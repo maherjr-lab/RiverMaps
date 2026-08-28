@@ -1,0 +1,493 @@
+{
+ "corrections": [
+  {
+   "id": "current",
+   "extend_upstream": {
+    "desc": "Put-in is Baptist Camp Access, ~1 mi below Montauk State Park (boating is prohibited through the park's hatchery/trout water)",
+    "to": [
+     37.45054,
+     -91.66146
+    ],
+    "approx": false
+   },
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Baptist Camp Access",
+     "town": "Salem (near Montauk SP)",
+     "type": "put-in",
+     "lat": 37.45054,
+     "lon": -91.66146,
+     "source": "https://naturalatlas.com/boat-launches/baptist-camp-kayak-access-1704055"
+    },
+    {
+     "name": "Akers Ferry Access",
+     "town": "Salem",
+     "type": "both",
+     "lat": 37.37611,
+     "lon": -91.55389,
+     "source": "https://en.wikipedia.org/wiki/Akers,_Missouri"
+    },
+    {
+     "name": "Pulltite Access & Campground",
+     "town": "Salem",
+     "type": "both",
+     "lat": 37.33444,
+     "lon": -91.48306,
+     "source": "https://thedyrt.com/camping/missouri/pulltite-ozark-national-scenic-river"
+    },
+    {
+     "name": "Round Spring Access & Campground",
+     "town": "Eminence",
+     "type": "both",
+     "lat": 37.28306,
+     "lon": -91.40833,
+     "source": "https://outdoorithm.com/campgrounds/mo/ozark-national-scenic-riverways/round-spring"
+    },
+    {
+     "name": "Two Rivers Access (Jacks Fork confluence)",
+     "town": "Eminence",
+     "type": "both",
+     "lat": 37.18993,
+     "lon": -91.2763,
+     "source": "https://www.aaa.com/tripcanvas/campground/two-rivers-campground-NPS0EDCA7B8_76C4_4D1B_8B8A_F9549DCC256D"
+    },
+    {
+     "name": "Big Spring Access",
+     "town": "Van Buren",
+     "type": "take-out",
+     "lat": 36.95094,
+     "lon": -90.99186,
+     "source": "https://nwis.waterdata.usgs.gov/monitoring-location/07067500"
+    }
+   ],
+   "new_miles": 88.1,
+   "outfitter": null,
+   "note": "Spring-fed Class I, no dams. Mapped extent is really 88.1 river miles (NPS float-time table, Baptist Camp to Big Spring) \u2014 a multi-day extent normally floated in day sections. Baptist-to-Akers is narrow and fast with strainers at higher flows; Van Buren access omitted only to stay within 6 pins."
+  },
+  {
+   "id": "jacksfork",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Buck Hollow Access (Hwy 17 bridge)",
+     "town": "Mountain View",
+     "type": "put-in",
+     "lat": 37.05612,
+     "lon": -91.66821,
+     "source": "https://naturalatlas.com/boat-launches/buck-hollow-kayak-access-1704045"
+    },
+    {
+     "name": "Alley Spring Access & Campground",
+     "town": "Eminence",
+     "type": "both",
+     "lat": 37.14817,
+     "lon": -91.44308,
+     "source": "https://waterdata.usgs.gov/monitoring-location/USGS-07065495/"
+    },
+    {
+     "name": "Eminence Access (Hwy 19 bridge)",
+     "town": "Eminence",
+     "type": "both",
+     "lat": 37.15408,
+     "lon": -91.35817,
+     "source": "https://waterdata.usgs.gov/monitoring-location/USGS-07066000/"
+    },
+    {
+     "name": "Two Rivers Access (Current River confluence)",
+     "town": "Eminence",
+     "type": "take-out",
+     "lat": 37.18993,
+     "lon": -91.2763,
+     "source": "https://www.aaa.com/tripcanvas/campground/two-rivers-campground-NPS0EDCA7B8_76C4_4D1B_8B8A_F9549DCC256D"
+    }
+   ],
+   "new_miles": 37.6,
+   "outfitter": null,
+   "note": "No dams; NPS float table gives Buck Hollow (Hwy 17) to Two Rivers as 37.6 mi, not 25. Upper river above Alley Spring is reliably floatable only in spring or after rain; Alley Spring keeps the lower river running year-round."
+  },
+  {
+   "id": "elevenpoint",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Concrete take-out is Riverton East River Access at the US 160 bridge, river mile 35.6 below Thomasville",
+    "to": [
+     36.64918,
+     -91.19961
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Thomasville River Access (Hwy 99 bridge)",
+     "town": "Thomasville",
+     "type": "put-in",
+     "lat": 36.78548,
+     "lon": -91.52806,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/thomasville-river-access"
+    },
+    {
+     "name": "Greer Crossing Recreation Area (Hwy 19)",
+     "town": "Winona",
+     "type": "both",
+     "lat": 36.79356,
+     "lon": -91.32854,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/greer-crossing-recreation-area"
+    },
+    {
+     "name": "Turner Mill North River Access",
+     "town": "Alton",
+     "type": "both",
+     "lat": 36.76575,
+     "lon": -91.26693,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/turner-mill-north-river-access"
+    },
+    {
+     "name": "Whitten River Access",
+     "town": "Alton",
+     "type": "both",
+     "lat": 36.73236,
+     "lon": -91.21484,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/whitten-river-access"
+    },
+    {
+     "name": "Riverton East River Access (US 160)",
+     "town": "Riverton",
+     "type": "take-out",
+     "lat": 36.64918,
+     "lon": -91.19961,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/riverton-east-river-access"
+    }
+   ],
+   "new_miles": 35.6,
+   "outfitter": null,
+   "note": "Wild & Scenic, no dams; true extent is 35.6 mi, not 19. Mary Decker Shoal (below Greer) and Halls Bay Chute run Class II; the Thomasville\u2013Greer upper section needs spring/early-summer water and the Thomasville access has USFS-reported flood damage; motorboats to 25 hp allowed below Greer."
+  },
+  {
+   "id": "niangua",
+   "extend_upstream": {
+    "desc": "Upstream endpoint: MDC Moon Valley Access (guidebook mile 22.3), off Route OO across a low-water bridge",
+    "to": [
+     37.7025,
+     -92.8821
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Downstream endpoint: MDC Prosperine Access gravel-bar landing at the mouth of Mountain Creek (guidebook mile 40.8)",
+    "to": [
+     37.79833,
+     -92.83611
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Moon Valley Access (MDC)",
+     "town": "Windyville",
+     "type": "put-in",
+     "lat": 37.7025,
+     "lon": -92.8821,
+     "source": "https://thepaddlinghub.com/directory/missouri/moon-valley-access"
+    },
+    {
+     "name": "Bennett Spring Access (MDC, Hwy 64 bridge)",
+     "town": "Lebanon (Bennett Spring SP)",
+     "type": "both",
+     "lat": 37.73809,
+     "lon": -92.86046,
+     "source": "https://waterdata.usgs.gov/monitoring-location/USGS-06923700/"
+    },
+    {
+     "name": "Barclay Conservation Area access (MDC)",
+     "town": "Lebanon",
+     "type": "both",
+     "lat": 37.79193,
+     "lon": -92.86706,
+     "source": "https://vymaps.com/US/Barclay-Conservation-Area-2647584/"
+    },
+    {
+     "name": "Prosperine Access (MDC)",
+     "town": "Lebanon",
+     "type": "take-out",
+     "lat": 37.79833,
+     "lon": -92.83611,
+     "source": "https://www.getamap.net/maps/united_states/missouri/laclede/_prosperine_access_point/"
+    }
+   ],
+   "new_miles": 18.5,
+   "outfitter": null,
+   "note": "Concrete reach for 'Bennett Spring country' is Moon Valley to Prosperine, 18.5 mi. Low-water bridge on the Moon Valley approach; Prosperine is a gravel-bar landing with no developed ramp; below it Lead Mine CA access is poor and Tunnel Dam sits near guidebook mile 66 \u2014 take out at Prosperine."
+  },
+  {
+   "id": "meramec",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Maramec Spring Park (James Foundation, fee)",
+     "town": "St. James",
+     "type": "put-in",
+     "lat": 37.95393,
+     "lon": -91.53293,
+     "source": "https://www.anyplaceamerica.com/directory/mo/phelps-county-29161/springs/maramec-spring-721852/"
+    },
+    {
+     "name": "Scotts Ford Access (MDC)",
+     "town": "Steelville",
+     "type": "both",
+     "lat": 37.9783,
+     "lon": -91.4563,
+     "source": "https://thepaddlinghub.com/directory/missouri/scotts-ford-access"
+    },
+    {
+     "name": "Bird's Nest Access",
+     "town": "Steelville",
+     "type": "both",
+     "lat": 37.99616,
+     "lon": -91.36042,
+     "source": "https://mapcarta.com/21100094"
+    },
+    {
+     "name": "Onondaga Cave State Park ramp",
+     "town": "Leasburg",
+     "type": "both",
+     "lat": 38.05733,
+     "lon": -91.22002,
+     "source": "https://mapcarta.com/26241830"
+    },
+    {
+     "name": "Sappington Bridge Access (MDC)",
+     "town": "Sullivan",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://mdc.mo.gov/discover-nature/places/sappington-bridge-access"
+    },
+    {
+     "name": "Meramec State Park ramp",
+     "town": "Sullivan",
+     "type": "take-out",
+     "lat": 38.21667,
+     "lon": -91.07778,
+     "source": "https://en.wikipedia.org/wiki/Meramec_State_Park"
+    }
+   ],
+   "new_miles": 60,
+   "outfitter": null,
+   "note": "Mapped extent is really ~60 river miles (guidebook miles 28.1 to 88.0), a multi-day extent floated in day sections via Scotts Ford, Bird's Nest, Onondaga and Sappington Bridge. Maramec Spring Park is fee access (James Foundation). MDC publishes no coordinates for Sappington Bridge (Route D south of Sullivan, then Sappington Bridge Rd)."
+  },
+  {
+   "id": "gasconade",
+   "extend_upstream": {
+    "desc": "Upstream endpoint: MDC Hazelgreen Access at the I-44/Historic Rt 66 crossing just below the Osage Fork confluence",
+    "to": [
+     37.75938,
+     -92.45247
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Downstream endpoint: Jerome Access off Hwy D near I-44 at the Little Piney confluence",
+    "to": [
+     37.9343,
+     -91.9767
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Hazelgreen Access (MDC)",
+     "town": "Hazelgreen",
+     "type": "put-in",
+     "lat": 37.75938,
+     "lon": -92.45247,
+     "source": "https://marinas.com/view/ramp/37cr21_Hazelgreen_Access_Ramp_Richland_MO_United_States"
+    },
+    {
+     "name": "Schlicht Springs Access (MDC)",
+     "town": "Crocker",
+     "type": "both",
+     "lat": 37.90334,
+     "lon": -92.28564,
+     "source": "https://campgroundtour.com/explore/mo/pulaski-county/schlicht-springs-access"
+    },
+    {
+     "name": "Riddle Bridge Access (MDC)",
+     "town": "St. Robert",
+     "type": "both",
+     "lat": 37.9087,
+     "lon": -92.1323,
+     "source": "https://mbd-db.osu.edu/hol/localities/02a9fe39-805f-499c-8fde-4e08e5925f99"
+    },
+    {
+     "name": "Boiling Spring Access",
+     "town": "Dixon",
+     "type": "both",
+     "lat": 37.88749,
+     "lon": -92.03975,
+     "source": "https://thedyrt.com/camping/missouri/boiling-spring-campground"
+    },
+    {
+     "name": "Jerome Access",
+     "town": "Jerome",
+     "type": "take-out",
+     "lat": 37.9343,
+     "lon": -91.9767,
+     "source": "https://mbd-db.osu.edu/hol/localities/161f0076-a660-411d-a7a5-38f020c79e77"
+    }
+   ],
+   "new_miles": 75.8,
+   "outfitter": null,
+   "note": "Hazelgreen to Jerome is actually ~75.8 river miles (guidebook miles 75.4 to 151.2; verified order Hazelgreen\u2013Schlicht\u2013Riddle\u2013Boiling Spring\u2013Jerome) \u2014 far too long for a day-trip line; consider a sub-reach such as Riddle Bridge to Jerome (~21.3 mi) or Boiling Spring to Jerome (~7.5 mi). Easy flatwater, no dams or named rapids on this reach."
+  },
+  {
+   "id": "bigpiney",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Pin take-out at Ross Access (MDC, 'Ross Bridge'), the last public take-out before Fort Leonard Wood; coordinate estimated from MDC directions (from Duke via Rte K/Western Rd/Windsor Ln) \u2014 no published coords found",
+    "to": [
+     37.625,
+     -92.075
+    ],
+    "approx": true
+   },
+   "landings": [
+    {
+     "name": "Dogs Bluff Access (MDC, Hwy 17)",
+     "town": "Houston",
+     "type": "both",
+     "lat": 37.32645,
+     "lon": -92.00269,
+     "source": "https://mbd-db.osu.edu/hol/localities/fab83cba-e706-4001-899a-f857cb35cea5"
+    },
+    {
+     "name": "Mason Bridge Access (MDC)",
+     "town": "Licking",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://mdc.mo.gov/discover-nature/places/mason-bridge-access"
+    },
+    {
+     "name": "Slabtown Recreation Area (USFS)",
+     "town": "Roby",
+     "type": "put-in",
+     "lat": 37.56155,
+     "lon": -92.03214,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/slabtown-recreation-area"
+    },
+    {
+     "name": "Ross Access (MDC)",
+     "town": "Duke",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://mdc.mo.gov/discover-nature/places/ross-access"
+    }
+   ],
+   "new_miles": 14.9,
+   "outfitter": null,
+   "note": "Verified upstream-to-downstream order: Dogs Bluff (guidebook mi 8.7), Sand Shoals (19.3), Mason Bridge (31.8), Slabtown (39.8), Ross (54.7) \u2014 so the mapped Slabtown-Ross run is only ~14.9 mi (put in at Mason Bridge for ~22.9). Ross is the last take-out before Fort Leonard Wood, where access is restricted and two low dams require portage. MDC publishes no coordinates for Mason Bridge or Ross."
+  },
+  {
+   "id": "huzzah",
+   "extend_upstream": {
+    "desc": "Upstream endpoint: Hwy 8 bridge over Huzzah Creek at Huzzah Valley (guidebook mile 23.0)",
+    "to": [
+     37.97431,
+     -91.20436
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Downstream endpoint: Onondaga Cave State Park ramp on the Meramec, ~2.5 mi below the Huzzah confluence (GNIS mouth at 38.03338,-91.22486)",
+    "to": [
+     38.05733,
+     -91.22002
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Hwy 8 Bridge landing (Huzzah Valley)",
+     "town": "Steelville",
+     "type": "put-in",
+     "lat": 37.97431,
+     "lon": -91.20436,
+     "source": "https://mapcarta.com/N12537553608"
+    },
+    {
+     "name": "Huzzah Conservation Area low-water bridge (Scotia Bridge, MDC)",
+     "town": "Leasburg",
+     "type": "both",
+     "lat": 38.0296,
+     "lon": -91.213,
+     "source": "https://thepaddlinghub.com/directory/missouri/huzzah-conservation-area"
+    },
+    {
+     "name": "Onondaga Cave State Park ramp (Meramec R., below confluence)",
+     "town": "Leasburg",
+     "type": "take-out",
+     "lat": 38.05733,
+     "lon": -91.22002,
+     "source": "https://mapcarta.com/26241830"
+    }
+   ],
+   "new_miles": 8.9,
+   "outfitter": null,
+   "note": "Small seasonal creek, often too low to float by mid-late summer. Standard reach: Hwy 8 to the Huzzah CA low-water bridge (5.4 mi), ~1 more mile to the Meramec confluence, then ~2.5 Meramec miles to the Onondaga ramp (8.9 mi total). Watch low-water bridges; reaches above Hwy 8 are high-water-only."
+  },
+  {
+   "id": "northfork-mo",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Twin Bridges Access (Hwy 14 crossing)",
+     "town": "Dora",
+     "type": "put-in",
+     "lat": 36.81089,
+     "lon": -92.14905,
+     "source": "https://waterdata.usgs.gov/monitoring-location/USGS-07057400"
+    },
+    {
+     "name": "North Fork Recreation Area / Hammond Camp (USFS)",
+     "town": "Dora",
+     "type": "both",
+     "lat": 36.75742,
+     "lon": -92.15428,
+     "source": "https://www.fs.usda.gov/r09/marktwain/recreation/north-fork-recreation-area-day-use-and-picnic-area"
+    },
+    {
+     "name": "Blair Bridge Access (MDC)",
+     "town": "Dora",
+     "type": "both",
+     "lat": 36.65442,
+     "lon": -92.22952,
+     "source": "https://campgroundtour.com/explore/mo/ozark-county/blair-bridge-access"
+    },
+    {
+     "name": "Patrick Bridge Access (MDC)",
+     "town": "Sycamore",
+     "type": "both",
+     "lat": 36.643,
+     "lon": -92.225,
+     "source": "https://thedyrt.com/camping/missouri/missouri-patrick-bridge-access"
+    },
+    {
+     "name": "Dawt Mill landing (private livery)",
+     "town": "Tecumseh",
+     "type": "take-out",
+     "lat": 36.60979,
+     "lon": -92.27821,
+     "source": "https://mapcarta.com/21112630"
+    }
+   ],
+   "new_miles": 23,
+   "outfitter": null,
+   "note": "Twin Bridges to Dawt Mill is ~23 river miles, not 15 (guidebook miles 24.1 to ~47.2; Hammond 29.2, Blair 39.2, Patrick 42.1). The Falls (mi 36.0, below Hammond) is a 2-3 ft Class II ledge usually run via its chute; the low dam at Dawt Mill must be portaged or run down the shallow right-side chute; Dawt landing is private. Map-blurb fix: Hodgson Mill sits on nearby Bryant Creek, not the North Fork \u2014 Rainbow Spring is the mid-run spring."
+  }
+ ]
+}

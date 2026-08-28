@@ -1,0 +1,966 @@
+{
+ "corrections": [
+  {
+   "id": "rum",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Onamia trailer access (Lake Onamia)",
+     "town": "Onamia",
+     "type": "put-in",
+     "lat": 46.069237,
+     "lon": -93.680331,
+     "source": "https://naturalatlas.com/boat-launches/onamia-lake-2291260"
+    },
+    {
+     "name": "Milaca City Park landing",
+     "town": "Milaca",
+     "type": "both",
+     "lat": 45.75449,
+     "lon": -93.660273,
+     "source": "https://naturalatlas.com/boat-launches/milaca-dam-2290613"
+    },
+    {
+     "name": "Cambridge West Park carry-in",
+     "town": "Cambridge",
+     "type": "both",
+     "lat": 45.572355,
+     "lon": -93.235867,
+     "source": "https://naturalatlas.com/boat-launches/cambridge-2291367"
+    },
+    {
+     "name": "Martin's Landing trailer access",
+     "town": "Isanti",
+     "type": "both",
+     "lat": 45.488309,
+     "lon": -93.266627,
+     "source": "https://naturalatlas.com/boat-launches/martins-2291360"
+    },
+    {
+     "name": "Rum River North County Park",
+     "town": "St. Francis",
+     "type": "both",
+     "lat": 45.389042,
+     "lon": -93.354942,
+     "source": "https://www.anokacountyparks.com/parks/rum-river-north"
+    },
+    {
+     "name": "Akin Riverside Park",
+     "town": "Anoka",
+     "type": "take-out",
+     "lat": 45.195534,
+     "lon": -93.391826,
+     "source": "https://www.nps.gov/miss/planyourvisit/akinriverside.htm"
+    }
+   ],
+   "new_miles": 154,
+   "outfitter": [
+    "Country Camping - Rum River Tubing & Paddling",
+    "https://www.country-camping.com/tubing-and-paddling/"
+   ],
+   "note": "Mille Lacs to Anoka is ~154 river miles (DNR maps RM 154.5 to 0), not 18. Portage rock rapids at Onamia/Hwy 27 (RM 143, right 30 yds); Old Rock Dam RM 87.8 use caution; frequent logjams RM 95-85 above Princeton; Rum River Dam in Anoka (RM 0.8) portage right 30 yds - Akin Riverside is below the dam. Mostly flatwater/Class I."
+  },
+  {
+   "id": "cannon",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Two Rivers Park canoe landing",
+     "town": "Faribault",
+     "type": "put-in",
+     "lat": 44.31067,
+     "lon": -93.27087,
+     "source": "https://milespaddled.com/cannon-river-i/"
+    },
+    {
+     "name": "Dundas canoe landing (Hwy 1)",
+     "town": "Dundas",
+     "type": "both",
+     "lat": 44.43033,
+     "lon": -93.20531,
+     "source": "https://milespaddled.com/cannon-river-i/"
+    },
+    {
+     "name": "Riverside Park",
+     "town": "Cannon Falls",
+     "type": "both",
+     "lat": 44.512,
+     "lon": -92.90682,
+     "source": "https://milespaddled.com/cannon-river-ii/"
+    },
+    {
+     "name": "Welch access (County Rd 7 / Welch Mill)",
+     "town": "Welch",
+     "type": "both",
+     "lat": 44.56775,
+     "lon": -92.73897,
+     "source": "https://milespaddled.com/cannon-river-ii/"
+    },
+    {
+     "name": "Cannon River public access off US 61",
+     "town": "Red Wing",
+     "type": "take-out",
+     "lat": 44.58098,
+     "lon": -92.65467,
+     "source": "https://milespaddled.com/cannon-river-iii/"
+    }
+   ],
+   "new_miles": 58,
+   "outfitter": [
+    "Cannon Falls Canoe & Bike Rental",
+    "https://www.cannonfallscanoeandbike.com/"
+   ],
+   "note": "Faribault (RM 58.4) to the Mississippi near Red Wing is ~58 river miles, not 15. Northfield dam (RM 41.9, 10 ft) has no developed portage; Lake Byllesby dam (RM 27.8, 60 ft) portage left ~1,000 yds via Byllesby Regional Park; Class I riffles Cannon Falls-Welch; last easy take-out is the Hwy 61 access (~RM 6.5, steep bank)."
+  },
+  {
+   "id": "root-mn",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Parsley Bridge carry-in (Hwy 52)",
+     "town": "Chatfield",
+     "type": "put-in",
+     "lat": 43.81641,
+     "lon": -92.13924,
+     "source": "https://milespaddled.com/root-river-north-branch/"
+    },
+    {
+     "name": "Moen's Bridge carry-in (Co Rd 21)",
+     "town": "Chatfield",
+     "type": "both",
+     "lat": 43.78218,
+     "lon": -92.03188,
+     "source": "https://milespaddled.com/root-river-north-branch/"
+    },
+    {
+     "name": "Lanesboro access (Hwy 16)",
+     "town": "Lanesboro",
+     "type": "both",
+     "lat": 43.7368,
+     "lon": -91.9468,
+     "source": "https://milespaddled.com/root-river-i/"
+    },
+    {
+     "name": "Whalan carry-in access",
+     "town": "Whalan",
+     "type": "both",
+     "lat": 43.734532,
+     "lon": -91.919702,
+     "source": "https://naturalatlas.com/boat-launches/whalan-2290769"
+    },
+    {
+     "name": "Peterson access (Hwy 16)",
+     "town": "Peterson",
+     "type": "both",
+     "lat": 43.78648,
+     "lon": -91.82735,
+     "source": "https://milespaddled.com/root-river-i/"
+    },
+    {
+     "name": "Rushford carry-in access",
+     "town": "Rushford",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/root1.pdf"
+    }
+   ],
+   "new_miles": 45,
+   "outfitter": [
+    "Root River Outfitters",
+    "https://www.rootriveroutfitters.net/"
+   ],
+   "note": "Parsley Bridge (Chatfield) to Rushford is ~45 river miles (DNR RM 78.6 to 33.8), not 18. Portage constructed rock rapids RM 59.8 (right, 20 yds) and Lanesboro Dam RM 56.1 (left); submerged dams at RM 39.2 and 33.9 - caution; swift Class I riffles; Peterson access temporarily closed during 2026 Mill St bridge work."
+  },
+  {
+   "id": "zumbro",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Elton Hills Drive bridge carry-in",
+     "town": "Rochester",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/zumbro1.pdf"
+    },
+    {
+     "name": "Green Bridge carry-in (Co Rd 7)",
+     "town": "Mazeppa",
+     "type": "both",
+     "lat": 44.2337,
+     "lon": -92.48249,
+     "source": "https://milespaddled.com/zumbro-river-i/"
+    },
+    {
+     "name": "Zumbro Falls access (Hwy 63)",
+     "town": "Zumbro Falls",
+     "type": "both",
+     "lat": 44.27982,
+     "lon": -92.42342,
+     "source": "https://milespaddled.com/zumbro-river-i/"
+    },
+    {
+     "name": "Read's Park landing",
+     "town": "Millville",
+     "type": "both",
+     "lat": 44.23845,
+     "lon": -92.30031,
+     "source": "https://milespaddled.com/zumbro-river-ii/"
+    },
+    {
+     "name": "Theilman carry-in access",
+     "town": "Theilman",
+     "type": "both",
+     "lat": 44.28674,
+     "lon": -92.18687,
+     "source": "https://milespaddled.com/zumbro-river-iii/"
+    },
+    {
+     "name": "Kellogg carry-in access",
+     "town": "Kellogg",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/zumbro2.pdf"
+    }
+   ],
+   "new_miles": 72,
+   "outfitter": [
+    "Zumbro Valley Canoe Rental",
+    "https://www.zumbrovalleycanoerental.com/"
+   ],
+   "note": "Rochester (Elton Hills Dr, RM 77.1) to Kellogg is ~72 river miles, not 15. Two Rochester dams (RM 81.1 and 77.6) have no established portage - put in below them; Lake Zumbro flatwater ends at the hydro dam RM 57.9 (portage right 80 yds); notorious snags/strainers throughout; water rises fast below the Rochester power dam after rain; Class I riffles. Livery in Zumbro Falls runs a 7-mi float on this reach."
+  },
+  {
+   "id": "crowwing",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Stigman's Mound County Park (Nimrod access, RM 65.5)",
+     "town": "Nimrod",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.dnr.state.mn.us/watertrails/crowwingriver/segments-maps.html"
+    },
+    {
+     "name": "Little White Dog County Park landing (RM 59.3)",
+     "town": "Sebeka",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.dnr.state.mn.us/watertrails/crowwingriver/segments-maps.html"
+    },
+    {
+     "name": "Cottingham County Park landing (RM 49.5)",
+     "town": "Sebeka",
+     "type": "both",
+     "lat": 46.50505,
+     "lon": -94.806898,
+     "source": "https://naturalatlas.com/camping-areas/cottingham-park-2311138"
+    },
+    {
+     "name": "McGivern County Park landing",
+     "town": "Staples",
+     "type": "both",
+     "lat": 46.412937,
+     "lon": -94.79824,
+     "source": "https://thedyrt.com/camping/minnesota/mcgivern"
+    },
+    {
+     "name": "Crow Wing State Park canoe landing (Mississippi confluence)",
+     "town": "Brainerd",
+     "type": "take-out",
+     "lat": 46.267992,
+     "lon": -94.344559,
+     "source": "https://thedyrt.com/camping/minnesota/canoe-landing-campsite-at-crow-wing-state-park"
+    }
+   ],
+   "new_miles": 65.5,
+   "outfitter": [
+    "Gloege's Northern Sun Canoe & Kayak Outfitting",
+    "https://canoethecrowwing.com"
+   ],
+   "note": "DNR map: Nimrod is river mile 65.5, mouth RM 0 at Crow Wing State Park, so the mapped run is ~65 mi (listed 20 is wrong). Gentle quiet-water river, no major rapids; county-park landings every 4-6 mi. Two hydro dams on the lower river: Pillager Dam RM 11.5 (portage right 125 yds) and Sylvan Dam RM 3.9 (portage left 200 yds), with reservoir slackwater from ~RM 15."
+  },
+  {
+   "id": "snake-mn",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Mora municipal carry-in access (RM 41.9)",
+     "town": "Mora",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/snake.pdf"
+    },
+    {
+     "name": "County Road 11 trailer access (RM 34.8)",
+     "town": "Kanabec County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/snake.pdf"
+    },
+    {
+     "name": "Cross Lake DNR trailer access (RM 13.5)",
+     "town": "Pine City",
+     "type": "both",
+     "lat": 45.830703,
+     "lon": -92.969488,
+     "source": "https://naturalatlas.com/boat-launches/cross-2289605"
+    },
+    {
+     "name": "Snake River landing, Chengwatana State Forest (RM 1.0)",
+     "town": "Pine City",
+     "type": "take-out",
+     "lat": 45.823258,
+     "lon": -92.764568,
+     "source": "https://naturalatlas.com/boat-launches/snake-river-2258350"
+    }
+   ],
+   "new_miles": 42,
+   "outfitter": [
+    "Snake River Outfitters of Minnesota",
+    "https://snakeriveroutfittersmn.com"
+   ],
+   "note": "DNR map: Mora access is RM 41.9, St. Croix confluence RM 0 - mapped run is ~42 mi, not 12 (full state water trail is 84 mi from McGrath). Flat water Mora to Pokegama/Cross Lake (RM ~17-12). No dam at Mora; at Pine City the former Cross Lake outlet dam is now constructed rock rapids at RM 11.8 - portage left 200 yds if not running it. Class I Pine City rapids RM 11.7-0.8; very shallow/scrapey in low water."
+  },
+  {
+   "id": "kettle",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Give the run a concrete lower endpoint at Maple Island trailer access (RM 7.9), the standard take-out for the mellow water below Sandstone",
+    "to": [
+     45.945146,
+     -92.777039
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Highway 23 bridge / #1 trailer access (RM 29.8)",
+     "town": "Sandstone",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/kettle1.pdf"
+    },
+    {
+     "name": "Banning State Park #2 trailer access (RM 28.4)",
+     "town": "Sandstone",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/kettle1.pdf"
+    },
+    {
+     "name": "Robinson Park (RM 25.4)",
+     "town": "Sandstone",
+     "type": "both",
+     "lat": 46.132636,
+     "lon": -92.857511,
+     "source": "https://thedyrt.com/camping/minnesota/robinson-park-camping"
+    },
+    {
+     "name": "Highway 48 bridge trailer access (RM 15.1)",
+     "town": "Hinckley",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/kettle2.pdf"
+    },
+    {
+     "name": "Maple Island trailer access (RM 7.9)",
+     "town": "Hinckley",
+     "type": "take-out",
+     "lat": 45.945146,
+     "lon": -92.777039,
+     "source": "https://naturalatlas.com/boat-launches/maple-island-boat-access-2258627"
+    }
+   ],
+   "new_miles": 22,
+   "outfitter": [
+    "Hard Water Sports",
+    "https://hardwatersports.com"
+   ],
+   "note": "Hwy 23 access (RM 29.8) to Maple Island (RM 7.9) is ~22 mi, not 10. Banning gorge rapids RM 28.4-26.8: Blueberry Slide (II-IV), Mother's Delight (II-III), Dragon's Tooth (II-IV), Little Banning (I-III), Hell's Gate (II-III); 1.5-mi portage trail from RM 28.4 bypasses the gorge. Below Robinson Park, Big Spring Falls and Sandstone Rapids (RM 24-23.4) are Class II-IV - portage right 0.7 mi; quiet water from there to Maple Island. Guided whitewater raft/inflatable-kayak trips run Banning to Robinson Park."
+  },
+  {
+   "id": "crow-mn",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Riverside Park trailer access (north end of Main St)",
+     "town": "Rockford",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/areas/fisheries/saukrapids/3rockford.pdf"
+    },
+    {
+     "name": "Riverside County Park carry-in (RM 15.4)",
+     "town": "Hanover",
+     "type": "both",
+     "lat": 45.164687,
+     "lon": -93.640151,
+     "source": "https://naturalatlas.com/boat-launches/riverside-2289965"
+    },
+    {
+     "name": "Crow-Hassan Park Reserve carry-in (Co Rd 116)",
+     "town": "Rogers",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://files.dnr.state.mn.us/maps/canoe_routes/northforkcrow2.pdf"
+    },
+    {
+     "name": "Dayton trailer access (Crow/Mississippi confluence, RM 0.1)",
+     "town": "Dayton",
+     "type": "take-out",
+     "lat": 45.245637,
+     "lon": -93.521076,
+     "source": "https://naturalatlas.com/boat-launches/dayton-2289842"
+    }
+   ],
+   "new_miles": 23,
+   "outfitter": null,
+   "note": "Rockford (RM 22.8) to Dayton (RM 0.1) is ~23 river miles, not 15. No portages required: the old dams at RM 18 (Hanover) and RM 10.5 (Berning Mill near St. Michael) are gone - per MN DNR the mills still stand where dams were located in the past; watch for fast current/rubble at the old dam sites plus deadfall and overhanging trees; otherwise easy flatwater."
+  },
+  {
+   "id": "missheadwaters",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Mississippi Headwaters, Itasca State Park (RM 1341.6)",
+     "town": "Lake Itasca",
+     "type": "put-in",
+     "lat": 47.240325,
+     "lon": -95.210829,
+     "source": "https://naturalatlas.com/visitor-centers/mary-gibbs-mississippi-headwaters-center-2296109"
+    },
+    {
+     "name": "Coffee Pot Landing (RM 1326.2)",
+     "town": "Shevlin",
+     "type": "both",
+     "lat": 47.349239,
+     "lon": -95.182767,
+     "source": "https://naturalatlas.com/boat-launches/coffee-pot-landing-2290549"
+    },
+    {
+     "name": "Pine Point carry-in access",
+     "town": "Bemidji",
+     "type": "both",
+     "lat": 47.427916,
+     "lon": -95.069597,
+     "source": "https://thedyrt.com/camping/minnesota/pine-point-canoe-campsite-mississippi-headwaters-water-trail"
+    },
+    {
+     "name": "Iron Bridge landing",
+     "town": "Bemidji",
+     "type": "both",
+     "lat": 47.435472,
+     "lon": -94.999403,
+     "source": "https://naturalatlas.com/boat-launches/iron-bridge-2291003"
+    },
+    {
+     "name": "Nymore Beach, Lake Bemidji (RM 1284)",
+     "town": "Bemidji",
+     "type": "take-out",
+     "lat": 47.464387,
+     "lon": -94.864069,
+     "source": "https://naturalatlas.com/boat-launches/nymore-beach-2290565"
+    }
+   ],
+   "new_miles": 58,
+   "outfitter": [
+    "Itasca Sports",
+    "https://www.itascasports.com"
+   ],
+   "note": "DNR river miles: headwaters RM 1341.6 to Nymore Beach/Lake Bemidji RM 1284 = ~58 mi, roughly double the listed 30. First ~50 mi is a narrow winding channel (5-10 ft wide) - beaver dams and road culverts can force portages; Class I rapids between Vekins Dam and County Road 2. Recommended day trip: headwaters to Coffee Pot Landing, 15.4 mi."
+  },
+  {
+   "id": "upperiowa",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "End the run at Trout Run Park, Decorah (Hwy 9 bridge, RM ~54). The Chimney Rock/Bluffton palisades are UPSTREAM between Kendallville and Bluffton (RM ~79-74) - the mapped extent should not continue past Decorah to reach them.",
+    "to": [
+     43.29092,
+     -91.75884
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Kendallville Park Canoe Access",
+     "town": "Kendallville",
+     "type": "put-in",
+     "lat": 43.44202,
+     "lon": -92.03809,
+     "source": "https://milespaddled.com/upper-iowa-river-iii/"
+    },
+    {
+     "name": "Chimney Rock Park Access (Chimney Rock Rd)",
+     "town": "Bluffton",
+     "type": "both",
+     "lat": 43.42156,
+     "lon": -91.93467,
+     "source": "https://milespaddled.com/upper-iowa-river-iv/"
+    },
+    {
+     "name": "Bluffton Bluff Access (W Ravine St)",
+     "town": "Bluffton",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.winneshiekwild.com/wp-content/uploads/2019/12/Upper-Iowa-River-Paddlers-Guide-Web.pdf"
+    },
+    {
+     "name": "Malanaphy Springs Access (Bluffton Rd bridge)",
+     "town": "Decorah",
+     "type": "both",
+     "lat": 43.34508,
+     "lon": -91.843,
+     "source": "https://milespaddled.com/upper-iowa-river-v/"
+    },
+    {
+     "name": "Trout Run Park",
+     "town": "Decorah",
+     "type": "take-out",
+     "lat": 43.29092,
+     "lon": -91.75884,
+     "source": "https://milespaddled.com/upper-iowa-river-v/"
+    }
+   ],
+   "new_miles": 38,
+   "outfitter": [
+    "Chimney Rock Campground & River Trips",
+    "https://campatchimneyrock.com/river-trips/"
+   ],
+   "note": "Kendallville to Decorah (Trout Run Park) is ~38 river miles (RM 91.4 to 53.8 per Winneshiek CCB Paddler's Guide), not 20. No dams on this reach - the Upper Iowa's dams are downstream of Decorah. Scrapey below ~200 cfs on the Bluffton gauge. Chimney Rock Campground (riverside at RM ~79) rents canoes/kayaks/tubes with shuttle; Hruska's Canoe Livery at Kendallville also serves this reach."
+  },
+  {
+   "id": "yellow-ia",
+   "extend_upstream": {
+    "desc": "Extend put-in upstream to the Volney Canoe Launch (~0.9 mi below the Volney Rd/X26 bridge) - the standard livery-served put-in; Volney to Sixteen is the river's most popular leg.",
+    "to": [
+     43.14,
+     -91.36
+    ],
+    "approx": true
+   },
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Volney Canoe Launch",
+     "town": "Volney",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.wisconsinrivertrips.com/segments/yellow-river-iowa/volney"
+    },
+    {
+     "name": "Sixteen Bridge Access (Old Sixteen Rd/X32)",
+     "town": "Monona (NE of)",
+     "type": "both",
+     "lat": 43.12757,
+     "lon": -91.31466,
+     "source": "https://milespaddled.com/yellow-river-ii/"
+    },
+    {
+     "name": "Ion Access (Co Hwy X36 bridge, USGS gauge)",
+     "town": "Ion",
+     "type": "both",
+     "lat": 43.111944,
+     "lon": -91.265,
+     "source": "https://waterdata.usgs.gov/nwis/uv?legacy=1&site_no=05389000"
+    },
+    {
+     "name": "Old Mission Drive access",
+     "town": "Effigy Mounds area",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.wisconsinrivertrips.com/segments/yellow-river-iowa/volney"
+    },
+    {
+     "name": "Yellow River Landing (Hwy 76 at Mississippi mouth)",
+     "town": "Harpers Ferry (S of)",
+     "type": "take-out",
+     "lat": 43.08612,
+     "lon": -91.18213,
+     "source": "https://milespaddled.com/yellow-river-ii/"
+    }
+   ],
+   "new_miles": 22,
+   "outfitter": [
+    "Big Foot Canoe Rentals",
+    "https://www.mononachamber.com/big-foot-canoe-rentals.html"
+   ],
+   "note": "The mapped ~10-mi Effigy Mounds stretch checks out: Ion (X36 bridge) is 9.7 mi above the mouth per USGS. Recommended full run Volney to mouth is ~22 mi (Volney-Sixteen 4.6, Sixteen-Ion ~7.2, Ion-mouth 9.7). Iowa's fastest coldwater river: swift Class I with strainers on hairpin bends, a ~20-ft drop in the mile below Ion bridge, and confusing Mississippi backwaters at high water. No dams."
+  },
+  {
+   "id": "turkey-ia",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Elkader Access below dam (whitewater park, Water Trail #39B)",
+     "town": "Elkader",
+     "type": "put-in",
+     "lat": 42.85319,
+     "lon": -91.40256,
+     "source": "https://milespaddled.com/turkey-river/"
+    },
+    {
+     "name": "Motor Mill Access (Water Trail #32)",
+     "town": "Elkader (SE of)",
+     "type": "both",
+     "lat": 42.80692,
+     "lon": -91.35124,
+     "source": "https://milespaddled.com/turkey-river/"
+    },
+    {
+     "name": "Garber Access (Hwy X41/Jupiter Rd, Water Trail #20)",
+     "town": "Garber",
+     "type": "both",
+     "lat": 42.74002,
+     "lon": -91.26159,
+     "source": "https://milespaddled.com/turkey-river/"
+    },
+    {
+     "name": "Osterdock Access (Water Trail #12)",
+     "town": "Osterdock",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://turkeyriver.org/wp-content/uploads/turkeyRiverWaterTrailGuide.pdf"
+    },
+    {
+     "name": "Millville Access (Water Trail #5)",
+     "town": "Millville",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://turkeyriver.org/wp-content/uploads/turkeyRiverWaterTrailGuide.pdf"
+    }
+   ],
+   "new_miles": 34,
+   "outfitter": [
+    "Turkey River Rentals",
+    "https://www.turkeyriverrentals.com/"
+   ],
+   "note": "Elkader to Millville is ~34 river miles (Water Trail mile 39 to 5: Elkader-Motor Mill 6.5, Motor Mill-Garber 12.4, Garber-Osterdock 7.5, Osterdock-Millville 7.5), not 18. Dam at Elkader must be portaged river-right around the historic Keystone Bridge; put in below it - Class I-II whitewater-park ledges immediately downstream. Clermont's dam is upstream of this reach."
+  },
+  {
+   "id": "volga",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Klock's Island Park",
+     "town": "Fayette",
+     "type": "put-in",
+     "lat": 42.84288,
+     "lon": -91.81917,
+     "source": "https://milespaddled.com/volga-river/"
+    },
+    {
+     "name": "Heron Road Access (Volga River State Rec Area east edge)",
+     "town": "Fayette (E of)",
+     "type": "both",
+     "lat": 42.86453,
+     "lon": -91.74071,
+     "source": "https://milespaddled.com/volga-river/"
+    },
+    {
+     "name": "Osborne Park Landing (0.5 mi below Hwy 13 bridge)",
+     "town": "Osborne/Elkader",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.wisconsinrivertrips.com/segments/volga-river/osborne"
+    },
+    {
+     "name": "Mederville Canoe Access",
+     "town": "Mederville",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.wisconsinrivertrips.com/segments/volga-river/mederville"
+    },
+    {
+     "name": "Littleport Canoe Access",
+     "town": "Littleport",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.wisconsinrivertrips.com/segments/volga-river/mederville"
+    },
+    {
+     "name": "Garber Access on Turkey River (below Volga confluence)",
+     "town": "Garber",
+     "type": "take-out",
+     "lat": 42.74002,
+     "lon": -91.26159,
+     "source": "https://milespaddled.com/turkey-river/"
+    }
+   ],
+   "new_miles": 50,
+   "outfitter": null,
+   "note": "Fayette to Garber is roughly 50 river miles, not 10 (sourced segments: Klock's Island-Heron Rd 11; Hwy 13/Osborne-Mederville 5.3; Mederville-Littleport 5.7; Littleport-Grandview Rd 9.3; Grandview-Turkey confluence 0.5; the Heron Rd-Osborne reach is ~15-18 mi, least documented). No dams. Hazards: strainers, Class I ledges, abandoned-railroad concrete debris in the lower river. Take out on the Turkey at Garber ~1 mi below the Volga mouth. Runnable roughly above ~150 cfs at the Littleport gauge."
+  },
+  {
+   "id": "maquoketa",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Maquoketa Caves State Park is NOT on the river - end the mapped run at Eby's Mill Access (Eby's Mill Rd/Hwy X73 bridge); the river continues ~26 mi through Jackson County accesses (Supples Bridge, Canton, Royertown) to Joinerville Park at the town of Maquoketa.",
+    "to": [
+     42.19804,
+     -91.05659
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Mon-Maq Dam Access (River Rd, launch below dam)",
+     "town": "Monticello",
+     "type": "put-in",
+     "lat": 42.24535,
+     "lon": -91.17217,
+     "source": "https://milespaddled.com/maquoketa-river-iii/"
+    },
+    {
+     "name": "Pictured Rocks Park ramp (190th St)",
+     "town": "Monticello (5 mi SE)",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.mycountyparks.com/county/Jones/Park/Pictured-Rocks/Activity/Canoeing-Kayaking"
+    },
+    {
+     "name": "Eby's Mill Access (Eby's Mill Rd/Hwy X73)",
+     "town": "Scotch Grove/Onslow area",
+     "type": "take-out",
+     "lat": 42.19804,
+     "lon": -91.05659,
+     "source": "https://milespaddled.com/maquoketa-river-iii/"
+    }
+   ],
+   "new_miles": 14,
+   "outfitter": null,
+   "note": "Mon-Maq Dam to Eby's Mill is 14.25 mi with the Pictured Rocks/Indian Bluffs palisades at ~mile 8 - close to the listed 15, but fix the endpoint (Maquoketa Caves SP is off-river). Put in BELOW Mon-Maq Dam; Jones County warns of drowning risk at the dam. Lake Delhi dam is well upstream of Monticello. Wide sandy channel scrapes below ~200 cfs (Manchester gauge); logjams reported in the Jackson County reaches downstream."
+  },
+  {
+   "id": "wapsi",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Three Elms Area & Access (below Independence dam)",
+     "town": "Independence",
+     "type": "put-in",
+     "lat": 42.456001,
+     "lon": -91.874001,
+     "source": "https://thedyrt.com/camping/iowa/iowa-three-elms-area-and-access"
+    },
+    {
+     "name": "Veterans Memorial Park ramp (coords = USGS gauge at adjacent Quasqueton bridge)",
+     "town": "Quasqueton",
+     "type": "both",
+     "lat": 42.392488,
+     "lon": -91.762115,
+     "source": "https://waterdata.usgs.gov/monitoring-location/05421330/"
+    },
+    {
+     "name": "Troy Mills River Access",
+     "town": "Troy Mills",
+     "type": "both",
+     "lat": 42.290114,
+     "lon": -91.675064,
+     "source": "https://www.mycountyparks.com/County/Linn/Park/Troy-Mills-River-Access"
+    },
+    {
+     "name": "Pinicon Ridge Park",
+     "town": "Central City",
+     "type": "both",
+     "lat": 42.216934,
+     "lon": -91.535818,
+     "source": "https://thedyrt.com/camping/iowa/pinicon-ridge-park"
+    },
+    {
+     "name": "Stone City Access (boat ramp)",
+     "town": "Stone City",
+     "type": "both",
+     "lat": 42.11075,
+     "lon": -91.349431,
+     "source": "https://www.jonescountyiowa.gov/conservation/parks/stone_city_boat_ramp/"
+    },
+    {
+     "name": "Wapsipinicon State Park boat launch (below Anamosa dam)",
+     "town": "Anamosa",
+     "type": "take-out",
+     "lat": 42.09819,
+     "lon": -91.28755,
+     "source": "https://milespaddled.com/wapsipinicon-river/"
+    }
+   ],
+   "new_miles": 48,
+   "outfitter": [
+    "Pinicon Ridge Park Watercraft Concession (Linn County Conservation)",
+    "https://www.linncountyiowa.gov/1448/Watercraft-Concession"
+   ],
+   "note": "Listed ~15 mi is far off: Independence to Anamosa is roughly 45-50 river miles (anchor: Troy Mills-Pinicon Ridge alone is 12.2 mi per paddling.com); Stone City is ~4-5 river mi upstream of Anamosa. Dams: lowhead mill dam at Independence (put in below town at Three Elms); Quasqueton's old dam is now a rock-arch rapids at Veterans Memorial Park; remnant Troy Mills dam (county access sits below it); Anamosa lowhead dam is extremely dangerous - take out at Stone City or the Anamosa city ramp above the dam, or portage to the state-park launch below."
+  },
+  {
+   "id": "boone-ia",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Riverside Park",
+     "town": "Webster City",
+     "type": "put-in",
+     "lat": 42.468,
+     "lon": -93.813001,
+     "source": "https://thedyrt.com/camping/iowa/iowa-riverside-city-park"
+    },
+    {
+     "name": "Briggs Woods Park (concrete ramp)",
+     "town": "Webster City",
+     "type": "both",
+     "lat": 42.427829,
+     "lon": -93.796521,
+     "source": "https://www.parkadvisor.com/us/iowa/webster+city/1006091/Briggs+Woods+Park"
+    },
+    {
+     "name": "Albright Canoe Access",
+     "town": "Webster City",
+     "type": "both",
+     "lat": 42.4046,
+     "lon": -93.8093,
+     "source": "https://www.americanwhitewater.org/content/River/view/river-detail/3185/main"
+    },
+    {
+     "name": "Bells Mill Park (concrete ramp, campground)",
+     "town": "Stratford",
+     "type": "both",
+     "lat": 42.340987,
+     "lon": -93.891609,
+     "source": "https://www.campingroadtrip.com/campgrounds/campground/campground/19678/iowa/hamilton-county-bells-mill-park"
+    },
+    {
+     "name": "Boone Forks Wildlife Area access (above Des Moines River confluence)",
+     "town": "Stratford",
+     "type": "take-out",
+     "lat": 42.312524,
+     "lon": -93.933355,
+     "source": "https://naturalatlas.com/fishing-accesses/boone-forks-2265403"
+    }
+   ],
+   "new_miles": 27,
+   "outfitter": [
+    "Hamilton County Conservation kayak rentals (Briggs Woods Park)",
+    "https://www.mycountyparks.com/county/hamilton/Content/Kayak-Canoe-Rentals"
+   ],
+   "note": "Iowa Canoe Guide: Riverside Park to Boone Forks is 27.8 mi; DNR's designated Boone River Water Trail is 26.6 mi - listed ~12 mi is wrong. No lowhead dams on this reach, but constant rock riffles and glacial-boulder gardens; a ~200-yd rock-ledge rapid (2-ft ledge, strainers river-right) lies below Albright Access. Scrapey at low water; county suspends rentals above 2,000 cfs or outside 2.5-5.5 ft."
+  },
+  {
+   "id": "midraccoon",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Lenon Mill Park (cement ramp below Lenon Mill dam)",
+     "town": "Panora",
+     "type": "put-in",
+     "lat": 41.686835,
+     "lon": -94.37036,
+     "source": "https://thedyrt.com/camping/iowa/iowa-lenon-mill-park"
+    },
+    {
+     "name": "Cowles River Access",
+     "town": "Linden (rural Guthrie/Dallas Co)",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://paddletoday.com/rivers/by-river/middle-raccoon-river/"
+    },
+    {
+     "name": "Redfield Dam Upper Access (above the lowhead dam)",
+     "town": "Redfield",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.iowadnr.gov/media/8897/download?inline="
+    }
+   ],
+   "new_miles": 16.5,
+   "outfitter": [
+    "Raccoon River Retreats",
+    "https://raccoonriverretreats.com/"
+   ],
+   "note": "DNR water-trail brochure: Lenon Mill-Cowles 9 mi, Cowles-Redfield Dam Upper 7.8 mi - Panora to Redfield totals ~16.5-16.8 mi, not 12. Put in below the Lenon Mill dam at Panora; lowhead Redfield Dam at run's end - take out at the Upper Access above it (the paved Redfield Boat Ramp below the dam starts the next leg). Frequent rock riffles and mid-riffle sweepers; premier smallmouth water. Livery rents exactly the Panora-Redfield stretch."
+  },
+  {
+   "id": "raccoon",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Redfield Boat Ramp (paved ramp below Redfield Dam)",
+     "town": "Redfield",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.mycountyparks.com/county/Dallas/Park/Redfield-Boat-Ramp/Activity/Canoeing-Kayaking"
+    },
+    {
+     "name": "Two Rivers Access (North/South Raccoon junction)",
+     "town": "Van Meter",
+     "type": "both",
+     "lat": 41.540963,
+     "lon": -93.96477,
+     "source": "https://naturalatlas.com/fishing-accesses/two-rivers-2268097"
+    },
+    {
+     "name": "Booneville Boat Launch (gravel access off 360th St)",
+     "town": "Booneville",
+     "type": "both",
+     "lat": 41.521711,
+     "lon": -93.89034,
+     "source": "https://naturalatlas.com/boat-launches/booneville-2265589"
+    },
+    {
+     "name": "Walnut Woods State Park ramp",
+     "town": "West Des Moines",
+     "type": "both",
+     "lat": 41.54222,
+     "lon": -93.74111,
+     "source": "https://campflare.com/campground/walnut-woods-state-park-133"
+    },
+    {
+     "name": "Raccoon River East Greenway ramp (ICON site 73)",
+     "town": "West Des Moines/Des Moines",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.iconwatertrails.com/water-trails/raccoon-river/"
+    }
+   ],
+   "new_miles": 31,
+   "outfitter": null,
+   "note": "Redfield to the Des Moines River confluence is ~31 mi (Iowa DNR fisheries segment 31.0 mi; designated Raccoon River Water Trail 30.9 mi) - listed ~15 mi covers barely half. Des Moines Water Works' infiltration weir sits in Water Works Park and boat launching is prohibited on Water Works property - end trips at Walnut Woods or the East Greenway ramp. Adel's rock dam (Bennett Access) is on the North Raccoon, NOT this run. Past the confluence, the Scott Avenue dam on the Des Moines River is immediately downstream."
+  }
+ ]
+}

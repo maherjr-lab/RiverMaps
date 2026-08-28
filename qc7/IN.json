@@ -1,0 +1,631 @@
+{
+ "corrections": [
+  {
+   "id": "sugarcreek",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Cox Ford Covered Bridge access (Turkey Run SP)",
+    "to": [
+     39.89,
+     -87.2
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Crawfordsville Public Access (below Crawfordsville dam)",
+     "town": "Crawfordsville",
+     "type": "put-in",
+     "lat": 40.05,
+     "lon": -86.91,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    },
+    {
+     "name": "Sugar Creek DNR Public Fishing Area",
+     "town": "Crawfordsville",
+     "type": "both",
+     "lat": 40.0,
+     "lon": -86.99,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    },
+    {
+     "name": "Deer's Mill Covered Bridge access (SR 234, Shades SP)",
+     "town": "Waveland",
+     "type": "both",
+     "lat": 39.95,
+     "lon": -87.06,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    },
+    {
+     "name": "Brush Creek access (Narrows Covered Bridge, Turkey Run SP)",
+     "town": "Marshall",
+     "type": "both",
+     "lat": 39.89,
+     "lon": -87.19,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    },
+    {
+     "name": "Cox Ford Covered Bridge access",
+     "town": "Marshall",
+     "type": "both",
+     "lat": 39.89,
+     "lon": -87.2,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    },
+    {
+     "name": "West Union Covered Bridge access",
+     "town": "West Union",
+     "type": "take-out",
+     "lat": 39.85,
+     "lon": -87.34,
+     "source": "https://www.indianaoutfitters.com/sugar_creek.html"
+    }
+   ],
+   "new_miles": 29,
+   "outfitter": [
+    "Clements Canoes Outdoor Center",
+    "https://clementscanoes.net/"
+   ],
+   "note": "Mileage correction: Crawfordsville to Cox Ford (Turkey Run) is ~29 river mi; ~15 mi matches only Crawfordsville-Deer's Mill (15.7). CRITICAL low-head dam at Crawfordsville - put in at the public access below it. Covered bridges: Deer's Mill, Narrows, Cox Ford, West Union. Best spring-early summer; scrapey by late summer. Outfitter URL note: clementscanoes.com domain has lapsed - live site is clementscanoes.net (bases at Crawfordsville and Deer's Mill)."
+  },
+  {
+   "id": "tippecanoe",
+   "extend_upstream": {
+    "desc": "Tippecanoe River State Park boat launch",
+    "to": [
+     41.1173,
+     -86.6025
+    ],
+    "approx": true
+   },
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Tippecanoe River State Park boat launch",
+     "town": "Winamac",
+     "type": "put-in",
+     "lat": 41.1173,
+     "lon": -86.6025,
+     "source": "https://thedyrt.com/camping/indiana/tippecanoe-river-state-park"
+    },
+    {
+     "name": "Winamac Boat Launch (state public access ramp)",
+     "town": "Winamac",
+     "type": "both",
+     "lat": 41.0524,
+     "lon": -86.5992,
+     "source": "https://snoflo.org/boat-launches/indiana/winamac"
+    },
+    {
+     "name": "Winamac Town Park ramp",
+     "town": "Winamac",
+     "type": "take-out",
+     "lat": 41.0514,
+     "lon": -86.6031,
+     "source": "https://www.fishing.org/ramps/indiana/winamac/tippecanoe-river-winnemac-city-park-ramp"
+    },
+    {
+     "name": "Pulaski Conservation Club access",
+     "town": "Pulaski",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/tipp_river.html"
+    }
+   ],
+   "new_miles": 12,
+   "outfitter": [
+    "Riverside Rentals",
+    "https://riversidecanoes.com/"
+   ],
+   "note": "Extent correction: Winamac-Monticello is far more than 20 river mi and ends in Lake Shafer/Freeman reservoir backwater with dams at Monticello - not a day float. Recommended run: Tippecanoe River SP to Winamac Town Park, ~12 mi (the local livery's standard 5-6 hr float); truncate the downstream endpoint at Winamac (41.0514,-86.6031); optional ~7-mi extension to Pulaski Conservation Club. SP coordinate is the park location, not the exact ramp. Hazards: logjams/strainers, not dams, on this stretch; canoe camping available in the state park."
+  },
+  {
+   "id": "blue-in",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Rothrock Mill DNR access",
+    "to": [
+     38.272746,
+     -86.274308
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Fredericksburg access (US 150)",
+     "town": "Fredericksburg",
+     "type": "put-in",
+     "lat": 38.4338,
+     "lon": -86.1917,
+     "source": "https://www.indianaoutfitters.com/blue_river.html"
+    },
+    {
+     "name": "Totten Ford access (private, fee)",
+     "town": "Depauw",
+     "type": "both",
+     "lat": 38.377,
+     "lon": -86.2596,
+     "source": "https://www.indianaoutfitters.com/blue_river.html"
+    },
+    {
+     "name": "Milltown public access",
+     "town": "Milltown",
+     "type": "both",
+     "lat": 38.340861,
+     "lon": -86.27435,
+     "source": "https://www.indianaoutfitters.com/blue_river.html"
+    },
+    {
+     "name": "Rothrock Mill DNR access",
+     "town": "English",
+     "type": "both",
+     "lat": 38.272746,
+     "lon": -86.274308,
+     "source": "https://www.indianaoutfitters.com/blue_river.html"
+    },
+    {
+     "name": "Blue River Chapel DNR access (Harrison-Crawford SF)",
+     "town": "Leavenworth",
+     "type": "take-out",
+     "lat": 38.226482,
+     "lon": -86.256735,
+     "source": "https://www.indianaoutfitters.com/blue_river.html"
+    }
+   ],
+   "new_miles": 37,
+   "outfitter": [
+    "Cave Country Canoes",
+    "https://cavecountrycanoes.com/"
+   ],
+   "note": "Mileage correction: Fredericksburg (RM 57) to Milltown (RM 33.5) alone is ~23 mi; Milltown to Rothrock Mill adds ~14 (Cave Country's full-day trip) - ~37 mi total. CRITICAL: dangerous dam at Milltown, portage right; partially breached dam at Rothrock's Mill/White Cloud also requires portage. 'Wyandotte caves country' is the Blue River Chapel reach (RM 11) well below Milltown. Indiana's first Natural & Scenic River; late-summer low water common."
+  },
+  {
+   "id": "whitewater-in",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Brookville Dam tailwater access (below spillway, off SR 101)",
+     "town": "Brookville",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.americanwhitewater.org/content/River/view/river-detail/4688/main"
+    },
+    {
+     "name": "Brookville town access (town park below US 52 bridge)",
+     "town": "Brookville",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/whitewtr.html"
+    },
+    {
+     "name": "New Trenton access (US 52)",
+     "town": "New Trenton",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.whitewatercanoerental.com/"
+    },
+    {
+     "name": "Whitewater Township Park at I-275",
+     "town": "Harrison, OH",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/whitewtr.html"
+    }
+   ],
+   "new_miles": 18,
+   "outfitter": [
+    "Morgan's Canoe & Outdoor Adventures",
+    "https://www.morganscanoe.com/"
+   ],
+   "note": "Mileage correction: Brookville Dam to Harrison OH is ~16-18 river mi, not 12 (AW reach 4688 covers dam to West Fork confluence, 2 mi Class I-III; shorter canonical liveried run is Brookville-New Trenton). Swiftest gradient in Indiana (~6 ft/mi) confirmed. Hazards: keeper hole at the rapid above the US 52 bridge at high dam releases; cold fluctuating tailwater - stay well below the spillway; banks mostly private; no low-head dams on this stretch. Whitewater Canoe Rental (whitewatercanoerental.com) also serves Brookville-New Trenton-Cedar Grove. No source-published coordinates found for these landings - pin manually at named bridges/parks."
+  },
+  {
+   "id": "wildcat",
+   "extend_upstream": {
+    "desc": "Adams Mill access (replace Kokomo start)",
+    "to": [
+     40.4809,
+     -86.5089
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Wildcat Creek Park, Eisenhower Rd, Lafayette (replace Lafayette generic end)",
+    "to": [
+     40.4385,
+     -86.8032
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Adams Mill access (DNR fishing area at covered bridge)",
+     "town": "Cutler",
+     "type": "both",
+     "lat": 40.4809,
+     "lon": -86.5089,
+     "source": "https://www.hmdb.org/m.asp?m=42694"
+    },
+    {
+     "name": "Knop Lake public fishing area",
+     "town": "Carroll County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.burlingtonindiana.org/community/discover-and-explore/canoeing-on-the-wildcat.html"
+    },
+    {
+     "name": "Mis-So-La Access Site (CR 725 E)",
+     "town": "Lafayette",
+     "type": "both",
+     "lat": 40.4428,
+     "lon": -86.7633,
+     "source": "https://www.homeofpurdue.com/blog/post/aguidetokayakingingreaterlafayette/"
+    },
+    {
+     "name": "Wildcat Creek Park (Eisenhower Rd)",
+     "town": "Lafayette",
+     "type": "both",
+     "lat": 40.4385,
+     "lon": -86.8032,
+     "source": "https://www.homeofpurdue.com/blog/post/aguidetokayakingingreaterlafayette/"
+    },
+    {
+     "name": "Peters Mill Landing (Eisenhower Ct)",
+     "town": "Lafayette",
+     "type": "both",
+     "lat": 40.4414,
+     "lon": -86.8301,
+     "source": "https://www.homeofpurdue.com/blog/post/aguidetokayakingingreaterlafayette/"
+    },
+    {
+     "name": "Davis Ferry Park (Wabash River, below Wildcat mouth)",
+     "town": "Lafayette",
+     "type": "take-out",
+     "lat": 40.4762,
+     "lon": -86.8707,
+     "source": "https://www.hmdb.org/m.asp?m=36235"
+    }
+   ],
+   "new_miles": 27,
+   "outfitter": [
+    "Wildcat Canoe and Kayak Too",
+    "https://www.wildcatcanoeandkayaktoo.com/"
+   ],
+   "note": "Extent correction: full Kokomo-Lafayette is 45+ river mi, not 12. Recommended canonical run: Adams Mill to Wildcat Creek Park, ~27 mi; popular day floats are Mis-So-La to Wildcat Park (4.5 mi) and Wildcat Park to Davis Ferry (10 mi). Hazards: old mill dam at Adams Mill (portage, separate accesses above/below); frequent logjams/strainers; Kokomo Reservoir dam upstream. Livery (verified) is at 1850 N 725 E beside the Mis-So-La access, serving this exact stretch. Caveat: Tippecanoe County ended its Wildcat Creek Park lease in 2022 - the DNR site remains a listed access but confirm current status."
+  },
+  {
+   "id": "bigpine",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Rainsville Bridge put-in (CR 25 E, gauge marks on pier)",
+     "town": "Rainsville",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/big_pine_creek.html"
+    },
+    {
+     "name": "CR 450 N 'Harrison' Bridge access (day-use only)",
+     "town": "Warren County",
+     "type": "both",
+     "lat": 40.382053,
+     "lon": -87.332652,
+     "source": "https://paddletoday.com/rivers/big-pine-creek-450-harrison-twin-bridges/"
+    },
+    {
+     "name": "Twin Bridges access (Twin Bridges Rd off SR 55)",
+     "town": "Attica",
+     "type": "both",
+     "lat": 40.339953,
+     "lon": -87.314311,
+     "source": "https://paddletoday.com/rivers/big-pine-creek-450-harrison-twin-bridges/"
+    },
+    {
+     "name": "Ouabache Park on the Wabash (0.7 mi below Big Pine mouth)",
+     "town": "Attica",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/big_pine_creek.html"
+    }
+   ],
+   "new_miles": 7,
+   "outfitter": null,
+   "note": "Extent confirmed: Rainsville bridge to Twin Bridges, 6.7 mi per American Whitewater - Class II-II+ (III high water): Rocky Ford ledges, S-Curve (nasty hole above ~4 ft on the Rainsville gauge), All Day Wave. Strictly seasonal (~400-500 cfs, mainly March-May); usually too low in summer. No dams; hazards are strainers in rapids and private banks. Optional 7-mi Class I continuation Twin Bridges to Ouabache Park, Attica. No livery serves Big Pine - self-shuttle only."
+  },
+  {
+   "id": "flatrock-in",
+   "extend_upstream": {
+    "desc": "Owens Bend County Park (correct upstream endpoint, NE of Columbus)",
+    "to": [
+     39.2804169,
+     -85.907011
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Mill Race Park, Columbus (Flatrock/Driftwood confluence forming East Fork White; replaces erroneous Edinburgh endpoint)",
+    "to": [
+     39.204569,
+     -85.926671
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Conn's Creek public access (River Rd)",
+     "town": "St. Paul",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/Maps/Maps_of_Rivers/flatrock_River/conns.htm"
+    },
+    {
+     "name": "Owens Bend County Park",
+     "town": "Columbus",
+     "type": "both",
+     "lat": 39.2804169,
+     "lon": -85.907011,
+     "source": "https://owens-bend.wheree.com"
+    },
+    {
+     "name": "Noblitt Park",
+     "town": "Columbus",
+     "type": "both",
+     "lat": 39.213053,
+     "lon": -85.926654,
+     "source": "https://mapcarta.com/W468488933"
+    },
+    {
+     "name": "Mill Race Park",
+     "town": "Columbus",
+     "type": "take-out",
+     "lat": 39.204569,
+     "lon": -85.926671,
+     "source": "https://en.wikipedia.org/wiki/Mill_Race_Park"
+    }
+   ],
+   "new_miles": 9,
+   "outfitter": [
+    "Pathfinder Outfitters",
+    "https://www.pathfinderoutfitters.com/trips-flatrock-river/"
+   ],
+   "note": "DIRECTION FIX: the Flatrock flows SOUTHWEST from the Rushville/St. Paul area down TO Columbus, joining the Driftwood at Mill Race Park to form the East Fork White River - it never reaches Edinburgh. Recommended run: Owens Bend to Mill Race Park (~9 mi, approx from the outfitter's 5-hr trip). Hazard: low-head dam between Owens Bend and Mill Race (near Noblitt Park) - portage required (confirmed by Pathfinder trip page); frequent strainers; usually too low by August. Pathfinder (verified) runs shuttle-only on the Flatrock, no rentals. Longer option: SR 252/Flat Rock or SR 9 access to Columbus ~23 mi; upstream Class I-II play stretch Old US 421 to Conn's Creek at St. Paul (AW reach 4173, 6.8 mi)."
+  },
+  {
+   "id": "driftwood",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Driftwood public fishing area (Atterbury FWA, off US 31)",
+     "town": "Edinburgh",
+     "type": "put-in",
+     "lat": 39.348385,
+     "lon": -85.980741,
+     "source": "https://driftwood-state-fishing-area.wheree.com/"
+    },
+    {
+     "name": "Lowell Bridge public access (CR 325W at Lowell Rd)",
+     "town": "Columbus",
+     "type": "both",
+     "lat": 39.2396,
+     "lon": -85.97287,
+     "source": "https://www.hmdb.org/m.asp?m=63794"
+    },
+    {
+     "name": "Mill Race Park",
+     "town": "Columbus",
+     "type": "take-out",
+     "lat": 39.204569,
+     "lon": -85.926671,
+     "source": "https://en.wikipedia.org/wiki/Mill_Race_Park"
+    }
+   ],
+   "new_miles": 16,
+   "outfitter": [
+    "Blue's Canoe Livery",
+    "https://www.bluescanoelivery.com/"
+   ],
+   "note": "Direction as mapped (Edinburgh south to Columbus) is CORRECT: the Driftwood forms 1 mi west of Edinburgh at the Big Blue/Sugar Creek confluence and joins the Flatrock at Mill Race Park to form the East Fork White. Mileage correction: full Atterbury-to-Mill Race run is ~15.5-16 river mi, not 8. No dams; fast current through Atterbury FWA woods, watch strainers. Blue's Canoe Livery (Edinburgh) runs Driftwood trips (7-9 mi segments); Pathfinder Outfitters (Columbus) also serves it."
+  },
+  {
+   "id": "eel-in",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Liberty Mills public access",
+     "town": "Liberty Mills",
+     "type": "both",
+     "lat": 41.03366,
+     "lon": -85.73582,
+     "source": "https://mapcarta.com/N3986912244"
+    },
+    {
+     "name": "Warvel Park access",
+     "town": "North Manchester",
+     "type": "both",
+     "lat": 41.00672,
+     "lon": -85.77256,
+     "source": "https://mapcarta.com/22201398"
+    },
+    {
+     "name": "Laketon public access",
+     "town": "Laketon",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/eel_river_north.html"
+    },
+    {
+     "name": "Stockdale Mill access (upstream of dam)",
+     "town": "Roann",
+     "type": "both",
+     "lat": 40.913741,
+     "lon": -85.942055,
+     "source": "https://mapcarta.com/W992111699"
+    },
+    {
+     "name": "Riverside Park (IDNR access)",
+     "town": "Logansport",
+     "type": "take-out",
+     "lat": 40.7598993,
+     "lon": -86.3533098,
+     "source": "https://riverside-park-2203345.wheree.com/"
+    }
+   ],
+   "new_miles": 90,
+   "outfitter": null,
+   "note": "Mileage flag: Columbia City-North Manchester-Logansport is the FULL Eel River Water Trail, ~90 mi, not 15 (South Whitley-Logansport alone ~70-78). For a ~15-mi highlight use North Manchester (Warvel Park) to Stockdale. CRITICAL low-head dams upstream-to-downstream: Collamer (portage left), Liberty Mills (portage right), North Manchester, Stockdale Mill at Roann (~200-yd portage; use access east of town), Chili (scout), Mexico (reported breached - verify), plus Logansport dams below Riverside Park - take out at Riverside/Spencer Park. No current outfitter: Ride the Eel (North Manchester) closed in early 2025."
+  },
+  {
+   "id": "cedarck-in",
+   "extend_upstream": {
+    "desc": "Cook's Landing County Park, Huntertown (replace Auburn start - creek above is too shallow/logjammed; CR 35 N of Auburn is high-water only)",
+    "to": [
+     41.251892,
+     -85.135546
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "SR 1 DNR access, Leo-Cedarville - last Cedar Creek take-out ~0.9 mi above the St. Joseph confluence",
+    "to": [
+     41.202773,
+     -85.026873
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Cook's Landing County Park",
+     "town": "Huntertown",
+     "type": "put-in",
+     "lat": 41.251892,
+     "lon": -85.135546,
+     "source": "https://recplanet.com/in/huntertown/cooks-landing-county-park"
+    },
+    {
+     "name": "Tonkel Road bridge access",
+     "town": "Allen County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://neiwatertrails.com/plan-your-trip/suggested-trips"
+    },
+    {
+     "name": "Metea County Park (Hursh Rd bridge, 300-yd carry)",
+     "town": "Leo-Cedarville",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.friendsofcedarcreek.org/paddle"
+    },
+    {
+     "name": "SR 1 DNR Public Access",
+     "town": "Leo-Cedarville",
+     "type": "both",
+     "lat": 41.202773,
+     "lon": -85.026873,
+     "source": "https://neiwatertrails.com/plan-your-trip/suggested-trips"
+    },
+    {
+     "name": "Shoaff Park ramp (St. Joseph River continuation)",
+     "town": "Fort Wayne",
+     "type": "take-out",
+     "lat": 41.145839,
+     "lon": -85.100188,
+     "source": "https://neiwatertrails.com/plan-your-trip/suggested-trips"
+    }
+   ],
+   "new_miles": 9,
+   "outfitter": [
+    "Fort Wayne Outfitters & Bike Depot",
+    "https://www.fwoutfitters.com/"
+   ],
+   "note": "Lower 13.7 mi is a state Natural, Scenic & Recreational river through Cedar Creek Canyon (Metea County Park, ACRES preserves). Shifting logjams/strainers; best spring/fall higher water. Cedarville Dam sits on the St. Joseph immediately UPSTREAM of the Cedar Creek mouth - no portage for creek paddlers, but stay clear of the dam outflow at the confluence. St. Joe continuation from SR 1: Shoaff Park 9.6 mi. Outfitter is the Fort Wayne-area livery (listed by NEI Water Trails); Cedar Creek itself is self-shuttle. Data flag: NEI's printed Tonkel Rd coordinate duplicates the SR 1 longitude (likely misprint) - pin Tonkel manually at the bridge."
+  },
+  {
+   "id": "mississinewa",
+   "extend_upstream": {
+    "desc": "Mississinewa Dam tailwater access, Fire Ln (replace Marion start - the reservoir and 140-ft dam separate Marion from the Peru tailwater)",
+    "to": [
+     40.749792,
+     -86.012559
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "SR 124 bridge access, Peru",
+    "to": [
+     40.750684,
+     -86.066405
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "SR 221 bridge boat ramp",
+     "town": "Matthews",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/missinwa_river.html"
+    },
+    {
+     "name": "Gas City Park launch (South H St)",
+     "town": "Gas City",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/missinwa_river.html"
+    },
+    {
+     "name": "Canoe Launch, 1811 N Washington St",
+     "town": "Marion",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://showmegrantcounty.com/canoe-launch/"
+    },
+    {
+     "name": "CR 500 N bridge (last take-out above Mississinewa Lake)",
+     "town": "Jalapa",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.indianaoutfitters.com/missinwa_river.html"
+    },
+    {
+     "name": "Mississinewa Dam tailwater access (Fire Ln, DNR ramp)",
+     "town": "Peru",
+     "type": "put-in",
+     "lat": 40.749792,
+     "lon": -86.012559,
+     "source": "https://neiwatertrails.com/plan-your-trip/suggested-trips"
+    },
+    {
+     "name": "SR 124 bridge access",
+     "town": "Peru",
+     "type": "take-out",
+     "lat": 40.750684,
+     "lon": -86.066405,
+     "source": "https://neiwatertrails.com/plan-your-trip/suggested-trips"
+    }
+   ],
+   "new_miles": 5.3,
+   "outfitter": null,
+   "note": "Extent correction: 'Marion to tailwater near Peru' is not one run - Mississinewa Lake (USACE) and its 140-ft dam sit between, and the dam is not portage-friendly. Recommended classic float is the NEI 'Seven Pillars' run: dam tailwater (Fire Ln) to SR 124 at Peru, 5.3 mi, passing the Seven Pillars limestone bluffs ~2 mi below the dam. NO public landing at Seven Pillars (ACRES Land Trust: access is private, barriers in place) - view from the water. Tailwater fluctuates with dam releases - check USACE discharge. Upper alternative: Matthews/Gas City/Marion to CR 500 N at Jalapa above the lake, with low-head dam portages near Matthews and Charles Mill Park."
+  }
+ ]
+}

@@ -1,0 +1,679 @@
+{
+ "corrections": [
+  {
+   "id": "mohican",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Mohican State Park launch (SR 3 campground)",
+     "town": "Loudonville",
+     "type": "put-in",
+     "lat": 40.60665,
+     "lon": -82.25919,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/MohicanRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Riverside Park kayak launch (Black Fork, Wally Rd)",
+     "town": "Loudonville",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.knoxpages.com/2025/09/20/ashland-county-parks-loudonville-partner-to-build-new-kayak-launch/"
+    },
+    {
+     "name": "Greer Landing (20389 Brinkhaven Rd)",
+     "town": "Greer",
+     "type": "both",
+     "lat": 40.52227,
+     "lon": -82.19583,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/MohicanRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Bridge of Dreams access (16606 Hunter Rd)",
+     "town": "Brinkhaven",
+     "type": "take-out",
+     "lat": 40.46506,
+     "lon": -82.19331,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/MohicanRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Kokosing-Mohican Confluence access (TR 423)",
+     "town": "Walhonding",
+     "type": "take-out",
+     "lat": 40.36066,
+     "lon": -82.16064,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/MohicanRiverWaterTrail.pdf"
+    }
+   ],
+   "new_miles": 16.6,
+   "outfitter": [
+    "Mohican Adventures",
+    "https://mohicanadventures.com"
+   ],
+   "note": "ODNR Mohican River Water Trail is 28 mi Class I (State Park to Kokosing confluence); mapped State Park->Brinkhaven run is 16.6 mi per ODNR (11.1 to Greer + 5.5 to Bridge of Dreams), not ~12. Clear Fork Gorge proper lies upstream of the SR 3 launch (below Pleasant Hill Dam) \u2014 livery run does not pass through it. Hazard: partially breached lowhead dam at Brinkhaven near Bridge of Dreams \u2014 dangerous at some levels; ODNR map says portage left. Loudonville Riverside Park launch under construction (breaking ground 2026)."
+  },
+  {
+   "id": "littlemiami",
+   "extend_upstream": {
+    "desc": "Corwin Access, Harveysburg Rd bridge (Constitution Park area) \u2014 river passes east of Xenia, so Xenia is not an on-river anchor",
+    "to": [
+     39.5272,
+     -84.08003
+    ],
+    "approx": false
+   },
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Corwin Access (Harveysburg Rd bridge)",
+     "town": "Corwin",
+     "type": "put-in",
+     "lat": 39.5272,
+     "lon": -84.08003,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    },
+    {
+     "name": "Fort Ancient Access (Little Miami State Park, SR 350)",
+     "town": "Oregonia",
+     "type": "both",
+     "lat": 39.40642,
+     "lon": -84.10028,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    },
+    {
+     "name": "Morrow Park (Hamlin St)",
+     "town": "Morrow",
+     "type": "both",
+     "lat": 39.357,
+     "lon": -84.128,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    },
+    {
+     "name": "Carl A. Rahe Access (Glenn Island)",
+     "town": "Foster",
+     "type": "both",
+     "lat": 39.31827,
+     "lon": -84.2519,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    },
+    {
+     "name": "C. Roger Nisbet Park",
+     "town": "Loveland",
+     "type": "both",
+     "lat": 39.26978,
+     "lon": -84.2619,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    },
+    {
+     "name": "Jim Terrell Park Canoe Launch",
+     "town": "Milford",
+     "type": "take-out",
+     "lat": 39.17041,
+     "lon": -84.29856,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleMiamiScenicRiver.pdf"
+    }
+   ],
+   "new_miles": 42,
+   "outfitter": [
+    "Loveland Canoe and Kayak",
+    "https://www.lovelandcanoe.com"
+   ],
+   "note": "National Wild & Scenic + state water trail. Corrected corridor Corwin->Milford is ~42 river mi per ODNR access-table mileages (Loveland->Milford ~11); no lowhead dams in this stretch (dams are upstream near Clifton/Xenia). Hazards: turbulence at Caesar Creek confluence during lake discharges; log jams/strainers. Morgan's Fort Ancient livery CLOSED Jan 2025 (land to Little Miami Conservancy/ODNR; access remains public; morgancanoe.com dead) \u2014 Loveland Canoe & Kayak and Little Miami Canoe Rental (Morrow) still serve the corridor."
+  },
+  {
+   "id": "bigdarby",
+   "extend_upstream": {
+    "desc": "Prairie Oaks Metro Park - Upper Darby Canoe Access (4275 Amity Rd, Hilliard)",
+    "to": null,
+    "approx": true
+   },
+   "extend_downstream": {
+    "desc": "Battelle Darby Creek MP - Osprey Lake Launch Area (5800 Harrisburg-Georgesville Rd, Darbydale)",
+    "to": null,
+    "approx": true
+   },
+   "landings": [
+    {
+     "name": "Prairie Oaks MP - Upper Darby Canoe Access (Amity Rd)",
+     "town": "Hilliard",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.metroparks.net/blog/float-on-in-your-metro-parks/"
+    },
+    {
+     "name": "Prairie Oaks MP - Darby Bend Lakes Access",
+     "town": "West Jefferson",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "http://www.metroparks.net/parks-and-trails/prairie-oaks/"
+    },
+    {
+     "name": "Battelle Darby Creek MP - Main Park Canoe Launch (8465 Alkire Rd)",
+     "town": "Galloway",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.metroparks.net/parks-and-trails/battelle-darby-creek/"
+    },
+    {
+     "name": "Battelle Darby Creek MP - Osprey Lake Launch Area",
+     "town": "Darbydale",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.metroparks.net/parks-and-trails/battelle-darby-creek/"
+    },
+    {
+     "name": "Scioto Darby Road Access (Pickaway County Park District)",
+     "town": "Orient",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://pickawaycountyparks.org/river-trails/"
+    }
+   ],
+   "new_miles": 18,
+   "outfitter": [
+    "Trapper John's Canoe Livery",
+    "https://www.trapperjohnscanoeing.com"
+   ],
+   "note": "State & National Scenic River (scenic-river rules apply; not on ODNR water-trails list). No dams on the Prairie Oaks->Battelle Darby run; hazards are strainers/downed trees, flashy post-rain water, shallow riffles at low flow (Pickaway's Scioto Darby Rd access needs 150+ cfs, closed Nov-Apr). Metro Parks: Amity Rd to Battelle Darby canoe launch = 13 mi; Osprey Lake take-out adds ~5 mi. Trapper John's reopened May 2025 under new owners \u2014 only permitted commercial livery on Big Darby. Metro Parks pages publish addresses, not lat/lon, hence null coordinates."
+  },
+  {
+   "id": "kokosing",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Millwood canoe access (Millwood Rd/US 36)",
+    "to": [
+     40.397,
+     -82.278
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Riverside Park (Greenwood Ave)",
+     "town": "Mount Vernon",
+     "type": "put-in",
+     "lat": 40.399,
+     "lon": -82.501,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Memorial Park",
+     "town": "Mount Vernon",
+     "type": "both",
+     "lat": 40.384,
+     "lon": -82.47,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Kokosing Gap Canoe Access (Lower Gambier Rd)",
+     "town": "Gambier",
+     "type": "both",
+     "lat": 40.378,
+     "lon": -82.434,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Big Run Rd bridge",
+     "town": "Gambier",
+     "type": "both",
+     "lat": 40.359,
+     "lon": -82.385,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Pipesville Rd bridge",
+     "town": "Howard",
+     "type": "both",
+     "lat": 40.404,
+     "lon": -82.322,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    },
+    {
+     "name": "Millwood Rd access",
+     "town": "Millwood",
+     "type": "take-out",
+     "lat": 40.397,
+     "lon": -82.278,
+     "source": "https://dam.assets.ohio.gov/image/upload/odnr/watertrails/KokosingRiverWaterTrail.pdf"
+    }
+   ],
+   "new_miles": 19.3,
+   "outfitter": [
+    "Kokosing Valley Camp & Canoe",
+    "https://www.kokosingvalley.com"
+   ],
+   "note": "Ohio's first designated water trail; full ODNR trail is 27.9 mi to the Mohican confluence. Mapped town order was wrong \u2014 true downstream order is Mount Vernon -> Gambier -> Howard -> Millwood; corrected Mount Vernon->Millwood run is 19.3 mi per ODNR segment table. Class I+ with shallow drags at low summer flow (ideal 100-200 cfs); strainers between Big Run and Pipesville; Factory Rapids below Millwood runs Class III at high water (stay left or portage right); no lowhead dams on mapped reach. Kokosing Valley Camp & Canoe (Howard) is the river's only canoe livery."
+  },
+  {
+   "id": "mad-oh",
+   "extend_upstream": {
+    "desc": "US 36 bridge access west of Urbana",
+    "to": [
+     40.10747,
+     -83.79931
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "St. Paris Pike bridge access south of Eagle City \u2014 core run ends north of Springfield, not Dayton",
+    "to": [
+     39.96395,
+     -83.83155
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "US 36 Bridge Access",
+     "town": "Urbana (west of)",
+     "type": "put-in",
+     "lat": 40.10747,
+     "lon": -83.79931,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/MadRiver.pdf"
+    },
+    {
+     "name": "SR 55 Bridge Access",
+     "town": "Urbana (southwest of)",
+     "type": "both",
+     "lat": 40.0685,
+     "lon": -83.8104,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/MadRiver.pdf"
+    },
+    {
+     "name": "Eagle City Rd Bridge Access",
+     "town": "Eagle City",
+     "type": "both",
+     "lat": 39.97638,
+     "lon": -83.82178,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/MadRiver.pdf"
+    },
+    {
+     "name": "St. Paris Pike Bridge Access (steep, river left)",
+     "town": "Eagle City/Springfield",
+     "type": "take-out",
+     "lat": 39.96395,
+     "lon": -83.83155,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/MadRiver.pdf"
+    },
+    {
+     "name": "SR 41 / First St Bridge (Snyder Park area)",
+     "town": "Springfield",
+     "type": "take-out",
+     "lat": 39.94376,
+     "lon": -83.84908,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/MadRiver.pdf"
+    }
+   ],
+   "new_miles": 9.6,
+   "outfitter": [
+    "Birch Bark Canoe Livery",
+    "https://birchbarkcanoelivery.com"
+   ],
+   "note": "ODNR water trail (2010); core run US-36 -> St. Paris Pike = ~9.6 mi (MCD river mi 45.8->36.2; SR-41/Snyder Park adds ~2.8). Hazards: 2-3 ft lowhead dam immediately below US-36 put-in (portage right); dam upstream near Lippincott Rd; cold spring-fed year-round trout water, swift narrow channel, frequent strainers. Major downstream dams (Huffman 73-ft, SR-444 millrace) lie outside this stretch. Birch Bark Canoe Livery (River Rd, Urbana) verified operating 2026."
+  },
+  {
+   "id": "littlebeaver",
+   "extend_upstream": {
+    "desc": "Elkton put-in, SR-154/CR 419 (Middle Fork)",
+    "to": [
+     40.76135,
+     -80.69593
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "SR 68 bridge access near Glasgow, PA (Ohio River confluence)",
+    "to": [
+     40.64591,
+     -80.5125
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Elkton Put-In (SR 154 / CR 419)",
+     "town": "Elkton",
+     "type": "put-in",
+     "lat": 40.76135,
+     "lon": -80.69593,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleBeaverCreek.pdf"
+    },
+    {
+     "name": "Lusk Lock (Beaver Creek State Park)",
+     "town": "Elkton",
+     "type": "both",
+     "lat": 40.74005,
+     "lon": -80.66809,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleBeaverCreek.pdf"
+    },
+    {
+     "name": "Beaver Creek SP at Echo Dell Rd (Gaston's Mill)",
+     "town": "East Liverpool",
+     "type": "both",
+     "lat": 40.72742,
+     "lon": -80.61138,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleBeaverCreek.pdf"
+    },
+    {
+     "name": "Sprucevale Rd access (Hambleton's Mill)",
+     "town": "East Liverpool (Calcutta)",
+     "type": "both",
+     "lat": 40.70473,
+     "lon": -80.58503,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleBeaverCreek.pdf"
+    },
+    {
+     "name": "Fredericktown access",
+     "town": "Fredericktown",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.americanwhitewater.org/content/River/view/river-detail/1471/main"
+    },
+    {
+     "name": "SR 68 bridge access (Ohio River mouth)",
+     "town": "Glasgow, PA",
+     "type": "take-out",
+     "lat": 40.64591,
+     "lon": -80.5125,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/LittleBeaverCreek.pdf"
+    }
+   ],
+   "new_miles": 23,
+   "outfitter": [
+    "Beaver Creek Kayak Company",
+    "https://beavercreekkayak.wordpress.com/"
+   ],
+   "note": "National + State Wild & Scenic. Class I-II; one II+ rapid below Fredericktown nears III at high water (AW). Remote roadless canyon through Beaver Creek SP/SF \u2014 limited road/cell access, self-rescue country; strainers on sharp bends. Rain/snowmelt dependent (spring and after storms). Lisbon lowhead dams (Willow Grove, US-30) sit above the Elkton put-in \u2014 none on the run. Respect private land at Fredericktown. Segments: Lusk Lock->Echo Dell 5.5 mi, Echo Dell->Fredericktown 7 mi, Fredericktown->Ohio River 8 mi, Elkton->Lusk ~3 mi = ~23 total."
+  },
+  {
+   "id": "cuyahoga",
+   "extend_upstream": {
+    "desc": "Northampton Point River Access, 3132 Akron Peninsula Rd, Cuyahoga Falls (RM 36.7, opened Jul 2025) \u2014 Kent and Cleveland lie outside the CVNP stretch",
+    "to": null,
+    "approx": true
+   },
+   "extend_downstream": {
+    "desc": "Station Road Bridge River Access, Brecksville (RM 21)",
+    "to": [
+     41.317922,
+     -81.58749
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Northampton Point River Access",
+     "town": "Cuyahoga Falls",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.nps.gov/places/northampton-point-river-access.htm"
+    },
+    {
+     "name": "Lock 29 River Access",
+     "town": "Peninsula",
+     "type": "both",
+     "lat": 41.243308,
+     "lon": -81.55005,
+     "source": "https://naturalatlas.com/trailheads/lock-29-2128026"
+    },
+    {
+     "name": "Boston Store Trailhead River Access",
+     "town": "Boston (Peninsula)",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.nps.gov/places/boston-store-trailhead-river-access.htm"
+    },
+    {
+     "name": "Red Lock Trailhead River Access",
+     "town": "Sagamore Hills",
+     "type": "both",
+     "lat": 41.289523,
+     "lon": -81.563757,
+     "source": "https://naturalatlas.com/trailheads/red-lock-2128055"
+    },
+    {
+     "name": "Station Road Bridge River Access",
+     "town": "Brecksville",
+     "type": "both",
+     "lat": 41.317922,
+     "lon": -81.58749,
+     "source": "https://naturalatlas.com/trailheads/station-road-bridge-2128058"
+    },
+    {
+     "name": "Lock 39 River Access (Rockside Rd)",
+     "town": "Independence",
+     "type": "both",
+     "lat": 41.393215,
+     "lon": -81.6284,
+     "source": "https://naturalatlas.com/trailheads/lock-39-2128092"
+    }
+   ],
+   "new_miles": 16,
+   "outfitter": [
+    "Burning River Adventures (Paddle the River)",
+    "https://paddletheriver.com"
+   ],
+   "note": "Extent corrected: 'Kent->Peninsula->Cleveland ~15 mi' was wrong \u2014 Kent and Cleveland are outside CVNP. CVNP water-trail section is Northampton Point (RM 36.7) to Station Road Bridge (RM 21), ~16 mi; Lock 39 (RM ~9) adds a 12-mi Class I run toward Cleveland's shipping channel (freighters last 4 mi \u2014 advanced only). Brecksville diversion + Pinery feeder dams REMOVED 2020 (Station Rd free-flowing); Gorge Dam still stands upstream in Cuyahoga Falls; Class II-III gorge water is outside the park. Hazards: waterfall/dam remnant just above Lock 29 \u2014 portage river-left near SR 303; brief Class II at Peninsula; strainers throughout; log jams at pylons above Lock 39 (portage right); mandatory river-left take-out upstream of Fitzwater Rd (RM 17) per water-trail maps; avoid after heavy rain (sewer overflows). Burning River Adventures is based in Cuyahoga Falls (not Valley View) and mainly serves the Kent-Cuyahoga Falls section upstream of CVNP; site now operates as paddletheriver.com. NPS place pages confirm accesses but publish no lat/lon \u2014 those left null."
+  },
+  {
+   "id": "grand-oh",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Beaty Landing, Painesville (RM 8.4); optional continue to Grand River Landing, Fairport Harbor (RM 2.7)",
+    "to": [
+     41.719927,
+     -81.226725
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Harpersfield Covered Bridge (below dam)",
+     "town": "Harpersfield Twp / Geneva",
+     "type": "put-in",
+     "lat": 41.75649,
+     "lon": -80.946408,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    },
+    {
+     "name": "Hidden Valley Park",
+     "town": "Madison Twp",
+     "type": "both",
+     "lat": 41.741864,
+     "lon": -81.047837,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    },
+    {
+     "name": "Indian Point Park (south entrance)",
+     "town": "Leroy Twp",
+     "type": "both",
+     "lat": 41.726539,
+     "lon": -81.180925,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    },
+    {
+     "name": "Helen Hazen Wyman Park",
+     "town": "Concord Twp / Painesville",
+     "type": "both",
+     "lat": 41.703107,
+     "lon": -81.230209,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    },
+    {
+     "name": "Beaty Landing",
+     "town": "Painesville",
+     "type": "both",
+     "lat": 41.719927,
+     "lon": -81.226725,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    },
+    {
+     "name": "Grand River Landing",
+     "town": "Fairport Harbor",
+     "type": "take-out",
+     "lat": 41.740294,
+     "lon": -81.262953,
+     "source": "https://www.lakemetroparks.com/KenticoTemplate/media/LakeMetroparks/Grand-River-Water-Trail-map_low-res.pdf"
+    }
+   ],
+   "new_miles": 23,
+   "outfitter": [
+    "Grand River Canoe & Kayak Rentals",
+    "https://grandrivercanoe.com/"
+   ],
+   "note": "Put in BELOW the Harpersfield lowhead dam at the covered bridge \u2014 do not run it. Lake Metroparks water-trail river miles: Harpersfield (RM 31.0) to Beaty Landing (RM 8.4) = 22.6 mi, so mapped 12 mi was wrong; shorter day run Hidden Valley (RM 22.5) -> Beaty = 14.1 mi. Wild & Scenic lower gorge is a shale canyon. Log jams/strainers; flashy \u2014 gauge guide 2-5 ft optimal, under 2 ft slow drag, over 8 ft flood-dangerous; best flows spring/cold season."
+  },
+  {
+   "id": "stillwater-oh",
+   "extend_upstream": {
+    "desc": "Stillwater Prairie Reserve, Rangeline Rd access (Miami Co. Park District), upstream of Covington",
+    "to": [
+     40.15025,
+     -84.3782
+    ],
+    "approx": false
+   },
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Stillwater Prairie Reserve (Rangeline Rd)",
+     "town": "Covington",
+     "type": "put-in",
+     "lat": 40.15025,
+     "lon": -84.3782,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    },
+    {
+     "name": "Covington Community Park",
+     "town": "Covington",
+     "type": "both",
+     "lat": 40.12086,
+     "lon": -84.3593,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    },
+    {
+     "name": "SR 718 Bridge Access",
+     "town": "Pleasant Hill",
+     "type": "both",
+     "lat": 40.05174,
+     "lon": -84.36582,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    },
+    {
+     "name": "Fenner Rd Bridge Access",
+     "town": "Ludlow Falls",
+     "type": "both",
+     "lat": 40.02267,
+     "lon": -84.34076,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    },
+    {
+     "name": "West Milton Municipal Park (Barefoot Canoe base)",
+     "town": "West Milton",
+     "type": "both",
+     "lat": 39.96397,
+     "lon": -84.32413,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    },
+    {
+     "name": "Englewood MetroPark Canoe Take-out (above Englewood Dam)",
+     "town": "Englewood",
+     "type": "take-out",
+     "lat": 39.87455,
+     "lon": -84.29292,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/StillwaterRiver.pdf"
+    }
+   ],
+   "new_miles": 14.2,
+   "outfitter": [
+    "Barefoot Canoe",
+    "https://barefootcanoe.com"
+   ],
+   "note": "State Scenic River; Stillwater Prairie->Englewood = ~14.2 mi (MCD river mi 37.5->23.3; Covington->Englewood alone 12.6). Dam-heavy: Covington waterworks dam (portage), rock dam 0.8 mi below Bridge St/SR-41 (portage right), dams below Falknor Rd and Fenner Rd (portage right), lowhead at West Milton water plant (SR-48), several dams Frederick-Garland->Old Springfield Rd (portage left). MANDATORY take-out at Englewood MetroPark above Englewood Dam (portage right; second dam below, portage left). Ludlow Falls (~15 ft) is on Ludlow Creek tributary, not the mainstem \u2014 avoid the creek mouth. Strainers common; upper reaches shallow late summer. Barefoot Canoe (West Milton) verified operating 2026."
+  },
+  {
+   "id": "sandusky-oh",
+   "extend_upstream": {
+    "desc": "Wolf Creek Park canoe launch \u2014 corrected upstream endpoint; Upper Sandusky is ~60 river miles farther upstream, inconsistent with ~12 mi",
+    "to": [
+     41.27441,
+     -83.16784
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Rodger Young Park, Fremont",
+    "to": [
+     41.33696,
+     -83.11249
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Indian Mill Park (below Indian Mill dam)",
+     "town": "Upper Sandusky",
+     "type": "put-in",
+     "lat": 40.86294,
+     "lon": -83.25349,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/SanduskyRiver.pdf"
+    },
+    {
+     "name": "Junior Home Park",
+     "town": "Tiffin",
+     "type": "both",
+     "lat": 41.13136,
+     "lon": -83.1655,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/SanduskyRiver.pdf"
+    },
+    {
+     "name": "Abbott's Bridge access",
+     "town": "Seneca County (near Old Fort)",
+     "type": "both",
+     "lat": 41.20944,
+     "lon": -83.1455,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/SanduskyRiver.pdf"
+    },
+    {
+     "name": "Wolf Creek Park canoe/kayak launch (north entrance)",
+     "town": "Fremont (Ballville Twp)",
+     "type": "both",
+     "lat": 41.27441,
+     "lon": -83.16784,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/SanduskyRiver.pdf"
+    },
+    {
+     "name": "Tindall Bridge access",
+     "town": "Fremont (Ballville Twp)",
+     "type": "both",
+     "lat": 41.3083,
+     "lon": -83.1568,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/coastal/public-access/pag-riv-04-SanduskyRiver.pdf"
+    },
+    {
+     "name": "Rodger Young Park",
+     "town": "Fremont",
+     "type": "take-out",
+     "lat": 41.33696,
+     "lon": -83.11249,
+     "source": "https://dam.assets.ohio.gov/image/upload/ohiodnr.gov/documents/parks/streammaps/SanduskyRiver.pdf"
+    }
+   ],
+   "new_miles": 7,
+   "outfitter": [
+    "Ghoul Runnings Kayak Adventures",
+    "https://ghoulrunnings.com"
+   ],
+   "note": "Mapped extent was inconsistent: Upper Sandusky->Fremont is ~60+ river mi, not 12. Corrected core run: Wolf Creek Park (~RM 22-24) -> Rodger Young Park (RM 16-17), ~6-7 mi. Ballville Dam removed 2018 \u2014 free-flowing into Fremont; Sandusky Rapids below the old dam site run Class I-III depending on level (ODNR). Dams remain upstream: Upper Sandusky waterworks + Indian Mill (portage), Tiffin waterworks dam, Pioneer Mill dam, partial Huss St dam (portage/care). Flashy flows; heavy spring walleye-run angler crowds at Fremont. State Scenic River spans 65 mi, Harrison Smith Park to Rodger Young Park."
+  }
+ ]
+}

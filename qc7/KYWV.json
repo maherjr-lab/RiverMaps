@@ -1,0 +1,957 @@
+{
+ "corrections": [
+  {
+   "id": "elkhorn",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Forks of Elkhorn carry-down (AMA on the Creek, US 460)",
+     "town": "Forks of Elkhorn / Frankfort",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Fish/pages/elkhorn-creek.aspx"
+    },
+    {
+     "name": "Elkhorn Creek VPA #3 (Church's Grove, KY 1900)",
+     "town": "Frankfort",
+     "type": "both",
+     "lat": 38.2517,
+     "lon": -84.8158,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=996"
+    },
+    {
+     "name": "American Whitewater/Elkhorn Acres access (below Knight's Bridge, KY 1900)",
+     "town": "Peaks Mill / Frankfort",
+     "type": "both",
+     "lat": 38.2676,
+     "lon": -84.8155,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=1105"
+    },
+    {
+     "name": "Peter W. Pfeiffer Fish Hatchery access (Indian Gap Rd, KY 2919)",
+     "town": "Frankfort",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Fish/pages/elkhorn-creek.aspx"
+    },
+    {
+     "name": "Still Waters Campground ramp (Elkhorn-Kentucky River confluence, fee)",
+     "town": "Frankfort",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Fish/pages/elkhorn-creek.aspx"
+    }
+   ],
+   "new_miles": 13,
+   "outfitter": null,
+   "note": "KDFWR states the Forks-to-Kentucky River trail is 13 mi (mapped ~10 is low). The Class II (occasional III) ledge whitewater is the upper ~6 mi from the US 460 bridge to AW/Elkhorn Acres per American Whitewater; the rest is mostly flatwater. Jim Beam distillery low-head dam at the Forks was removed summer 2021 (former portage gone). AW Acres take-out is ~100 yd below Knight's Bridge (donation); Pfeiffer Hatchery access weekdays 7-3 only; Still Waters is a fee ramp. Optimal flow 100-600 cfs."
+  },
+  {
+   "id": "red-ky",
+   "extend_upstream": {
+    "desc": "KY 715 concrete bridge put-in (start of the standard Middle Red scenic float)",
+    "to": [
+     37.817,
+     -83.571
+    ],
+    "approx": true
+   },
+   "extend_downstream": {
+    "desc": "Correct take-out to the KY 77 iron bridge at Nada - Clay City is ~10 more flatwater miles downstream and not part of the standard gorge float",
+    "to": [
+     37.835,
+     -83.627
+    ],
+    "approx": true
+   },
+   "landings": [
+    {
+     "name": "Big Branch Canoe Launch (Sandfield Rd off KY 746; Upper Red, experts only)",
+     "town": "Campton",
+     "type": "put-in",
+     "lat": 37.802182,
+     "lon": -83.484183,
+     "source": "https://www.fs.usda.gov/r08/danielboone/recreation/big-branch-canoe-launch"
+    },
+    {
+     "name": "KY 715 concrete bridge put-in",
+     "town": "Pine Ridge",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Red-River.aspx"
+    },
+    {
+     "name": "Copperas Creek Canoe Launch (KY 715, Osborne Bend)",
+     "town": "Slade",
+     "type": "both",
+     "lat": 37.819972,
+     "lon": -83.575056,
+     "source": "https://www.fs.usda.gov/r08/danielboone/recreation/copperas-creek-canoe-launch"
+    },
+    {
+     "name": "KY 77 iron bridge access",
+     "town": "Nada",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://gopoco.org/kayaking/"
+    },
+    {
+     "name": "Schoolhouse Branch ford (FS Rd 23; end of Wild & Scenic section)",
+     "town": "Stanton",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Red-River.aspx"
+    }
+   ],
+   "new_miles": 8,
+   "outfitter": null,
+   "note": "Copperas Creek->Clay City is NOT the standard scenic float and ~9 mi is wrong. Classic beginner run is the Middle Red through the gorge: KY 715 bridge -> KY 77 iron bridge, 8 mi per KDFWR (8.5 per Powell Co tourism), Class I; USFS Copperas Creek launch sits ~2.5 river mi below the KY 715 bridge. The 19.4-mi Wild & Scenic segment (KY 746 -> Schoolhouse Branch) ends 2 mi below KY 77. Upper Red (Big Branch -> KY 715, ~10.5 mi) is Class II-III+, expert-only. Rain-dependent; strainers from storm damage are the main hazard; no dams. Clay City has only a separate 4-mi in-town loop."
+  },
+  {
+   "id": "green-ky",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Dennison Ferry Day Use Area (carry-down only, boat slides)",
+     "town": "Mammoth Cave NP (Hart Co.)",
+     "type": "put-in",
+     "lat": 37.2174,
+     "lon": -86.0493,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=1015"
+    },
+    {
+     "name": "Green River Ferry canoe/kayak launch",
+     "town": "Mammoth Cave NP",
+     "type": "both",
+     "lat": 37.1797,
+     "lon": -86.1114,
+     "source": "https://cavecountrytrails.com/trails/dennison-ferry-green-river-ferry/"
+    },
+    {
+     "name": "Houchin Ferry boat ramp/campground",
+     "town": "Brownsville",
+     "type": "take-out",
+     "lat": 37.2024,
+     "lon": -86.2376,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=156"
+    }
+   ],
+   "new_miles": null,
+   "outfitter": null,
+   "note": "Mileage verified: Dennison Ferry -> Green River Ferry 7.6 mi (NPS); Green River Ferry -> Houchin Ferry 12.4-12.5 mi (KDFWR) - ~20 mi total as mapped. Dennison is carry-down only via steep bank slides. Give way to the Green River Ferry cable ferry - land only downstream of ferry landings. Flatwater but swift; strainers/logjams; KDFWR warns not to float at 10-ft gauge or higher; loose rock at Houchin ramp. Green River Lock & Dam 6 (below Houchin) removed July 2017, so reach is free-flowing; trips can continue ~3.5 mi past Houchin to the Brownsville ramp."
+  },
+  {
+   "id": "barren",
+   "extend_upstream": {
+    "desc": "State Street Bridge Access, downtown Bowling Green (below the low-head dam)",
+    "to": [
+     36.999,
+     -86.44
+    ],
+    "approx": true
+   },
+   "extend_downstream": {
+    "desc": "Lonnie White Ramp at Thomas Landing",
+    "to": [
+     37.0348,
+     -86.4984
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Potter/Combs Ramp at Weldon Peete Park (Old Louisville Rd)",
+     "town": "Bowling Green",
+     "type": "put-in",
+     "lat": 37.0027,
+     "lon": -86.4184,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=628"
+    },
+    {
+     "name": "State Street Bridge Access (gravel ramp below pedestrian bridge)",
+     "town": "Bowling Green",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Fish/Pages/Lower-Barren-River.aspx"
+    },
+    {
+     "name": "Beech Bend Park ramps (registered campers only)",
+     "town": "Bowling Green",
+     "type": "both",
+     "lat": 37.0192,
+     "lon": -86.3928,
+     "source": "https://cavecountrytrails.com/trails/beech-bend-park-hines-boat-landing-ramp/"
+    },
+    {
+     "name": "James R. Hines Boat Landing",
+     "town": "Greencastle / Bowling Green",
+     "type": "both",
+     "lat": 37.0161,
+     "lon": -86.4447,
+     "source": "https://cavecountrytrails.com/trails/hines-boat-landing-ramp-lonnie-white-ramp/"
+    },
+    {
+     "name": "Lonnie White Ramp at Thomas Landing (Boat Ramp Rd off KY 1435)",
+     "town": "Bowling Green",
+     "type": "take-out",
+     "lat": 37.0348,
+     "lon": -86.4984,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=729"
+    }
+   ],
+   "new_miles": 14.4,
+   "outfitter": null,
+   "note": "Mapped description conflates two sections: KDFWR's 'Barren River Below the Dam' Blue Water Trail is the release-dependent tailwater near Scottsville/Glasgow (Tailwater Rec Area 36.8947,-86.1348 -> KY 101 VPA, 13.3 mi; needs 100+ cfs release), NOT Bowling Green. Recommended Bowling Green water trail: State Street Bridge -> Beech Bend 3.1 mi -> Hines Landing 4.6 mi -> Lonnie White Ramp 6.7 mi = 14.4 mi (KDFWR). Hazard: low-head State Street Bridge Dam just downstream of Weldon Peete Park - put in below it or portage. Former Barren River Lock & Dam No. 1 removed 2022, stretch now free-flowing. Beech Bend ramps limited to registered campers. No livery found on the Barren mainstem (Drakes Creek Canoe serves only tributary Drakes Creek)."
+  },
+  {
+   "id": "nolin",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Houchin Ferry ramp on the Green River - no take-out at the Nolin/Green confluence; paddlers continue 1.7 mi down the Green",
+    "to": [
+     37.2024,
+     -86.2376
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Tailwater Recreation Area (Nolin River Lake tailwater ramp, USACE)",
+     "town": "Brownsville (Mammoth Cave)",
+     "type": "put-in",
+     "lat": 37.2743,
+     "lon": -86.2508,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=157"
+    },
+    {
+     "name": "Houchin Ferry (Green River, Mammoth Cave NP)",
+     "town": "Brownsville",
+     "type": "take-out",
+     "lat": 37.2024,
+     "lon": -86.2376,
+     "source": "https://fw.ky.gov/Fish/Pages/Houchins-Ferry-(Mammoth-Cave-National-Park).aspx"
+    },
+    {
+     "name": "Brownsville Boat Ramp (Green River, alternate take-out ~3.2 mi below the Nolin confluence)",
+     "town": "Brownsville",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.nps.gov/thingstodo/nolin-river-dam-to-houchin-ferry.htm"
+    }
+   ],
+   "new_miles": 9.2,
+   "outfitter": [
+    "Lincoln Trail Outfitters",
+    "https://www.tripadvisor.com/Attraction_Review-g60894-d14827214-Reviews-Lincoln_Trail_Outfitters-Mammoth_Cave_Kentucky.html"
+   ],
+   "note": "NPS: 7.5 mi on the Nolin to the Green confluence + 1.7 mi on the Green to Houchin Ferry (one NPS page states 11.1 mi total - figures conflict; 9.2 matches NPS component distances). Dam releases can raise water rapidly. Green River Lock & Dam 6 failed 2016/removed - a Class II rapid now runs at the former dam site below Houchin Ferry (relevant only if continuing to Brownsville). KDFWR currently flags the tailwater ramp 'temporarily closed' due to post-removal water levels - verify status. Lincoln Trail Outfitters (Nolin Dam Rd) rents kayaks for the tailwater-to-Brownsville run."
+  },
+  {
+   "id": "rockcastle",
+   "extend_upstream": {
+    "desc": "KY 490 bridge put-in at Livingston (alt: Old Wilderness Road Ford off US 25)",
+    "to": [
+     37.2984,
+     -84.2166
+    ],
+    "approx": true
+   },
+   "extend_downstream": {
+    "desc": "KY 1956 bridge at Billows (old KY 80) - last reasonable take-out before the Narrows whitewater",
+    "to": [
+     37.1712,
+     -84.296
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "KY 490 bridge access",
+     "town": "Livingston",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://paddling.com/paddle/trips/rockcastle-river-kentucky"
+    },
+    {
+     "name": "Old Wilderness Road Ford (US 25)",
+     "town": "Livingston",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Rockcastle-River.aspx"
+    },
+    {
+     "name": "I-75 bridge access (off KY 1329)",
+     "town": "Livingston",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Rockcastle-River.aspx"
+    },
+    {
+     "name": "KY 1956 bridge at Billows",
+     "town": "Billows",
+     "type": "take-out",
+     "lat": 37.1712,
+     "lon": -84.296,
+     "source": "https://waterdata.usgs.gov/nwis/inventory/?site_no=03406500"
+    },
+    {
+     "name": "Bee Rock Boat Ramp / Campground (KY 192, Daniel Boone NF) - whitewater-section take-out only, NOT part of this float",
+     "town": "London",
+     "type": "both",
+     "lat": 37.027909,
+     "lon": -84.317916,
+     "source": "https://www.fs.usda.gov/r08/danielboone/recreation/bee-rock-campground"
+    }
+   ],
+   "new_miles": 16.6,
+   "outfitter": null,
+   "note": "KDFWR Blue Water Trail: Old Wilderness Ford -> I-75 6 mi, I-75 -> Billows 10.6 mi (=16.6). END THE FLOAT AT BILLOWS/KY 1956: the Narrows lie BETWEEN Billows and Bee Rock - AW/riverfacts rate KY 80 -> Bee Rock 16 mi Class II+(IV) with Beech Narrows (IV) and Lower Narrows 'Teeth' (severely undercut/sieved) ending AT Bee Rock ramp; below Bee Rock is 7 mi of Lake Cumberland flatwater. Billows coordinate is the USGS gauge at the KY 1956 bridge."
+  },
+  {
+   "id": "licking-ky",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Moore's Ferry ramp (KDFWR, unpaved), Bath County - Blue Licks is 40+ river miles below Cave Run dam and cannot be the take-out for a ~15-mi run",
+    "to": [
+     38.1758,
+     -83.6185
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Cave Run Dam Tailwater ramp (USACE)",
+     "town": "Farmers / Morehead",
+     "type": "put-in",
+     "lat": 38.116295,
+     "lon": -83.537002,
+     "source": "https://campflare.com/campground/cave-run-dam-tailwater-354"
+    },
+    {
+     "name": "Moore's Ferry (KDFWR, unpaved ramp)",
+     "town": "Salt Lick / Owingsville (Bath Co.)",
+     "type": "both",
+     "lat": 38.1758,
+     "lon": -83.6185,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=34"
+    },
+    {
+     "name": "Wyoming Ford (KDFWR carry-down, below mouth of Slate Creek)",
+     "town": "Wyoming (Bath Co.)",
+     "type": "take-out",
+     "lat": 38.2212,
+     "lon": -83.698,
+     "source": "https://app.fw.ky.gov/fisheries/accesssitedetail.aspx?asid=36"
+    }
+   ],
+   "new_miles": null,
+   "outfitter": null,
+   "note": "Mapped extent geographically wrong: Blue Licks Battlefield SP is 40+ river miles below the dam; KDFWR's official Licking River Blue Water Trail is a separate lower reach. Corrected take-out: Moore's Ferry (or Wyoming Ford carry-down further down - access road often muddy, 1-2 car parking). Dam -> Moore's Ferry river mileage could not be verified in any fetched source, so mileage left unchanged. Flows fluctuate with Cave Run releases. No official KDFWR ramp at the US 60 Farmers bridge."
+  },
+  {
+   "id": "floydsfork",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Cliffside Paddling Access, Broad Run Park (southernmost Parklands take-out)",
+    "to": [
+     38.08794,
+     -85.551683
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "North Beckley Paddling Access (Beckley Creek Park)",
+     "town": "Eastwood (Louisville)",
+     "type": "put-in",
+     "lat": 38.230343,
+     "lon": -85.468407,
+     "source": "https://theparklands.org/location/north-beckley-paddling-access-to-creekside/"
+    },
+    {
+     "name": "Fisherville Paddling Access (Pope Lick Park)",
+     "town": "Fisherville",
+     "type": "both",
+     "lat": 38.188781,
+     "lon": -85.476641,
+     "source": "https://theparklands.org/location/fisherville-paddling-access-to-cane-run/"
+    },
+    {
+     "name": "Cane Run Paddling Access (The Strand)",
+     "town": "Louisville",
+     "type": "both",
+     "lat": 38.151634,
+     "lon": -85.502665,
+     "source": "https://theparklands.org/location/cane-run-paddling-access-to-seaton-valley/"
+    },
+    {
+     "name": "Seaton Valley Paddling Access (Turkey Run Park)",
+     "town": "Seatonville (Louisville)",
+     "type": "both",
+     "lat": 38.132105,
+     "lon": -85.519037,
+     "source": "https://theparklands.org/location/seaton-valley-paddling-access-to-broad-run-valley/"
+    },
+    {
+     "name": "Broad Run Valley Paddling Access (Broad Run Park)",
+     "town": "Louisville",
+     "type": "both",
+     "lat": 38.104115,
+     "lon": -85.545288,
+     "source": "https://theparklands.org/location/broad-run-valley-paddling-access-to-cliffside/"
+    },
+    {
+     "name": "Cliffside Paddling Access (Broad Run Park)",
+     "town": "Louisville",
+     "type": "take-out",
+     "lat": 38.08794,
+     "lon": -85.551683,
+     "source": "https://theparklands.org/location/cliffside-paddling-access/"
+    }
+   ],
+   "new_miles": 19.7,
+   "outfitter": null,
+   "note": "Mapped ~12 mi is short: official Parklands water trail runs North Beckley -> Cliffside, 19.7 mi (Parklands route table; KDFWR splits it into two Blue Water Trails). Creekside access (2 mi below N Beckley) omitted for 6-landing cap. Flashy rain-driven creek with frequent strainers (active fallen-tree alert); remnant blown-out low-head dam ~1 mi below N Beckley forms a surf wave at 300-600 cfs; braided channel below Fisherville; Cane Run access closed in winter; keep river left at Mary's Island (closed conservation area); Cliffside is the mandatory last take-out - next landing ~20 mi downstream."
+  },
+  {
+   "id": "gasper",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Barren River #2 VPA ramp at the Gasper-Barren confluence (KDFWR)",
+    "to": [
+     37.08472,
+     -86.57779
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "River Road Bridge (New Harmony-Richelieu Rd)",
+     "town": "Richelieu (Logan Co.)",
+     "type": "put-in",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Gasper-River.aspx"
+    },
+    {
+     "name": "Hullett Lane (off KY 1083 / Galloway Mill Rd)",
+     "town": "Logan County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Gasper-River.aspx"
+    },
+    {
+     "name": "KY 1083 Bridge (Galloway Mill Rd)",
+     "town": "Logan County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Gasper-River.aspx"
+    },
+    {
+     "name": "KY 626 Bridge (Jackson Bridge Rd)",
+     "town": "Warren County",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://americanwhitewater.org/content/River/detail/id/662"
+    },
+    {
+     "name": "US 231 Bridge (Morgantown Rd)",
+     "town": "Hadley",
+     "type": "both",
+     "lat": null,
+     "lon": null,
+     "source": "https://fw.ky.gov/Education/Pages/Gasper-River.aspx"
+    },
+    {
+     "name": "Barren River #2 VPA site (Gasper-Barren confluence)",
+     "town": "Warren County",
+     "type": "take-out",
+     "lat": 37.08472,
+     "lon": -86.57779,
+     "source": "https://www.riverfacts.com/maps/11230.html"
+    }
+   ],
+   "new_miles": 18.5,
+   "outfitter": null,
+   "note": "Mapped ~8 mi bluff run verified as KY 1083 -> US 231 (KDFWR legs 5 + 3.5 = 8.5 mi); extending to the KDFWR Barren River #2 VPA ramp at the confluence adds ~10 flat miles = ~18.5 total. Upstream floats add 9.5 mi from River Road Bridge but accesses are primitive (Hullett Ln fits 2 cars; KY 1083 steep). Rapids cluster around KY 626: Put-In Rapid (II+), Surfers, Retreat, Barking Dog (III at high water); AW warns of a private-property parking dispute at the KY 626 put-in. Rain-dependent (USGS Hadley gauge). No livery found serving the Gasper."
+  },
+  {
+   "id": "rough-ky",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Dundee (KY 69 bridge)",
+    "to": [
+     37.55,
+     -86.776
+    ],
+    "approx": true
+   },
+   "landings": [
+    {
+     "name": "Tailwater Boat Ramp (below Rough River Dam, USACE)",
+     "town": "Falls of Rough",
+     "type": "put-in",
+     "lat": 37.621148,
+     "lon": -86.501641,
+     "source": "https://naturalatlas.com/fishing-accesses/rough-river-dam-tailwater-2146887"
+    },
+    {
+     "name": "Dundee access (KY 69 bridge)",
+     "town": "Dundee",
+     "type": "take-out",
+     "lat": null,
+     "lon": null,
+     "source": "https://www.riverfacts.com/rivers/11256.html"
+    }
+   ],
+   "new_miles": 23.5,
+   "outfitter": null,
+   "note": "Mapped ~8 mi 'easy tailwater float' is not supportable: the only documented section is Rough River Dam -> Dundee, 23.5 mi Class I-II (riverfacts), and the Falls of Rough - a natural ledge over a rebuilt 1855 stone mill dam (37.589373,-86.551494; private property) - sits ~6 river mi below the dam, so an 8-mi float would cross it; treat as mandatory portage/hazard. Only two public accesses verifiable: the USACE tailwater ramp (coord cross-checked vs recreation.gov) and Dundee. A 'Green Farm' access near Falls of Rough appears on paddling.com but is unverified. Dam-controlled releases; no kayak/canoe livery found for the tailwater."
+  },
+  {
+   "id": "greenbrier",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Marlinton Bridge (town access)",
+     "town": "Marlinton",
+     "type": "put-in",
+     "lat": 38.2247,
+     "lon": -80.0961,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District3_FishingGuide_WEB.pdf"
+    },
+    {
+     "name": "Watoga State Park access (Seebert)",
+     "town": "Seebert",
+     "type": "both",
+     "lat": 38.1178,
+     "lon": -80.1739,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District3_FishingGuide_WEB.pdf"
+    },
+    {
+     "name": "Renick WVDNR access",
+     "town": "Renick",
+     "type": "both",
+     "lat": 37.9897,
+     "lon": -80.3569,
+     "source": "https://wvdnr.gov/wp-content/uploads/2023/04/Pub_District4FishingGuide_DNR_WILD_digital.pdf"
+    },
+    {
+     "name": "Anthony WVDNR access (Anthony Creek)",
+     "town": "Anthony",
+     "type": "both",
+     "lat": 37.8965,
+     "lon": -80.3254,
+     "source": "https://wvdnr.gov/wp-content/uploads/2023/04/Pub_District4FishingGuide_DNR_WILD_digital.pdf"
+    },
+    {
+     "name": "Caldwell WVDNR access",
+     "town": "Caldwell",
+     "type": "both",
+     "lat": 37.7822,
+     "lon": -80.3989,
+     "source": "https://wvdnr.gov/wp-content/uploads/2023/04/Pub_District4FishingGuide_DNR_WILD_digital.pdf"
+    },
+    {
+     "name": "Ronceverte Island Park (City Park)",
+     "town": "Ronceverte",
+     "type": "take-out",
+     "lat": 37.7448,
+     "lon": -80.4661,
+     "source": "https://wvdnr.gov/wp-content/uploads/2023/04/Pub_District4FishingGuide_DNR_WILD_digital.pdf"
+    }
+   ],
+   "new_miles": 55,
+   "outfitter": null,
+   "note": "Mapped 25 mi is wrong: Marlinton -> Ronceverte is ~55 river mi (Greenbrier River Trail mileposts Marlinton MM56 to N. Caldwell MM3 = 53 trail mi per greenbrierrivertrail.com, plus ~2 to Ronceverte; river-mile figure approximate). Class I-II, summer-low-water dependent, no dams. Classic day floats: Marlinton -> Seebert ~10 mi or Anthony -> Caldwell ~11 mi; rail-trail parallels the whole run for bike shuttles. Other verified WVDNR sites if needed: Stillwell Park 38.2097,-80.1008; Buckeye Bridge 38.1861,-80.1308."
+  },
+  {
+   "id": "sbpotomac",
+   "extend_upstream": {
+    "desc": "Old Fields Bridge (US 220) WVDNR access - Trough run put-in",
+    "to": [
+     39.1036,
+     -78.9588
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Harmison's Landing WVDNR access near Sector - Trough take-out",
+    "to": [
+     39.2278,
+     -78.8524
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Fisher Bridge WVDNR access",
+     "town": "Fisher",
+     "type": "put-in",
+     "lat": 39.0533,
+     "lon": -78.9911,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Old Fields Bridge (US 220) WVDNR access",
+     "town": "Old Fields",
+     "type": "put-in",
+     "lat": 39.1036,
+     "lon": -78.9588,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "South Branch WMA (McNeill) access",
+     "town": "McNeill (Old Fields)",
+     "type": "both",
+     "lat": 39.1459,
+     "lon": -78.9248,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Harmison's Landing WVDNR access",
+     "town": "Sector (Romney vicinity)",
+     "type": "take-out",
+     "lat": 39.2278,
+     "lon": -78.8524,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Stoney Run WVDNR access",
+     "town": "Romney vicinity",
+     "type": "take-out",
+     "lat": 39.2465,
+     "lon": -78.8426,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Romney Bridge (Wapocomo) WVDNR access",
+     "town": "Romney",
+     "type": "take-out",
+     "lat": 39.3394,
+     "lon": -78.7765,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    }
+   ],
+   "new_miles": 11.5,
+   "outfitter": null,
+   "note": "Mapped extent wrongly merges two reaches ~25 mi apart. Map The Trough as the main run: US 220/Old Fields Bridge -> Harmison's Landing, 11.54 mi Class I-II per American Whitewater reach 2433 (1000-ft canyon walls, bald eagles, several Class II ledges, gravel-bar scraping at low water); short classic float is McNeill (South Branch WMA) -> Harmison's ~7 mi. Smoke Hole Canyon (Big Bend area, Grant/Pendleton Co) is a separate advanced Class II-IV run far upstream - note only, don't map as the same run."
+  },
+  {
+   "id": "cacapon",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Wardensville WVDNR access",
+     "town": "Wardensville",
+     "type": "put-in",
+     "lat": 39.0921,
+     "lon": -78.5868,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Capon Lake WVDNR access",
+     "town": "Capon Lake",
+     "type": "both",
+     "lat": 39.1582,
+     "lon": -78.5348,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Capon Bridge (US 50)",
+     "town": "Capon Bridge",
+     "type": "both",
+     "lat": 39.29808,
+     "lon": -78.43444,
+     "source": "https://www.riverfacts.com/maps/13982.html"
+    },
+    {
+     "name": "Rt. 127 Bridge WVDNR access (Forks of Cacapon)",
+     "town": "Forks of Cacapon",
+     "type": "both",
+     "lat": 39.4032,
+     "lon": -78.4174,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Cacapon Crossing WVDNR access",
+     "town": "Largent area (Hampshire Co.)",
+     "type": "both",
+     "lat": 39.4523,
+     "lon": -78.4256,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    },
+    {
+     "name": "Great Cacapon WVDNR access",
+     "town": "Great Cacapon",
+     "type": "take-out",
+     "lat": 39.6185,
+     "lon": -78.2824,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/WILDfishingGuideD2_WEB.pdf"
+    }
+   ],
+   "new_miles": 75,
+   "outfitter": [
+    "Cacapon River Outfitters",
+    "https://cacaponriveroutfitters.com"
+   ],
+   "note": "Mapped 12 mi is wrong: Wardensville -> Great Cacapon is ~75 river mi (WVU DIY: Wardensville -> Capon Bridge 25 mi flatwater; Capon Bridge -> Rt 127 11.5 mi Class I-III; Rt 127 -> Great Cacapon 38+ mi Class A1-I). Recommend the classic 'Caudy's Castle' reach: Capon Bridge (US 50) -> WV 127 Bridge, 11.6-12.6 mi Class II with three Class II+/III- ledges (AW reach 2344; wood/pin hazard right channel at Hutchinson Rapid). Strongly level-dependent: <2 ft Great Cacapon gauge scrapes, >4 ft risky for novices. No dams noted on mainstem. Cacapon River Outfitters (Great Cacapon/Largent) runs kayak-canoe-tube rentals and shuttles on the lower river."
+  },
+  {
+   "id": "cheat",
+   "extend_upstream": null,
+   "extend_downstream": {
+    "desc": "Friends of the Cheat Narrows take-out (Preston FOC lot near US 50 high bridge)",
+    "to": [
+     39.431,
+     -79.684
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Parsons - US 219 Bridge (Shavers Fork)",
+     "town": "Parsons",
+     "type": "put-in",
+     "lat": 39.097,
+     "lon": -79.679,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    },
+    {
+     "name": "Holly Meadows Bridge",
+     "town": "Holly Meadows",
+     "type": "both",
+     "lat": 39.122,
+     "lon": -79.675,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    },
+    {
+     "name": "St. George Bridge DNR access",
+     "town": "St. George",
+     "type": "both",
+     "lat": 39.165,
+     "lon": -79.707,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    },
+    {
+     "name": "Hannahsville Ford",
+     "town": "Hannahsville",
+     "type": "both",
+     "lat": 39.245,
+     "lon": -79.708,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    },
+    {
+     "name": "Rowlesburg City Park",
+     "town": "Rowlesburg",
+     "type": "both",
+     "lat": 39.349,
+     "lon": -79.671,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    },
+    {
+     "name": "Preston FOC lot (Friends of the Cheat Narrows take-out)",
+     "town": "near Caddell / US 50",
+     "type": "take-out",
+     "lat": 39.431,
+     "lon": -79.684,
+     "source": "https://wvdnr.gov/wp-content/uploads/2021/06/DNR_Wildlife_District1_FishingGuide.pdf"
+    }
+   ],
+   "new_miles": 44,
+   "outfitter": null,
+   "note": "Label fix: Parsons -> Rowlesburg is NOT the Cheat Narrows - it is the Upper Cheat River Water Trail, Class I flatwater/riffles, ~36 river mi (WVU DIY; full water trail Hendricks -> Rowlesburg is nearly 40 mi, 9 access points per Friends of the Cheat). Needs >4 ft Parsons gauge to avoid scraping; dangerous waves at high water. The actual Cheat Narrows (Class II-III, Calamity Rock III+ at mi 5) runs 8 mi from Rowlesburg park to the Friends of the Cheat lot (AW reach 2346) - mapped here as the downstream whitewater extension, runnable most of the year; 36 + 8 = 44 mi total if both reaches are kept."
+  },
+  {
+   "id": "elk-wv",
+   "extend_upstream": {
+    "desc": "Sutton Dam Tailwaters (Elk River Water Trail mile 0, Sutton)",
+    "to": [
+     38.661338,
+     -80.696872
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Frametown Bridge access, Frametown",
+    "to": [
+     38.635583,
+     -80.864857
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Sutton Dam Tailwaters",
+     "town": "Sutton",
+     "type": "put-in",
+     "lat": 38.661338,
+     "lon": -80.696872,
+     "source": "https://braxtonwv.org/things-to-do/elk-river-water-trail/map/"
+    },
+    {
+     "name": "Elk River Hotel & Cafe (Cafe Cimino) access",
+     "town": "Sutton",
+     "type": "both",
+     "lat": 38.66401,
+     "lon": -80.704174,
+     "source": "https://braxtonwv.org/things-to-do/elk-river-water-trail/map/"
+    },
+    {
+     "name": "Gassaway (Dairy Queen) access",
+     "town": "Gassaway",
+     "type": "both",
+     "lat": 38.676474,
+     "lon": -80.770031,
+     "source": "https://diyoutdoors.wvu.edu/files/d/6097bc04-2c9d-4dc9-8ad4-3be19d026de6/elk-river-water-trail-guide-1.pdf"
+    },
+    {
+     "name": "Frametown Bridge access",
+     "town": "Frametown",
+     "type": "both",
+     "lat": 38.635583,
+     "lon": -80.864857,
+     "source": "https://braxtonwv.org/things-to-do/elk-river-water-trail/map/"
+    },
+    {
+     "name": "Duck access",
+     "town": "Duck",
+     "type": "both",
+     "lat": 38.582676,
+     "lon": -80.937581,
+     "source": "https://braxtonwv.org/things-to-do/elk-river-water-trail/map/"
+    },
+    {
+     "name": "Clendenin access",
+     "town": "Clendenin",
+     "type": "take-out",
+     "lat": 38.490464,
+     "lon": -81.330125,
+     "source": "https://braxtonwv.org/things-to-do/elk-river-water-trail/map/"
+    }
+   ],
+   "new_miles": null,
+   "outfitter": [
+    "Elk River Paddle and Yak",
+    "https://elkriverpaddleandyak.com/"
+   ],
+   "note": "Mapped Webster Springs -> Charleston is ~100+ river miles; the Elk River Water Trail proper runs ~97 flatwater miles (Class A-I) from Sutton Dam tailwaters to Charleston (Coonskin Park, 38.389236,-81.584101). Recommend one representative reach: Sutton Dam Tailwaters -> Frametown Bridge (~15 mi, matches mapped length; trout tailwater). Flows depend on USACE Sutton Dam releases. Elk River Paddle and Yak rents/shuttles specifically on the Sutton-Gassaway-Frametown-Duck reach; other liveries at Clay and Clendenin. No low-head dam confirmed on this reach in fetched sources; watch strainers and island channels."
+  },
+  {
+   "id": "coal-wv",
+   "extend_upstream": null,
+   "extend_downstream": null,
+   "landings": [
+    {
+     "name": "Meadowood Park (Coal River Water Trail visitor center, two kayak launches)",
+     "town": "Tornado",
+     "type": "put-in",
+     "lat": 38.339444,
+     "lon": -81.840355,
+     "source": "https://diyoutdoors.wvu.edu/canoeing/coal-river"
+    },
+    {
+     "name": "Coal River Bend access",
+     "town": "Tornado",
+     "type": "both",
+     "lat": 38.354476,
+     "lon": -81.843807,
+     "source": "https://diyoutdoors.wvu.edu/canoeing/coal-river"
+    },
+    {
+     "name": "Lower Falls access (Strawberry Rd)",
+     "town": "St. Albans",
+     "type": "both",
+     "lat": 38.37954,
+     "lon": -81.856871,
+     "source": "https://diyoutdoors.wvu.edu/canoeing/coal-river"
+    },
+    {
+     "name": "St. Albans / Coal River Group boathouse near Kanawha confluence",
+     "town": "St. Albans",
+     "type": "take-out",
+     "lat": 38.391354,
+     "lon": -81.840123,
+     "source": "https://diyoutdoors.wvu.edu/canoeing/coal-river"
+    }
+   ],
+   "new_miles": 11,
+   "outfitter": null,
+   "note": "Verified: Meadowood Park is at Tornado on the main Coal (not Alum Creek/Big Coal) and hosts the water trail visitor center; the annual Tour de Coal is an 11-mile float from Meadowood Park to the mouth at St. Albans, so mapped ~10 mi should be ~11. Part of the 88-mile Walhonde Water Trail (Big/Little/main Coal, up to Class II). Two drops on this reach - Upper Falls at Tornado (old crib lock-and-dam site) and Lower Falls near St. Albans - can be run by experienced paddlers or portaged/walked. Otherwise slow, always-canoeable flatwater."
+  },
+  {
+   "id": "bluestone",
+   "extend_upstream": {
+    "desc": "Pipestem Resort SP aerial tram / Mountain Creek Lodge (canyon bottom)",
+    "to": [
+     37.537633,
+     -81.007689
+    ],
+    "approx": false
+   },
+   "extend_downstream": {
+    "desc": "Bluestone State Park boat access (Bluestone Lake) near Hinton",
+    "to": [
+     37.606952,
+     -80.94383
+    ],
+    "approx": false
+   },
+   "landings": [
+    {
+     "name": "Eads Mill Road bridge put-in",
+     "town": "Spanishburg",
+     "type": "put-in",
+     "lat": 37.47888,
+     "lon": -81.07178,
+     "source": "https://diyoutdoors.wvu.edu/whitewater/bluestone-river-eads-mill-to-bluestone-sp"
+    },
+    {
+     "name": "Pipestem Resort SP tram / Mountain Creek Lodge",
+     "town": "Pipestem",
+     "type": "both",
+     "lat": 37.537633,
+     "lon": -81.007689,
+     "source": "https://diyoutdoors.wvu.edu/whitewater/bluestone-river-eads-mill-to-bluestone-sp"
+    },
+    {
+     "name": "Bluestone Turnpike Trailhead (former Lilly town site)",
+     "town": "Nimitz",
+     "type": "both",
+     "lat": 37.583837,
+     "lon": -80.971511,
+     "source": "https://diyoutdoors.wvu.edu/whitewater/bluestone-river-eads-mill-to-bluestone-sp"
+    },
+    {
+     "name": "Bluestone State Park boat access",
+     "town": "Hinton",
+     "type": "take-out",
+     "lat": 37.606952,
+     "lon": -80.94383,
+     "source": "https://diyoutdoors.wvu.edu/whitewater/bluestone-river-eads-mill-to-bluestone-sp"
+    }
+   ],
+   "new_miles": 10.5,
+   "outfitter": null,
+   "note": "NPS protects 10.5 miles (Pipestem area -> Bluestone SP), so mapped ~10 mi should be 10.5; full whitewater run from Eads Mill Rd is 19 mi Class I-III. Runnable only at adequate water - NPS says 4-7 ft on the Pipestem gauge; often too low in summer. Remote gorge: mid-run access via the Pipestem tram (fee, roughly May-Oct) to Mountain Creek Lodge, or the Lilly site via ~5 mi of gravel road; Bluestone Turnpike Trail is the hiking corridor. Take-out on Bluestone Lake at Bluestone SP. Park marina rents kayaks/canoes on the lake only, not for the gorge run, so no outfitter listed."
+  }
+ ]
+}

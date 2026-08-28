@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midwest Kayak Rivers — 10 States</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --spruce:#14342b; --spruce-2:#1d4a3d; --paper:#fbfaf7; --card:#ffffff;
+  --ink:#22312b; --muted:#6b7a72; --line:#e3e0d6;
+  --green:#178a4c; --green-dark:#0d6337; --green-soft:#e6f4ec;
+  --g-aug:#0c6b38; --g-jul:#43a566; --g-jun:#a5cd73;
+  --blue:#2b6cb0; --blue-soft:#e8f0f9;
+  --amber:#c2620f; --red:#b3382c; --purple:#6d4fa1;
+  --shadow:0 2px 10px rgba(20,52,43,.14);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Public Sans",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
+button{font:inherit;cursor:pointer}
+a{color:var(--spruce-2)}
+
+/* ---------- header ---------- */
+header{background:var(--spruce);color:#eef4ef;display:flex;align-items:center;gap:14px;padding:9px 16px;flex:0 0 auto;z-index:1200}
+header h1{font-family:"Bitter",Georgia,serif;font-weight:800;font-size:19px;margin:0;letter-spacing:.2px}
+header .tag{font-size:12.5px;color:#bcd3c6;font-weight:500}
+header .tag b.g{color:#7fd8a5}header .tag b.b{color:#9cc3ee}
+header .spacer{flex:1}
+#aboutBtn,#homeBtn{background:transparent;border:1px solid #3d6355;color:#cfe2d6;border-radius:8px;padding:5px 12px;font-size:12.5px;font-weight:600}
+#aboutBtn:hover,#homeBtn:hover{background:var(--spruce-2)}
+#homeMenu{position:fixed;top:44px;right:150px;z-index:3000;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:6px;display:none;min-width:200px}
+#homeMenu.open{display:block}
+#homeMenu .hm-title{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:5px 9px 4px;font-weight:700}
+#homeMenu button{display:block;width:100%;text-align:left;background:none;border:none;padding:7px 9px;font-size:13px;border-radius:7px}
+#homeMenu button:hover{background:#f0eee7}
+/* distance chips: <100 mi day trip · 100–250 weekend · 250+ trek */
+.dchip{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.dchip.d1{background:#e2efe3;color:#2c6e49}
+.dchip.d2{background:#f7edda;color:#8a6516}
+.dchip.d3{background:#efe9f8;color:#6d4fa8}
+#panelBtn{display:none;background:transparent;border:1px solid #3d6355;color:#cfe2d6;border-radius:8px;padding:5px 10px;font-size:13px}
+
+/* ---------- layout ---------- */
+#wrap{flex:1;display:flex;min-height:0}
+aside{width:358px;flex:0 0 auto;background:var(--paper);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0;z-index:1100}
+#map{flex:1;min-width:0}
+.leaflet-container{background:#dbe6dc;font:inherit}
+
+/* ---------- status strip ---------- */
+#status{padding:8px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px}
+#status .bar{flex:1;height:4px;background:#e9e6dc;border-radius:2px;overflow:hidden}
+#status .bar i{display:block;height:100%;width:0%;background:var(--green);border-radius:2px;transition:width .3s}
+#status.done .bar i{background:var(--green-dark)}
+#status.err{color:var(--red)}
+#bigrow{padding:7px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink)}
+#bigrow input{vertical-align:-2px;margin-right:6px}
+body.nobig .riv.blue, body.nobig .riv.motorok, body.nobig .sect.bighdr, body.nobig .bgroup.biggrp{display:none!important}
+body.nobyo .riv.byo{display:none!important}
+.secrow{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 34px;cursor:pointer;font-size:12.5px;border-top:1px dashed #eceadf}
+.secrow:hover{background:#f3f1e9}
+.secrow.on{background:var(--blue-soft)}
+.secdot{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
+/* inspector widgets */
+.pwidget{display:inline-block;background:#1d4e89;color:#fff;font-weight:700;font-size:12px;padding:3px 10px;border-radius:20px;margin:2px 6px 4px 0}
+.fwidget{display:inline-block;background:#dcebf7;color:#1d4e89;font-weight:600;font-size:11.5px;padding:3px 10px;border-radius:20px;margin:2px 0 4px}
+.runlist{margin:2px 0 0;padding:0;list-style:none}
+.runlist li{padding:1px 0 1px 7px;border-left:3px solid #7fb8e8;font-size:12px;line-height:1.45}
+.runlist li::before{content:"• ";color:#3f7fb8;font-weight:700}
+.runlist .rl-name{font-weight:600;font-size:12.2px}
+.runlist .rl-leg{font-size:10.8px;color:var(--muted)}
+
+/* ---------- river list ---------- */
+#list{flex:1;overflow-y:auto;padding:6px 0 20px}
+.sect{padding:14px 14px 4px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sect b.dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
+.riv{border-bottom:1px solid #efece3}
+.riv-row{display:flex;align-items:center;gap:9px;padding:9px 14px;cursor:pointer}
+.riv-row:hover{background:#f3f1e9}
+.riv:focus-within .riv-row,.riv.open .riv-row{background:var(--green-soft)}
+.riv.blue.open .riv-row{background:var(--blue-soft)}
+.chip{width:14px;height:14px;border-radius:4px;flex:0 0 auto;position:relative}
+.chip.pending::after{content:"";position:absolute;inset:3px;border-radius:2px;background:#fff9;animation:pulse 1.2s infinite}
+.chip.fail{outline:2px solid var(--red);outline-offset:1px}
+@keyframes pulse{50%{opacity:.2}}
+.riv-name{flex:1;font-size:13.5px;font-weight:600;line-height:1.25}
+.riv-name small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.gchip{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px;background:#eeece4;color:var(--muted);white-space:nowrap}
+.gchip.ok{background:var(--green-soft);color:var(--green-dark)}
+.gchip.low{background:#f8e8e5;color:var(--red)}
+.gchip.marg{background:#f7edda;color:var(--amber)}
+.gchip.high{background:#efe9f8;color:var(--purple)}
+.eye{border:none;background:none;color:#a8b3aa;font-size:15px;padding:3px 4px;border-radius:6px;line-height:1}
+.eye:hover{background:#e8e5da;color:var(--ink)}
+.eye.off{color:#d3d0c5}
+.card{display:none;padding:2px 16px 15px;font-size:12.8px;line-height:1.5}
+.riv.open .card{display:block}
+.card h4{margin:10px 0 3px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.card p{margin:2px 0}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:20px;margin:4px 6px 2px 0}
+.badge.g{background:var(--green-soft);color:var(--green-dark)}
+.badge.b{background:var(--blue-soft);color:var(--blue)}
+.badge.w{background:#f7edda;color:var(--amber)}
+.gauge-line{font-family:ui-monospace,Menlo,monospace;font-size:12px;margin:3px 0}
+.gauge-line a{text-decoration:none;border-bottom:1px dotted}
+.watch{background:#fdf6e8;border-left:3px solid var(--amber);padding:6px 9px;border-radius:0 6px 6px 0;margin:8px 0;font-size:12.3px}
+.unp li{margin:2px 0}
+.card .srcs a{display:inline-block;margin-right:10px;font-size:12px}
+ul.unp{margin:3px 0 0;padding-left:17px;color:#4a584f}
+.zoombtn{margin-top:9px;background:var(--spruce);color:#eef4ef;border:none;border-radius:8px;padding:6px 13px;font-size:12.5px;font-weight:600}
+.zoombtn:hover{background:var(--spruce-2)}
+
+/* ---------- panel footer ---------- */
+#pfoot{flex:0 0 auto;border-top:1px solid var(--line);padding:9px 14px;font-size:11px;color:var(--muted);line-height:1.45}
+
+/* ---------- markers: Google-Maps-stop style — small white dots ---------- */
+.lm{width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid #3b4a44;box-shadow:0 0 3px rgba(0,0,0,.35);transition:transform .12s}
+.lm:hover{transform:scale(1.6)}
+#map.z13 .lm{width:12px;height:12px}
+@media (prefers-reduced-motion: reduce){.lm,#status .bar i{transition:none}.chip.pending::after{animation:none}}
+
+/* ---------- mini table in list cards ---------- */
+.mt{width:100%;border-collapse:collapse;margin:4px 0 2px;font-size:12px}
+.mt td{border:1px solid #e7e4da;padding:4px 8px;vertical-align:middle}
+.mt td:first-child{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;width:74px;background:#f6f4ee}
+.mt .mono{font-family:ui-monospace,Menlo,monospace;font-size:11.5px}
+.mt a{text-decoration:none;border-bottom:1px dotted}
+.szn{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:20px;color:#fff}
+.mt .mini-actions{font-size:11.5px}
+.mt .sub{font-size:10.5px;color:var(--muted)}
+/* state headers: tinted to match their border color; sub-headers light grey */
+.state-hdr{border-radius:0;padding:12px 14px 10px;margin-top:6px}
+.state-hdr.st-WI{background:#e2efe7}
+.state-hdr.st-IL{background:#f6e7e4}
+.state-hdr.st-MI{background:#e6edf4}
+.sect.subhdr{background:#efeeea;padding:9px 14px 8px}
+
+/* ---------- inspector (bottom-left) ---------- */
+/* flush to the bottom-left of the map, 3/4 width, kept short */
+#inspector{position:absolute;left:368px;bottom:26px;z-index:1150;width:248px;max-height:48vh;overflow-y:auto;background:#fffffffa;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px 14px 12px;font-size:12.3px;line-height:1.5;display:none}
+#inspector.open{display:block}
+#inspector h3{margin:0 22px 4px 0;font-family:"Bitter",Georgia,serif;font-size:15px}
+#inspector h4{margin:9px 0 2px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+#inspector p{margin:2px 0}
+#inspector .close{position:absolute;top:8px;right:9px;border:none;background:#eeece4;border-radius:7px;padding:2px 9px;font-weight:700;line-height:1.4}
+#inspector .srcs a{display:inline-block;margin-right:10px;font-size:11.5px}
+#inspector .links1 a{display:block;font-size:12px;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;border-bottom:none}
+#inspector ul{margin:3px 0 0;padding-left:16px;color:#4a584f}
+@media (max-width:820px){#rightstack{right:8px;bottom:12px;max-width:calc(100vw - 16px)}#inspector{left:12px;bottom:12px;width:min(70vw,260px);max-height:34vh}}
+
+/* ---------- route endpoints (A/B) ---------- */
+.ab{width:17px;height:17px;border-radius:50%;color:#fff;font:800 10px/17px "Public Sans",sans-serif;text-align:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45)}
+.ab.a{background:#0d6337}
+.ab.b{background:#b3382c}
+
+/* ---------- collapsible state groups ---------- */
+.state-hdr{cursor:pointer;user-select:none;font-size:12px;padding-top:16px}
+.state-hdr:hover{color:var(--ink)}
+.sgroup{display:none}
+.sgroup.openb{display:block}
+
+/* ---------- collapsible big-river groups ---------- */
+.sect.toggler{cursor:pointer;user-select:none}
+.sect.toggler:hover{color:var(--ink)}
+.sect .tri{display:inline-block;width:12px;transition:transform .15s}
+.sect.openb .tri{transform:rotate(90deg)}
+.bgroup{display:none}
+.bgroup.openb{display:block}
+
+/* ---------- popups ---------- */
+.leaflet-popup-content-wrapper{border-radius:10px;box-shadow:var(--shadow)}
+.leaflet-popup-content{margin:12px 15px;font:12.8px/1.5 "Public Sans",system-ui,sans-serif}
+.pp h3{margin:0 0 2px;font-family:"Bitter",Georgia,serif;font-size:14.5px}
+.pp .meta{color:var(--muted);font-size:12px}
+.pp .coords{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--muted);margin-top:5px}
+.pp .links{margin-top:7px}
+.pp .links a{margin-right:11px;font-weight:600;font-size:12px}
+.pp .approx{color:var(--amber);font-size:11.5px;margin-top:5px}
+
+/* ---------- right-side stack: inspector above legend ---------- */
+#rightstack{position:absolute;right:12px;bottom:26px;z-index:1150;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none}
+#rightstack > *{pointer-events:auto}
+#legend{background:#fffffff2;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:10px 13px;font-size:12px;line-height:1.9}
+#legend .sw{display:inline-block;width:22px;height:5px;border-radius:3px;vertical-align:2px;margin-right:7px}
+#legend .swd{display:inline-block;width:22px;height:0;vertical-align:4px;margin-right:7px}
+#legend .mk{display:inline-block;width:13px;height:13px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 3px rgba(0,0,0,.4);vertical-align:-2px;margin-right:8px;margin-left:4px}
+#legend h5{margin:0 0 3px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:10px}
+#legBtn{border:1px solid var(--line);background:#f4f2ec;border-radius:6px;font-size:10px;padding:1px 7px;color:var(--muted);text-transform:none;letter-spacing:0;cursor:pointer}
+#legBtn:hover{background:#eceade;color:var(--ink)}
+#zoomhint{position:absolute;left:50%;transform:translateX(-50%);bottom:26px;z-index:1000;background:#14342bd9;color:#dcebe0;font-size:12px;padding:6px 14px;border-radius:20px;display:none}
+
+/* ---------- modal ---------- */
+#modal{position:fixed;inset:0;background:rgba(18,30,25,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+#modal.open{display:flex}
+#modal .box{background:var(--card);max-width:620px;max-height:86vh;overflow-y:auto;border-radius:14px;padding:26px 30px;font-size:13.5px;line-height:1.6}
+#modal h2{font-family:"Bitter",Georgia,serif;margin:0 0 8px}
+#modal h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 5px}
+#modal .close{float:right;border:none;background:#eeece4;border-radius:8px;padding:5px 12px;font-weight:600}
+
+@media (max-width:820px){
+  aside{position:absolute;top:48px;bottom:0;left:0;transform:translateX(-100%);transition:transform .2s;box-shadow:8px 0 24px rgba(0,0,0,.15)}
+  aside.open{transform:none}
+  #panelBtn{display:block}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Midwest Kayak Rivers</h1>
+  <span class="tag">10 states — <b style="color:#5fe0d0">turquoise</b>·<b style="color:#79c4f7">sky</b>·<b style="color:#c99af7">purple</b> = kayak runs by season · <b class="b">blue</b> = big water · red outline = permit</span>
+  <span class="spacer"></span>
+  <button id="panelBtn" aria-label="Toggle river list">☰ Rivers</button>
+  <button id="homeBtn" title="Drive distances measure from here">⌂ ORD</button>
+  <button id="aboutBtn">About &amp; sources</button>
+</header>
+<div id="homeMenu">
+  <div class="hm-title">Drive distances from…</div>
+  <button data-h="ORD">O'Hare (ORD)</button>
+  <button data-h="MDW">Midway (MDW)</button>
+  <button data-h="MKE">Milwaukee (MKE)</button>
+  <button data-h="MSP">Minneapolis (MSP)</button>
+  <button data-h="STL">St. Louis (STL)</button>
+  <button data-h="DTW">Detroit (DTW)</button>
+  <button data-h="CLE">Cleveland (CLE)</button>
+  <button data-h="LGA">New York (LGA)</button>
+  <button data-h="MAP">📍 Set a point on the map</button>
+</div>
+<div id="wrap">
+  <aside id="panel">
+    <div id="status"><span id="stTxt">Loading river geometry…</span><span class="bar"><i id="stBar"></i></span></div>
+    <div id="bigrow"><label><input type="checkbox" id="bigToggle"> Big Rivers &amp; Motoring: <b id="bigState">Hidden</b></label>
+      <label style="margin-left:10px"><input type="checkbox" id="byoToggle" checked> BYO-Boat Rivers: <b id="byoState">Visible</b></label></div>
+    <div id="list"></div>
+    <div id="pfoot">Landings compiled from paddling guides &amp; DNR sources, July 2026. Always confirm access, permits and water levels before you go.</div>
+  </aside>
+  <div id="map"></div>
+</div>
+<div id="inspector" role="complementary" aria-label="River details">
+  <button class="close" aria-label="Close details">×</button>
+  <div id="inspBody"></div>
+</div>
+<div id="rightstack">
+  <div id="legend">
+    <h5>Kayak rivers <button id="legBtn" aria-label="Expand legend">▸ more</button></h5>
+    <div><span class="sw" style="background:#0fb5a3;box-shadow:0 0 0 2px #0a6b60"></span>Floats into Aug–Sept</div>
+    <div><span class="sw" style="background:#2196f3;box-shadow:0 0 0 2px #0d47a1"></span>Reliable thru July</div>
+    <div><span class="sw" style="background:#a855f7;box-shadow:0 0 0 2px #6b21a8"></span>Spring–June river</div>
+    <div><span class="swd" style="border-top:3px dashed #2b6cb0"></span>Big river (blue dash)</div>
+    <div id="legMore" style="display:none">
+      <div><span class="sw" style="background:#0fb5a3;box-shadow:0 0 0 2px #d24b4b"></span>Red outline = permit required</div>
+      <div><span class="swd" style="border-top:3px dashed #0fb5a3"></span>Dashed + filled icon = outfitter found</div>
+      <div><span class="swd" style="border-top:2px dotted #0fb5a3"></span>Dotted + hollow icon = BYO boat</div>
+      <div><span class="swd" style="border-top:2px dotted #0fb5a3;opacity:.55"></span>Faded tail = run continues beyond outfitter water (BYO)</div>
+      <div><span class="sw" style="background:#7fb8e8"></span>Selected big-river section</div>
+      <div><span class="swd" style="border-top:2px dashed #5c6b7a"></span>Thin grey dash = hidden by the toggle</div>
+      <div><span class="sw" style="background:#d24b4b"></span>Dangerous — no watercraft · <span class="sw" style="background:#9aa1a8"></span>not advised</div>
+      <div><span class="mk" style="background:#fff;border-color:#3b4a44"></span>Access point (zoom in to see)</div>
+      <div><span class="dchip d1">mi</span> &lt;100 · <span class="dchip d2">mi</span> 100–250 · <span class="dchip d3">mi</span> 250+ drive</div>
+    </div>
+  </div>
+</div>
+<div id="zoomhint">Zoom in to see put-in / take-out points</div>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <button class="close" onclick="document.getElementById('modal').classList.remove('open')">Close</button>
+    <h2>About this map</h2>
+    <p>A working map of Midwest rivers that are set up for kayaking. <b style="color:var(--green-dark)">Green rivers</b> are runs where motorboats are prohibited (several Michigan rivers have formal bans) or simply can't operate (rapids, carry-in landings, shallow narrow channels), and that hold enough water to float a kayak in a normal May–September season — each card notes where that gets marginal. <b style="color:var(--blue)">Blue rivers</b> are the big shared waterways, shown for orientation without landing detail.</p>
+    <p>Click a river — in the list or on the map — and it lights up route-style from its first put-in (A) to its final take-out (B) while the map holds exactly where you are. Clicking a line on the map also opens that river's state and section in the side list. The only thing that moves the map is expanding a state header (each state has a fixed home view) or a card's "zoom to river" link. Click a selected river again (or tap empty map) to clear. Details open in the inspector at the bottom-left. Access points draw as small white dots that appear as you zoom in (a selected river shows its dots one zoom level earlier). On the map, kayak rivers draw in three dark purple shades by season (darkest = floats into Aug–Sept, lightest = spring–June) so they stand out against forested terrain; the side panel keeps its green season labels. Selecting any river glows it blue. State borders are tinted for orientation (WI green, IL red, IN tan, IA yellow, OH orange, MN purple, MI slate).</p>
+    <h3>Live data</h3>
+    <p>River lines load from OpenStreetMap (Overpass API) when the page opens, so they follow the real channel at any zoom. Flow readings come live from USGS gauges; each green river card shows current cfs against the run's documented minimum. If geometry can't load (no internet), simplified fallback lines are drawn instead.</p>
+    <h3>Landings</h3>
+    <p>Put-in / take-out points were compiled from published paddling guides and public land records: Miles Paddled, WisconsinRiverTrips, Wisconsin Trail Guide, the Kickapoo Valley Reserve guide, the Fabulous Fox Water Trail, Milwaukee Riverkeeper and county park pages. Each popup links its source. A few documented access points aren't pinned yet — they're listed in each river's card.</p>
+    <h3>Coverage — v4</h3>
+    <p>148 rivers across ten states (Missouri's Ozark rivers — Current, Jacks Fork, Eleven Point and friends — joined in v6): Wisconsin (regions SE/NE/W), Illinois (north and south of US-24), Michigan's Lower Peninsula (west and east), Kentucky, West Virginia, Ohio, Minnesota, Indiana, Iowa and Missouri — each new state a curated list of its most-paddled rivers. Put-in/take-out pins (347 so far) cover Wisconsin, Illinois and all of Michigan's Lower Peninsula after a full-run QC pass (v0.2) that verified extents, mileages and access order against DNR, USFS, water-trail and paddling-guide sources; pins, gauge links and sources for the remaining states are being added state by state — their flow ranges are estimates for now.</p>
+    <h3>Drive distances &amp; sort</h3>
+    <p>The chip beside each river is the driving distance from your home base (default O'Hare — change it with the ⌂ button: pick an airport or drop a pin on the map; your choice is saved in the page URL). List chips start as road-factor estimates (~) and upgrade to true driving miles when you select a river; the card then also shows drive time. Color bands: green under 100 mi (day trip), amber 100–250 (weekend), purple 250+ (expedition). Within each section, rivers are sorted by bottom-out risk — all-season rivers first, then thru-July, then spring-only — with the longest run first inside each tier. Every river draws a dashed backup line instantly (hand-traced along its documented course where needed) so selection always highlights something, even offline; solid, exact geometry replaces it as it loads.</p>
+    <h3>Outfitters &amp; campgrounds</h3>
+    <p>Color = season (green floats into Aug–Sept, sky blue thru July, light purple spring–June; navy = big shared rivers). Line style = rentals: DASHED rivers (with filled list icons) have a kayak-rental outfitter identified — most are draft research pending verification, with only the Pere Marquette and Pine linked in the detail window so far. Faint DOTTED rivers (hollow list icons) have no outfitter found yet: bring your own boat. The full outfitter roadmap lives in a companion spreadsheet during vetting.</p>
+    <h3>Time estimates</h3>
+    <p>The "X mi · ~Y hr" figures are deliberately conservative: beginner pace (~2 mph, 2.5 on the fast spring-fed rivers) at the low end of the flow range, and they do NOT include stops — real trips with breaks will run longer. Flow ranges show typical spring-high → late-summer-low readings; "min runnable" is the flow (in cfs) below which the run gets too shallow to enjoy.</p>
+    <h3>Fine print</h3>
+    <p>Rivers change: deadfall moves, access rules change, droughts happen. This map is a planning aid, not a guarantee — check gauges, outfitter reports and land ownership before you paddle. Some listed landings (Herb's, Wild Wolf Inn, Lost Falls, Ayers) are private and need permission; the Wolf below County M requires a Menominee tribal permit; Michigan's Pine and Pere Marquette require a USFS watercraft permit from Memorial Day weekend through Labor Day.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const DATA = %%DATA%%;
+const MIRRORS = ["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter","https://overpass.osm.jp/api/interpreter"];
+const COL = {green:"#178a4c", blue:"#2b6cb0"};   // big rivers: traditional blue (as original)
+const SEASON_COL = {aug:"#0c6b38", jul:"#43a566", jun:"#a5cd73"};          // side panel chips (unchanged)
+const LINE_COL  = {aug:"#0fb5a3", jul:"#2196f3", jun:"#a855f7"};   // turquoise / bright sky / bright purple
+const SEC_COL = {0:"#7fb8e8", 1:"#9aa1a8", 2:"#d24b4b"};            // section highlight: ok / not advised / dangerous
+function hasOutfit(r){ return (r.outfitters && r.outfitters.length) || r.outcand; }
+const CASE_COL = {aug:"#0a6b60", jul:"#0d47a1", jun:"#6b21a8"};   // dark same-hue outlines
+function caseColor(r){
+  if(r.permit) return "#d24b4b";
+  if(r.cls==="blue") return "#14355e";
+  return CASE_COL[r.season] || CASE_COL.aug;
+}
+function weightFactor(){ const z = map.getZoom(); return z<=7 ? 0.75 : (z>=10 ? 1.25 : 1); }
+let lastWF = null;
+function applyZoomWeights(){
+  const f = weightFactor();
+  if(f===lastWF) return;
+  lastWF = f;
+  for(const id in rivers){
+    const st = rivers[id]; if(!st.lineLayer) continue;
+    st.lineLayer.eachLayer(l=>{ if(l.options && l.options.bw) l.setStyle({weight: l.options.bw*f}); });
+  }
+}
+const GLOW_COL   = "#2b6cb0";                                              // selection glow: always blue
+const WINDOW_LABEL = {aug:"into Aug–Sept", jul:"thru July", jun:"May–June"};
+function riverColor(r){ return r.cls==="blue" ? COL.blue : (SEASON_COL[r.season] || SEASON_COL.aug); }   // panel
+function lineColor(r){
+  if(r.cls==="blue") return COL.blue;
+  return LINE_COL[r.season] || LINE_COL.aug;   // season always carries the color; outfitter status = line style
+}
+const STATE_COLORS = {WI:"#178a4c", IL:"#c0392b", IN:"#c8a165", IA:"#d4b106", OH:"#d97a1a", MN:"#7d4fa8", MI:"#5a7fa8", KY:"#6b8e23", WV:"#7b5d45", MO:"#3d8f8f"};
+const NE_KEY = {wisconsin:"Wisconsin",rock:"Rock",chippewa:"Chippewa","fox-lower":"Fox","wolf-lower":"Wolf",stcroix:"St. Croix",menominee:"Menominee","rock-il":"Rock","fox-chain":"Fox","illinois-r":"Illinois","desplaines":"Des Plaines","kankakee":"Kankakee",manistee:"Manistee",muskegon:"Muskegon","grand-mi":"Grand",kalamazoo:"Kalamazoo",stjoseph:"St. Joseph",
+ "kentucky-r":"Kentucky","cumberland-ky":"Cumberland","ohio-r":"Ohio","new-wv":"New",kanawha:"Kanawha",maumee:"Maumee",muskingum:"Muskingum","minnesota-r":"Minnesota",wabash:"Wabash","cedar-ia":"Cedar","desmoines-r":"Des Moines","green-ky":"Green","licking-ky":"Licking","missouri-r":"Missouri",meramec:"Meramec",gasconade:"Gasconade"};
+const MARKER_ZOOM = 10;
+
+/* ---------- map ---------- */
+const map = L.map("map",{zoomControl:true, preferCanvas:false});
+/* one fixed home view per state (user preference: Chicagoland-anchored region views) */
+const STATE_VIEW = {WI:[43.25,-87.85], IL:[41.85,-87.85], MI:[42.79,-86.10],
+  KY:[37.70,-85.70], WV:[38.70,-80.80], OH:[40.20,-82.80], MN:[46.00,-94.50], IN:[40.20,-86.20], IA:[42.10,-93.60], MO:[37.60,-91.50]};
+/* regional home views */
+const REGION_VIEW = {se:[43.25,-87.85], ne:[44.60,-88.40], w:[43.60,-90.60], n:[45.90,-91.20],
+  "il-n":[41.85,-87.85], "il-s":[39.80,-89.30], "mi-w":[42.79,-86.10], "mi-e":[44.30,-84.10]};
+const REGION_LABEL = {se:"Southeast", ne:"Northeast", w:"West", n:"North",
+  "il-n":"North of US-24", "il-s":"South of US-24", "mi-w":"West Lower Peninsula", "mi-e":"East Lower Peninsula"};
+const STATE_ZOOM = 7;   // ≈30-mi scale bar; whole state visible
+map.setView([42.5,-87.9], STATE_ZOOM);   // home: Chicagoland between the three states
+const baseMuted = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:19,subdomains:"abcd",attribution:"&copy; OpenStreetMap &copy; CARTO"});
+const baseOSM = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap contributors"});
+const baseTopo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",{maxZoom:17,attribution:"&copy; OpenStreetMap, SRTM · OpenTopoMap (CC-BY-SA)"});
+const baseSat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:"Esri World Imagery"});
+const baseHot = L.tileLayer("https://tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png",{maxZoom:19,subdomains:"ab",attribution:"&copy; OpenStreetMap contributors, Tiles: HOT/OSM France"});
+baseHot.addTo(map);
+L.control.layers({"Map":baseHot,"Classic OSM":baseOSM,"Muted":baseMuted,"Topo":baseTopo,"Satellite":baseSat},null,{position:"topright"}).addTo(map);
+L.control.scale({imperial:true,metric:false}).addTo(map);
+map.createPane("states").style.zIndex = 350;
+map.createPane("halo").style.zIndex = 397;
+map.createPane("casing").style.zIndex = 398;
+map.createPane("lines").style.zIndex = 399;
+
+/* ---------- state shading: tinted borders + faint interior wash ---------- */
+Object.entries(DATA.states || {}).forEach(([code, rings])=>{
+  const c = STATE_COLORS[code]; if(!c) return;
+  rings.forEach(ring=>{
+    L.polygon(ring,{pane:"states",color:c,weight:1.5,opacity:0.45,fill:false,interactive:false}).addTo(map);
+  });
+});
+
+/* ---------- helpers ---------- */
+function dpSimplify(pts, tol){
+  if(pts.length<3) return pts;
+  const keep = new Uint8Array(pts.length); keep[0]=keep[pts.length-1]=1;
+  const stack=[[0,pts.length-1]];
+  while(stack.length){
+    const [a,b]=stack.pop();
+    let dmax=0, idx=0;
+    const ax=pts[a][1],ay=pts[a][0],bx=pts[b][1],by=pts[b][0];
+    const dx=bx-ax,dy=by-ay,len2=dx*dx+dy*dy;
+    for(let i=a+1;i<b;i++){
+      const px=pts[i][1],py=pts[i][0];
+      let t=len2?((px-ax)*dx+(py-ay)*dy)/len2:0; t=Math.max(0,Math.min(1,t));
+      const qx=ax+t*dx-px, qy=ay+t*dy-py, d=qx*qx+qy*qy;
+      if(d>dmax){dmax=d;idx=i;}
+    }
+    if(Math.sqrt(dmax)>tol){keep[idx]=1;stack.push([a,idx],[idx,b]);}
+  }
+  const out=[]; for(let i=0;i<pts.length;i++) if(keep[i]) out.push(pts[i]);
+  return out;
+}
+function splitByLat(pts, lmin, lmax){
+  const segs=[]; let cur=[];
+  for(const p of pts){
+    if(p[0]>=lmin && p[0]<=lmax) cur.push(p);
+    else if(cur.length){ if(cur.length>1) segs.push(cur); cur=[]; }
+  }
+  if(cur.length>1) segs.push(cur);
+  return segs;
+}
+function distDeg(p, segs){ // min distance (deg, lat-scaled) point -> polylines
+  const cosl=Math.cos(p[0]*Math.PI/180); let best=1e9;
+  for(const s of segs){
+    for(let i=0;i<s.length-1;i++){
+      const ax=s[i][1]*cosl, ay=s[i][0], bx=s[i+1][1]*cosl, by=s[i+1][0];
+      const px=p[1]*cosl, py=p[0];
+      const dx=bx-ax, dy=by-ay, l2=dx*dx+dy*dy;
+      let t=l2?((px-ax)*dx+(py-ay)*dy)/l2:0; t=Math.max(0,Math.min(1,t));
+      const qx=ax+t*dx-px, qy=ay+t*dy-py, d=qx*qx+qy*qy;
+      if(d<best) best=d;
+    }
+  }
+  return Math.sqrt(best);
+}
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+const host = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return "source"; } };
+
+/* ---------- state ---------- */
+const rivers = {};           // id -> {def, lineLayer, markerLayer, segs, loaded, visible, open}
+DATA.rivers.forEach(r => rivers[r.id] = {def:r, segs:null, loaded:false, failed:false, visible:true, markers:[]});
+const landingsByRiver = {};
+DATA.landings.forEach(l => { (landingsByRiver[l[0]] = landingsByRiver[l[0]]||[]).push(l); });
+
+/* ---------- markers ---------- */
+const TYPE_LABEL = {p:"Put-in", t:"Take-out", b:"Put-in / take-out"};
+function makeMarker(l, riverName){
+  const [rid,name,town,typ,lat,lon,src] = l;
+  const icon = L.divIcon({className:"", html:`<div class="lm" title="${esc(name)}"></div>`, iconSize:[9,9], iconAnchor:[4.5,4.5], popupAnchor:[0,-6]});
+  const m = L.marker([lat,lon],{icon, keyboard:false});
+  m._landing = l;
+  const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+  m.bindPopup(()=>{
+    const approx = m._approx ? `<div class="approx">⚠ Position approximate — verify against the source.</div>` : "";
+    return `<div class="pp"><h3>${esc(name)}</h3>
+      <div class="meta">${esc(TYPE_LABEL[typ])} · ${esc(town)} · ${esc(riverName)}</div>
+      ${approx}
+      <div class="links"><a href="${esc(src)}" target="_blank" rel="noopener">${esc(host(src))} ↗</a>
+      <a href="${gmaps}" target="_blank" rel="noopener">Directions ↗</a></div>
+      <div class="coords">${lat.toFixed(5)}, ${lon.toFixed(5)}</div></div>`;
+  });
+  m.bindTooltip(name,{direction:"top",offset:[0,-10],opacity:.92});
+  return m;
+}
+for(const id in rivers){
+  const st = rivers[id];
+  const group = L.layerGroup();
+  (landingsByRiver[id]||[]).forEach(l => { const m = makeMarker(l, st.def.name); st.markers.push(m); group.addLayer(m); });
+  st.markerLayer = group;
+}
+function refreshMarkerVisibility(){
+  const z = map.getZoom();
+  document.getElementById("map").classList.toggle("z13", z>=13);
+  let anyHidden=false;
+  for(const id in rivers){
+    const st = rivers[id];
+    // dots are zoom-gated even for the selected river; selection just earns one extra zoom level
+    const want = st.visible && !hiddenByToggle(id) && st.markers.length && (z>=11 || (st.open && z>=10));
+    const has = map.hasLayer(st.markerLayer);
+    if(want && !has) st.markerLayer.addTo(map);
+    if(!want && has) map.removeLayer(st.markerLayer);
+    if(st.visible && st.markers.length && !want) anyHidden=true;
+  }
+  document.getElementById("zoomhint").style.display = anyHidden ? "block" : "none";
+}
+map.on("zoomend", refreshMarkerVisibility);
+map.on("zoomend", applyZoomWeights);
+
+/* ---------- river lines ---------- */
+function drawRiver(id, segs, isFallback){
+  const st = rivers[id]; const cls = st.def.cls;
+  if(st.lineLayer) map.removeLayer(st.lineLayer);
+  const g = L.layerGroup();
+  st.fb = isFallback;
+  const ghost = hiddenByToggle(id);   // toggled-off big/motor water: thin grey dash — FULL opacity, recedes by being thin+grey
+  const outfitted = hasOutfit(st.def);
+  const isBlue = cls==="blue";
+  // EVERY river is dashed or dotted — big rivers included
+  // widths rolled back (v8.1 widening + round caps were swallowing the dash gaps)
+  const w = ghost ? 1.8 : (isBlue ? 3 : (outfitted ? 3 : 2));
+  const dash = ghost ? "4 6" : (isBlue ? "10 9" : (outfitted ? "8 7" : "1 5 7 5"));
+  const op = ghost ? 1.0 : ((isBlue || outfitted) ? (isFallback?0.6:0.9) : (isFallback?0.5:0.7));
+  const col = ghost ? "#5c6b7a" : lineColor(st.def);
+  const f = weightFactor();
+  const dotty = !ghost && !isBlue && !outfitted;   // dot-dash rivers keep round caps so dots stay round
+  // core-box fade: on outfitted rivers whose full run extends beyond livery water,
+  // the portion OUTSIDE def.core draws in the faint BYO dot-dash style (line fades to bring-your-own)
+  const splitCore = (!ghost && !isBlue && outfitted && st.def.core) ? st.def.core : null;
+  segs.forEach(seg=>{
+    const caseCol = ghost ? "#ffffff" : caseColor(st.def);
+    const cw = ghost ? 4 : w+3;
+    const chunks = splitCore ? splitByCore(seg, splitCore) : [{pts:seg,faded:false}];
+    chunks.forEach(ch=>{
+      if(ch.pts.length<2) return;
+      const fw = ch.faded ? 2 : w;                       // faded = BYO weight
+      const fcw = ch.faded ? 5 : cw;
+      const fd = ch.faded ? "1 5 7 5" : dash;            // faded = BYO dot-dash
+      const fop = ch.faded ? (isFallback?0.4:0.55) : op; // and fainter still
+      // BUTT caps: a round cap extends each dash by half the stroke width and fills the gap — butt keeps gaps true
+      L.polyline(ch.pts,{pane:"casing",color:caseCol,weight:fcw*f,bw:fcw,opacity:ghost?0.85:(ch.faded?(isFallback?0.4:0.7):(isFallback?0.55:0.9)),dashArray:fd,lineCap:"butt",interactive:false}).addTo(g);
+      L.polyline(ch.pts,{pane:"lines",color:col,weight:fw*f,bw:fw,opacity:fop,dashArray:fd,lineCap:(ch.faded||dotty)?"round":"butt",interactive:false}).addTo(g);
+    });
+    if(!ghost){
+      const hit = L.polyline(seg,{pane:"lines",color:"#000",opacity:0,weight:14,lineCap:"round"});
+      hit.on("click",()=>{ window.__riverHit = true; openCard(id); });
+      hit.bindTooltip(st.def.name + (isFallback?" (approximate line)":""),{sticky:true,opacity:.92});
+      hit.addTo(g);
+    }
+  });
+  st.lineLayer = g; st.segs = segs;
+  if(st.visible) g.addTo(map);   // ghosts stay visible too (faint) — only interaction is removed
+  if(st.open) updateHighlight();
+}
+/* split a polyline into runs inside/outside the core box [S,W,N,E];
+   the crossing point is duplicated on both sides so the line stays continuous */
+function splitByCore(seg, box){
+  const s=box[0], w=box[1], n=box[2], e=box[3], res=[];
+  const inside = p => p[0]>=s && p[0]<=n && p[1]>=w && p[1]<=e;
+  let cur=[seg[0]], curIn=inside(seg[0]);
+  for(let i=1;i<seg.length;i++){
+    const p=seg[i], pin=inside(p);
+    if(pin===curIn){ cur.push(p); continue; }
+    if(cur.length>1) res.push({pts:cur,faded:!curIn});      // close the finished run
+    cur=[cur[cur.length-1], p]; curIn=pin;                  // transition segment takes the NEW style
+  }
+  if(cur.length>1 || !res.length) res.push({pts:cur,faded:!curIn});
+  return res;
+}
+/* route-style highlight for the selected river (Google-Maps-directions look).
+   Never depends on the network: falls back to the ordered landing chain
+   (first put-in → final take-out) until real geometry arrives. */
+let haloLayer = null;
+function routeGeom(id){
+  const st = rivers[id];
+  if(st.segs && st.segs.length) return st.segs;
+  const ls = (landingsByRiver[id]||[]).map(l=>[l[4],l[5]]);
+  return ls.length>1 ? [ls] : [];
+}
+function updateHighlight(){
+  if(haloLayer){ map.removeLayer(haloLayer); haloLayer = null; }
+  const id = ids.find(i=>rivers[i].open);
+  if(!id) return;
+  const st = rivers[id];
+  const segs = routeGeom(id);
+  const group = L.layerGroup();
+  const w = 16;
+  segs.forEach(seg=>{
+    L.polyline(seg,{pane:"halo",color:GLOW_COL,weight:w,opacity:0.35,lineCap:"round",lineJoin:"round",interactive:false}).addTo(group);
+  });
+  const ls = landingsByRiver[id]||[];
+  if(ls.length>1){
+    const a = ls[0], b = ls[ls.length-1];
+    group.addLayer(L.marker([a[4],a[5]],{icon:L.divIcon({className:"",html:'<div class="ab a" title="Start — first put-in">A</div>',iconSize:[17,17],iconAnchor:[8.5,8.5]}),interactive:false,keyboard:false}));
+    group.addLayer(L.marker([b[4],b[5]],{icon:L.divIcon({className:"",html:'<div class="ab b" title="End — final take-out">B</div>',iconSize:[17,17],iconAnchor:[8.5,8.5]}),interactive:false,keyboard:false}));
+  }
+  if(group.getLayers().length){ haloLayer = group; haloLayer.addTo(map); }
+}
+function clearSelection(){
+  let changed=false;
+  Object.keys(rivers).forEach(k=>{
+    if(rivers[k].open){ changed=true; }
+    rivers[k].open=false;
+    const d=document.getElementById("riv-"+k);
+    if(d){ d.classList.remove("open"); d.querySelector(".riv-row").setAttribute("aria-expanded","false"); }
+  });
+  if(changed){ clearSection(); updateHighlight(); refreshMarkerVisibility(); closeInspector(); }
+}
+map.on("click", (e)=>{
+  if(settingHome){ settingHome=false; document.getElementById("map").style.cursor=""; setHome(e.latlng.lat, e.latlng.lng, "PIN"); return; }
+  if(window.__riverHit){ window.__riverHit=false; return; }
+  clearSelection();
+});
+function neSegs(id){
+  const st = rivers[id];
+  if(!(NE_KEY[id] && DATA.ne[NE_KEY[id]])) return [];
+  let segs = DATA.ne[NE_KEY[id]];
+  if(st.def.latmin!=null) segs = segs.flatMap(s=>splitByLat(s, st.def.latmin, st.def.latmax));
+  if(id==="fox-lower") segs = segs.filter(s=>s[0][0]>43.5);
+  return segs.filter(s=>s.length>1);
+}
+function fallbackFor(id){
+  // QC guarantee: every river has SOME offline line — landing chain, hand-traced spine, or coarse NE geometry.
+  const st = rivers[id];
+  const ls = (landingsByRiver[id]||[]).map(l=>[l[4],l[5]]);
+  if(st.def.cls==="green"){
+    if(ls.length>1) return [ls];
+    if(st.def.spine) return [st.def.spine];
+    return neSegs(id);
+  }
+  const ne = neSegs(id);
+  if(ne.length) return ne;
+  if(st.def.spine) return [st.def.spine];
+  return ls.length>1 ? [ls] : [];
+}
+async function fetchRiver(id){
+  const st = rivers[id]; const d = st.def;
+  const names = Array.isArray(d.qname) ? d.qname : [d.qname];
+  const nameFilter = names.length>1
+    ? `["name"~"^(${names.map(n=>n.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|")})$"]`
+    : `["name"="${names[0]}"]`;
+  const q = `[out:json][timeout:60];way["waterway"~"^(river|stream)$"]${nameFilter}(${d.bbox.join(",")});out geom qt;`;
+  for(const m of MIRRORS){
+    const ctl = new AbortController();
+    const timer = setTimeout(()=>ctl.abort(), 25000);
+    try{
+      const res = await fetch(m,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"data="+encodeURIComponent(q),signal:ctl.signal});
+      clearTimeout(timer);
+      if(!res.ok) continue;
+      const j = await res.json();
+      if(!j.elements || !j.elements.length) continue;
+      const tol = d.cls==="green" ? 0.00012 : 0.0004;
+      let segs = j.elements.filter(e=>e.geometry && e.geometry.length>1)
+        .map(e=>dpSimplify(e.geometry.map(p=>[p.lat,p.lon]), tol));
+      if(d.latmin!=null) segs = segs.flatMap(s=>splitByLat(s,d.latmin,d.latmax));
+      segs = segs.filter(s=>s.length>1);
+      if(!segs.length) continue;
+      return segs;
+    }catch(e){ clearTimeout(timer); /* try next mirror */ }
+  }
+  return null;
+}
+let loadedCount = 0;
+const ids = Object.keys(rivers);
+function setProgress(){
+  const pct = Math.round(100*loadedCount/ids.length);
+  document.getElementById("stBar").style.width = pct+"%";
+  const stEl = document.getElementById("status");
+  if(loadedCount>=ids.length){
+    const fails = ids.filter(i=>rivers[i].failed).length;
+    stEl.classList.add("done");
+    document.getElementById("stTxt").textContent = fails ? `Geometry loaded (${ids.length-fails}/${ids.length}) — dashed lines are approximate` : "River geometry loaded from OpenStreetMap";
+    if(fails===ids.length){ stEl.classList.add("err"); document.getElementById("stTxt").textContent="Offline? Showing approximate lines — reopen with internet for exact geometry"; }
+  }
+}
+async function loadRound(roundIds){
+  const failed = [];
+  const queue = roundIds.slice();
+  await Promise.all(Array.from({length:4}, async ()=>{
+    while(queue.length){
+      const id = queue.shift();
+      const st = rivers[id];
+      if(st.loaded || st.fetching){   // priority fetch already handled (or handling) this one
+        const chip = document.querySelector(`.chip[data-r="${id}"]`);
+        if(chip) chip.classList.remove("pending");
+        loadedCount++; setProgress();
+        continue;
+      }
+      const segs = await fetchRiver(id);
+      if(segs){
+        drawRiver(id, segs, false); st.loaded = true; verifyLandings(id);
+        const chip = document.querySelector(`.chip[data-r="${id}"]`);
+        if(chip) chip.classList.remove("pending");
+        loadedCount++; setProgress();
+      } else failed.push(id);
+    }
+  }));
+  return failed;
+}
+async function loadAll(){
+  let failed = await loadRound(ids);
+  if(failed.length) failed = await loadRound(failed);   // one automatic retry round
+  failed.forEach(id=>{
+    const st = rivers[id];
+    st.failed = true; drawRiver(id, fallbackFor(id), true);
+    const chip = document.querySelector(`.chip[data-r="${id}"]`);
+    if(chip){ chip.classList.remove("pending"); chip.classList.add("fail"); }
+    loadedCount++; setProgress();
+  });
+}
+function verifyLandings(id){
+  const st = rivers[id];
+  if(!st.segs) return;
+  st.markers.forEach(m=>{
+    const l = m._landing;
+    const d = distDeg([l[4],l[5]], st.segs);
+    if(d > 0.0035) m._approx = true;   // ~390 m
+  });
+}
+
+/* ---------- big-river toggle (default OFF) ---------- */
+function hiddenByToggle(id){
+  const d = rivers[id].def;
+  if(document.body.classList.contains("nobig") && (d.cls==="blue" || d.motorok)) return true;
+  // BYO toggle: greens with no outfitter (faint dot-dash rivers) ghost out too when hidden
+  return document.body.classList.contains("nobyo") && d.cls==="green" && !hasOutfit(d);
+}
+function keepOnlyState(sgroup){
+  document.querySelectorAll(".state-hdr").forEach(h=>{
+    const g = h.nextElementSibling;
+    const keep = g === sgroup;
+    h.classList.toggle("openb", keep);
+    if(g) g.classList.toggle("openb", keep);
+  });
+}
+function expandAllStates(){
+  document.querySelectorAll(".state-hdr").forEach(h=>{
+    h.classList.add("openb");
+    if(h.nextElementSibling) h.nextElementSibling.classList.add("openb");
+  });
+}
+function applyBigToggle(){
+  const off = !document.getElementById("bigToggle").checked;
+  document.body.classList.toggle("nobig", off);
+  document.getElementById("bigState").textContent = off ? "Hidden" : "Visible";
+  let clearedNeeded = false;
+  for(const id in rivers){
+    const st = rivers[id];
+    if(st.def.cls==="blue" || st.def.motorok){
+      if(off && st.open) clearedNeeded = true;
+      if(st.segs && st.visible) drawRiver(id, st.segs, st.fb);   // redraw ghost or full
+    }
+  }
+  if(clearedNeeded) clearSelection();
+  expandAllStates();          // toggling always re-expands every state to its submenus
+  refreshMarkerVisibility();
+}
+function applyByoToggle(){
+  const off = !document.getElementById("byoToggle").checked;
+  document.body.classList.toggle("nobyo", off);
+  document.getElementById("byoState").textContent = off ? "Hidden" : "Visible";
+  let clearedNeeded = false;
+  for(const id in rivers){
+    const st = rivers[id];
+    if(st.def.cls==="green" && !hasOutfit(st.def)){
+      if(off && st.open) clearedNeeded = true;
+      if(st.segs && st.visible) drawRiver(id, st.segs, st.fb);   // redraw ghost or full
+    }
+  }
+  if(clearedNeeded) clearSelection();
+  expandAllStates();
+  refreshMarkerVisibility();
+}
+
+/* ---------- big-river section highlight ---------- */
+let secLayer = null, secSel = null;
+function clearSection(){
+  if(secLayer){ map.removeLayer(secLayer); secLayer = null; }
+  secSel = null;
+  document.querySelectorAll(".secrow.on").forEach(e=>e.classList.remove("on"));
+}
+function highlightSection(id, idx){
+  const secs = rivers[id].def.sections || [];
+  const s = secs[idx]; if(!s) return;
+  if(secSel === id+"|"+idx){ clearSection(); return; }   // re-click clears
+  clearSection();
+  secSel = id+"|"+idx;
+  secLayer = L.polyline(s[2], {pane:"halo", color:SEC_COL[s[1]]||SEC_COL[0], weight:11, opacity:0.65, lineCap:"round", interactive:false}).addTo(map);
+  const row = document.querySelector(`.secrow[data-sr="${id}"][data-si="${idx}"]`);
+  if(row) row.classList.add("on");
+}
+document.addEventListener("click", e=>{
+  const sr = e.target.closest(".secrow");
+  if(sr){ highlightSection(sr.dataset.sr, +sr.dataset.si); }
+});
+
+/* ---------- home base + drive distances ---------- */
+const HOME_PRESETS = {ORD:[41.9803,-87.9090], MDW:[41.7868,-87.7522], MKE:[42.9475,-87.8966],
+  MSP:[44.8848,-93.2223], STL:[38.7487,-90.3700], DTW:[42.2162,-83.3554], CLE:[41.4117,-81.8498], LGA:[40.7769,-73.8740]};
+let HOME = {lat:HOME_PRESETS.ORD[0], lon:HOME_PRESETS.ORD[1], label:"ORD"};
+(function(){  // restore from URL hash: #home=lat,lon,label
+  const m = location.hash.match(/home=([\d.-]+),([\d.-]+),?([\w%-]*)/);
+  if(m){ HOME = {lat:+m[1], lon:+m[2], label:decodeURIComponent(m[3]||"PIN")}; }
+})();
+function havMi(aLat,aLon,bLat,bLon){
+  const R=3958.8, toR=Math.PI/180;
+  const dLa=(bLat-aLat)*toR, dLo=(bLon-aLon)*toR;
+  const h=Math.sin(dLa/2)**2 + Math.cos(aLat*toR)*Math.cos(bLat*toR)*Math.sin(dLo/2)**2;
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+function riverTarget(id){
+  const ls = landingsByRiver[id]||[];
+  if(ls.length) return [ls[0][4], ls[0][5]];
+  const sp = rivers[id].def.spine;
+  if(sp) return sp[0];
+  const [s,w,n,e] = rivers[id].def.bbox;
+  return [(s+n)/2,(w+e)/2];
+}
+const ROAD_FACTOR = 1.25;
+function distEst(id){ const t=riverTarget(id); return Math.round(havMi(HOME.lat,HOME.lon,t[0],t[1])*ROAD_FACTOR); }
+function distBand(mi){ return mi<100 ? "d1" : mi<250 ? "d2" : "d3"; }
+const driveCache = {};   // `${home}|${id}` -> {mi, min}
+const dKey = id => `${HOME.lat.toFixed(3)},${HOME.lon.toFixed(3)}|${id}`;
+function chipHrs(mi, min){
+  const h = (min!=null) ? min/60 : mi/55;   // 55 mph average until a real route is fetched
+  const r = Math.round(h*10)/10;
+  return r>=10 ? String(Math.round(r)) : String(r);
+}
+function distChipHTML(id){
+  const dc = driveCache[dKey(id)];
+  const mi = dc ? dc.mi : distEst(id);
+  const hr = chipHrs(mi, dc ? dc.min : null);
+  return `<span class="dchip ${distBand(mi)}" data-dr="${id}" title="Drive from ${esc(HOME.label)}${dc?"":" (estimate)"}">${dc?"":"~"}${mi} mi / ${hr} hr</span>`;
+}
+function renderDistChips(){
+  document.querySelectorAll(".dchip[data-dr]").forEach(el=>{ el.outerHTML = distChipHTML(el.dataset.dr); });
+}
+function fmtDrive(min){
+  const h = Math.floor(min/60), m = Math.round(min%60);
+  return h ? `${h} h ${String(m).padStart(2,"0")} m` : `${m} min`;
+}
+async function fetchDrive(id){
+  const key = dKey(id);
+  if(driveCache[key]) return;
+  const t = riverTarget(id);
+  try{
+    const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${HOME.lon},${HOME.lat};${t[1]},${t[0]}?overview=false`);
+    const j = await res.json();
+    if(j.routes && j.routes[0]){
+      driveCache[key] = {mi: Math.round(j.routes[0].distance/1609.34), min: j.routes[0].duration/60};
+      renderDistChips();
+      const st = rivers[id];
+      if(st.open){ const d=document.getElementById("riv-"+id); if(d) d.querySelector(".card").innerHTML = cardHTML(st.def); }
+    }
+  }catch(e){ /* keep the estimate */ }
+}
+let settingHome = false;
+function setHome(lat,lon,label){
+  HOME = {lat,lon,label};
+  history.replaceState(null,"",`#home=${lat.toFixed(4)},${lon.toFixed(4)},${encodeURIComponent(label)}`);
+  document.getElementById("homeBtn").textContent = "⌂ " + label;
+  renderDistChips();
+  const openId = ids.find(i=>rivers[i].open);
+  if(openId){ const d=document.getElementById("riv-"+openId); if(d) d.querySelector(".card").innerHTML = cardHTML(rivers[openId].def); fetchDrive(openId); }
+}
+
+/* ---------- gauges ---------- */
+const gaugeState = {};
+function gaugeChipHTML(g){
+  const gs = gaugeState[g.site];
+  if(!gs) return `<span class="gchip" data-g="${g.site}">— cfs</span>`;
+  return renderChip(g, gs);
+}
+function classify(g, v){
+  if(g.min==null) return ["", "cfs"];
+  if(v < g.min) return ["low","LOW"];
+  if(v < g.lo) return ["marg","marginal"];
+  if(g.flood && v > g.flood) return ["high","HIGH"];
+  if(v > g.hi*2.5) return ["high","high"];
+  return ["ok","good"];
+}
+function renderChip(g, gs){
+  const [cls,word] = classify(g, gs.v);
+  return `<span class="gchip ${cls}" data-g="${g.site}" title="${esc(g.name)} — updated ${esc(gs.t)}">${Math.round(gs.v)} cfs · ${word}</span>`;
+}
+async function loadGauges(){
+  const sites = [...new Set(DATA.rivers.flatMap(r=>[r.gauge,r.gauge2].filter(Boolean).map(g=>g.site)))];
+  try{
+    const res = await fetch(`https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${sites.join(",")}&parameterCd=00060&siteStatus=all`);
+    const j = await res.json();
+    (j.value.timeSeries||[]).forEach(ts=>{
+      try{
+        const site = ts.sourceInfo.siteCode[0].value;
+        const vals = ts.values[0].value;
+        const last = vals[vals.length-1];
+        if(last && last.value!=="-999999") gaugeState[site] = {v:+last.value, t:new Date(last.dateTime).toLocaleString()};
+      }catch(e){}
+    });
+    const openId = ids.find(i=>rivers[i].open);   // refresh the open card with the live reading
+    if(openId){ const d=document.getElementById("riv-"+openId); if(d) d.querySelector(".card").innerHTML = cardHTML(rivers[openId].def); }
+  }catch(e){ /* offline — cards keep the typical range */ }
+}
+
+/* ---------- panel ---------- */
+/* compact Excel-style mini-table shown inline in the list */
+function fmtHours(h){
+  const r = Math.ceil(h*2)/2;                      // round UP to half hour — stay conservative
+  if(r < 1) return Math.round(h*60)+" min";
+  return (r%1 ? r.toFixed(1) : r) + " hr";
+}
+function cardHTML(r){
+  const rows = [];
+  const link = s=>`https://waterdata.usgs.gov/monitoring-location/${s}/`;
+  // Flow: live reading + typical seasonal range (spring high → late-summer low) + gauge hyperlink
+  if(r.gauge || r.fhi!=null){
+    const parts = [];
+    if(r.gauge) parts.push(`<a href="${link(r.gauge.site)}" target="_blank" rel="noopener">${esc(r.gauge.name)} ↗</a>${r.gauge2?` <a href="${link(r.gauge2.site)}" target="_blank" rel="noopener">(2nd) ↗</a>`:""}`);
+    const sub = [];
+    if(r.gauge){
+      const gs = gaugeState[r.gauge.site];
+      if(gs){ const [c,word] = classify(r.gauge, gs.v); sub.push(`now ${Math.round(gs.v)} cfs${word && word!=="cfs" ? " — "+word : ""}`); }
+    }
+    if(r.fhi!=null) sub.push(`typ. ${r.fhi}→${r.flo} cfs spring→late summer${r.fest?" (est.)":""}`);
+    if(r.gauge && r.gauge.min!=null) sub.push(`min runnable ~${r.gauge.min} cfs`);
+    if(!r.gauge) sub.push(r.gnone ? "no USGS gauge" : "gauge link coming");
+    if(sub.length) parts.push(`<span class="sub">${sub.join(" · ")}</span>`);
+    rows.push(`<tr><td>Flow</td><td>${parts.join("<br>")}</td></tr>`);
+  }
+  if(r.cls==="green" && r.season) rows.push(`<tr><td>Season</td><td><span class="szn" style="background:${SEASON_COL[r.season]}">${WINDOW_LABEL[r.season]}</span></td></tr>`);
+  const n = (landingsByRiver[r.id]||[]).length;
+  const bits = [];
+  if(r.miles!=null) bits.push(`${r.miles} mi · ~${fmtHours(r.miles/(r.mph||2))} paddling`);
+  const dc = driveCache[dKey(r.id)];
+  bits.push(dc ? `${dc.mi} mi / ${fmtDrive(dc.min)} drive from ${esc(HOME.label)}`
+              : `~${distEst(r.id)} mi drive from ${esc(HOME.label)} (est.)`);
+  if(n) bits.push(`${n} landing spot${n===1?"":"s"}`);
+  bits.push(`<a href="#" class="detbtn" data-d="${r.id}">details</a> · <a href="#" class="zoomlink" data-z="${r.id}">zoom to river</a>`);
+  rows.push(`<tr><td>More</td><td class="mini-actions">${bits.join(" · ")}</td></tr>`);
+  return `<table class="mt">${rows.join("")}</table>`;
+}
+/* full prose lives in the bottom-left inspector */
+function runLegs(r){
+  const ls = landingsByRiver[r.id]||[];
+  if(ls.length<2) return null;
+  const raw=[]; let tot=0;
+  for(let i=1;i<ls.length;i++){ const d=havMi(ls[i-1][4],ls[i-1][5],ls[i][4],ls[i][5]); raw.push(d); tot+=d; }
+  const scale = (r.miles && tot>0) ? r.miles/tot : 1.45;
+  let cum=0;
+  return ls.map((l,i)=>{
+    if(i===0) return {name:l[1], leg:null, cum:0};
+    const leg = raw[i-1]*scale; cum += leg;
+    return {name:l[1], leg, cum};
+  });
+}
+const rmi = v => v<10 ? (Math.round(v*10)/10) : Math.round(v);
+function openInspector(r){
+  const parts = [];
+  parts.push(`<h3>${esc(r.name)}</h3>`);
+  // 1) Paddling-distance widget (dark blue) — 2) open-season widget — 3) River-flow widget (light blue) — 4) motors flag
+  const top = [];
+  if(r.miles!=null) top.push(`<span class="pwidget">${r.miles} mi · ~${fmtHours(r.miles/(r.mph||2))} paddling</span>`);
+  if(r.cls==="green" && r.season) top.push(`<span class="szn" style="background:${SEASON_COL[r.season]}">${WINDOW_LABEL[r.season]}</span>`);
+  parts.push(`<div>${top.join(" ")}</div>`);
+  if(r.fhi!=null) parts.push(`<div><span class="fwidget">typ. ${r.fhi}→${r.flo} cfs${r.fest?" (est.)":""}${r.gauge&&r.gauge.min!=null?` · min ~${r.gauge.min}`:""}</span></div>`);
+  parts.push(`<div><span class="badge ${r.cls==='green'?'g':'b'}">${r.cls==='green'?'Non-motorized kayak water':'Big river — shared with motors'}</span></div>`);
+  // The Run: stop list with per-leg widgets where landings exist; prose otherwise
+  const legs = runLegs(r);
+  if(legs){
+    parts.push(`<h4>The run</h4><ul class="runlist">${legs.map(g=>{
+      const sub = g.leg==null ? "start" : `${rmi(g.leg)} mi / ${fmtHours(g.leg/(r.mph||2))} from last · ${rmi(g.cum)} mi total`;
+      return `<li><span class="rl-name">${esc(g.name)}</span> <span class="rl-leg">— ${sub}</span></li>`;
+    }).join("")}</ul>`);
+  } else if(r.stretch){
+    parts.push(`<h4>The run</h4><p>${r.stretch}</p>`);
+  }
+  if(r.depth) parts.push(`<h4>Summer water</h4><p>${r.depth}</p>`);
+  if(r.watch) parts.push(`<div class="watch">${r.watch}</div>`);
+  if(r.outfitters && r.outfitters.length) parts.push(`<h4>Outfitters — kayak rentals</h4><div class="links1">${r.outfitters.map(o=>`<a href="${esc(o[1])}" target="_blank" rel="noopener">${esc(o[0])} ↗</a>`).join("")}</div>`);
+  if(r.camps && r.camps.length) parts.push(`<h4>Campgrounds</h4><div class="links1">${r.camps.map(c=>`<a href="${esc(c[1])}" target="_blank" rel="noopener">${esc(c[0])} ↗</a>`).join("")}</div>`);
+  if(r.motor) parts.push(`<h4>Motors</h4><p>${r.motor}</p>`);
+  if(r.sources.length) parts.push(`<h4>Sources</h4><div class="srcs">${r.sources.map(s=>`<a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])} ↗</a>`).join("")}</div>`);
+  if(r.unpinned.length) parts.push(`<h4>Documented, not yet pinned</h4><ul>${r.unpinned.map(u=>`<li>${esc(u)}</li>`).join("")}</ul>`);
+  document.getElementById("inspBody").innerHTML = parts.join("");
+  document.getElementById("inspector").classList.add("open");
+}
+function closeInspector(){ document.getElementById("inspector").classList.remove("open"); }
+function buildPanel(){
+  const list = document.getElementById("list");
+  const mkSect = (label,color)=>{ const d=document.createElement("div"); d.className="sect"; d.innerHTML=`<b class="dot" style="background:${color}"></b>${label}`; return d; };
+  const addRiver = (r, container)=>{
+    const st = rivers[r.id];
+    const div = document.createElement("div");
+    div.className = "riv"+(r.cls==="blue"?" blue":"")+(r.motorok?" motorok":"")+((r.cls==="green"&&!hasOutfit(r))?" byo":"");
+    div.id = "riv-"+r.id;
+    const sub = r.cls==="green" ? `${(landingsByRiver[r.id]||[]).length} landings` : "overview only";
+    div.innerHTML = `<div class="riv-row" tabindex="0" role="button" aria-expanded="false">
+        <span class="chip pending" data-r="${r.id}" style="${(r.cls==='blue'||hasOutfit(r))?`background:${lineColor(r)}`:`background:#fff;border:3px solid ${lineColor(r)}`}"></span>
+        <span class="riv-name">${esc(r.name)}<small>${sub}</small></span>
+        ${distChipHTML(r.id)}
+        <button class="eye" title="Show / hide on map" aria-label="Show or hide ${esc(r.name)}">👁</button>
+      </div><div class="card"></div>`;
+    const row = div.querySelector(".riv-row");
+    row.addEventListener("click", e=>{ if(e.target.closest(".eye")) return; toggleCard(r.id); });
+    row.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggleCard(r.id);} });
+    div.querySelector(".eye").addEventListener("click", ()=>{
+      st.visible = !st.visible;
+      div.querySelector(".eye").classList.toggle("off", !st.visible);
+      if(st.lineLayer){ st.visible ? st.lineLayer.addTo(map) : map.removeLayer(st.lineLayer); }
+      refreshMarkerVisibility();
+    });
+    container.appendChild(div);
+  };
+  const STATES = [["WI","Wisconsin"],["IL","Illinois"],["MI","Michigan"],
+    ["KY","Kentucky"],["WV","West Virginia"],["OH","Ohio"],["MN","Minnesota"],["IN","Indiana"],["IA","Iowa"],["MO","Missouri · the Ozarks"]];
+  const STATE_REGIONS = {WI:["se","ne","w","n"], IL:["il-n","il-s"], MI:["mi-w","mi-e"]};
+  const stateEntries = [];
+  // sort: always-on rivers first (aug), then thru-July, then spring-only "sometimes" rivers; longest run breaks ties
+  const SEASON_RANK = {aug:0, jul:1, jun:2};
+  const tier = r => hasOutfit(r) ? (SEASON_RANK[r.season]??3) : 4;   // no outfitter found = bottom tier
+  const bySort = (a,b)=> (tier(a)-tier(b)) || ((b.miles||0)-(a.miles||0));
+  STATES.forEach(([code,label],si)=>{
+    const greens = DATA.rivers.filter(r=>r.state===code && r.cls==="green").sort(bySort);
+    const blues  = DATA.rivers.filter(r=>r.state===code && r.cls==="blue");
+    // state header: tinted like its border color; accordion — opening one collapses the others
+    const hdr = mkSect(`<span class="tri">▸</span>${label} (${greens.length+blues.length})`, STATE_COLORS[code]);
+    hdr.classList.add("toggler","state-hdr","st-"+code);
+    hdr.style.background = STATE_COLORS[code] + "22";   // tint matches the state's border color
+    const grp = document.createElement("div"); grp.className = "sgroup";
+    // everything starts collapsed
+    stateEntries.push({hdr,grp});
+    hdr.addEventListener("click", ()=>{
+      const isOpen = hdr.classList.contains("openb");
+      stateEntries.forEach(s=>{ s.hdr.classList.remove("openb"); s.grp.classList.remove("openb"); });
+      if(!isOpen){
+        hdr.classList.add("openb"); grp.classList.add("openb");
+        // expanding a state is the ONE action that recenters the map (its home view, default zoom)
+        const v = STATE_VIEW[code];
+        if(v) map.setView(v, STATE_ZOOM, {animate:true});
+      }
+    });
+    list.appendChild(hdr); list.appendChild(grp);
+    const regions = STATE_REGIONS[code];
+    if(regions){
+      regions.forEach(rg=>{
+        const rGreens = greens.filter(r=>r.region===rg);
+        if(!rGreens.length) return;
+        const rhdr = mkSect(`<span class="tri">▸</span>${REGION_LABEL[rg]} (${rGreens.length})`,"#178a4c");
+        rhdr.classList.add("toggler","subhdr");
+        const rgrp = document.createElement("div"); rgrp.className = "bgroup";
+        rhdr.addEventListener("click", ()=>{ rhdr.classList.toggle("openb"); rgrp.classList.toggle("openb"); keepOnlyState(grp); });
+        grp.appendChild(rhdr); grp.appendChild(rgrp);
+        rGreens.forEach(r=>addRiver(r,rgrp));
+      });
+    } else {
+      const fhdr = mkSect(`<span class="tri">▸</span>River Float (${greens.length})`,"#178a4c");
+      fhdr.classList.add("toggler","subhdr");
+      const fgrp = document.createElement("div"); fgrp.className = "bgroup";
+      fhdr.addEventListener("click", ()=>{ fhdr.classList.toggle("openb"); fgrp.classList.toggle("openb"); keepOnlyState(grp); });
+      grp.appendChild(fhdr); grp.appendChild(fgrp);
+      greens.forEach(r=>addRiver(r,fgrp));
+    }
+    if(blues.length){
+      const bhdr = mkSect(`<span class="tri">▸</span>Big rivers (${blues.length})`,"#2b6cb0");
+      bhdr.classList.add("toggler","subhdr","bighdr");
+      const bgrp = document.createElement("div"); bgrp.className = "bgroup biggrp";
+      bhdr.addEventListener("click", ()=>{ bhdr.classList.toggle("openb"); bgrp.classList.toggle("openb"); keepOnlyState(grp); });
+      grp.appendChild(bhdr); grp.appendChild(bgrp);
+      blues.forEach(r=>addRiver(r,bgrp));
+    }
+  });
+}
+/* delegated actions: zoom links + details links (list, mini-tables, inspector) */
+document.addEventListener("click", e=>{
+  const z = e.target.closest(".zoomlink,.zoombtn");
+  if(z){ e.preventDefault(); zoomRiver(z.dataset.z); return; }
+  const d = e.target.closest(".detbtn");
+  if(d){ e.preventDefault(); const st = rivers[d.dataset.d]; if(st) openInspector(st.def); }
+});
+function toggleCard(id){
+  const st = rivers[id];
+  const div = document.getElementById("riv-"+id);
+  const wasOpen = st.open;
+  Object.keys(rivers).forEach(k=>{ rivers[k].open=false; const d=document.getElementById("riv-"+k); d.classList.remove("open"); d.querySelector(".riv-row").setAttribute("aria-expanded","false"); });
+  clearSection();
+  if(!wasOpen){
+    st.open = true; div.classList.add("open");
+    div.querySelector(".riv-row").setAttribute("aria-expanded","true");
+    let extra = "";
+    if(st.def.cls==="blue" && st.def.sections){
+      extra = st.def.sections.map((s,i)=>`<div class="secrow" data-sr="${st.def.id}" data-si="${i}"><span class="secdot" style="background:${SEC_COL[s[1]]}"></span>${esc(s[0])}</div>`).join("");
+      // focus mode: collapse this state's small-river subsections
+      const sg = div.closest(".sgroup");
+      if(sg) sg.querySelectorAll(".bgroup:not(.biggrp)").forEach(g=>{ g.classList.remove("openb"); if(g.previousElementSibling) g.previousElementSibling.classList.remove("openb"); });
+    }
+    div.querySelector(".card").innerHTML = cardHTML(st.def) + extra;
+    // selecting a river never moves the map — you hold your place and zoom.
+    fetchDrive(id);   // upgrade the distance estimate to a real driving route
+    // priority-fetch the selected river so the glow follows the ACTUAL route asap
+    if(!st.loaded && !st.fetching){
+      st.fetching = true;
+      fetchRiver(id).then(segs=>{
+        st.fetching = false;
+        if(segs && !st.loaded){
+          drawRiver(id, segs, false); st.loaded = true; verifyLandings(id);
+          const chip = document.querySelector(`.chip[data-r="${id}"]`);
+          if(chip) chip.classList.remove("pending","fail");
+        }
+      }).catch(()=>{ st.fetching = false; });
+    }
+  }
+  updateHighlight();
+  refreshMarkerVisibility();
+  try{ st.open ? openInspector(st.def) : closeInspector(); }catch(e){}
+}
+/* expand the panel to show a river (used by map-line clicks): accordion its state open, expand its subsection */
+function revealInPanel(id){
+  const row = document.getElementById("riv-"+id);
+  if(!row) return;
+  const sub = row.closest(".bgroup");
+  const sg  = row.closest(".sgroup");
+  if(sg && !sg.classList.contains("openb")){
+    document.querySelectorAll(".state-hdr").forEach(h=>{ h.classList.remove("openb"); if(h.nextElementSibling) h.nextElementSibling.classList.remove("openb"); });
+    sg.classList.add("openb");
+    if(sg.previousElementSibling) sg.previousElementSibling.classList.add("openb");
+  }
+  if(sub && !sub.classList.contains("openb")){
+    sub.classList.add("openb");
+    if(sub.previousElementSibling) sub.previousElementSibling.classList.add("openb");
+  }
+}
+function openCard(id){
+  revealInPanel(id);
+  if(!rivers[id].open) toggleCard(id);
+  const el = document.getElementById("riv-"+id);
+  if(el) el.scrollIntoView({block:"nearest"});
+}
+function zoomRiver(id){
+  const st = rivers[id];
+  let b = null;
+  if(st.segs && st.segs.length){ b = L.latLngBounds(st.segs.flat()); }
+  else if((landingsByRiver[id]||[]).length){ b = L.latLngBounds(landingsByRiver[id].map(l=>[l[4],l[5]])); }
+  else { const [s,w,n,e]=st.def.bbox; b = L.latLngBounds([[s,w],[n,e]]); }
+  map.fitBounds(b.pad(0.12));
+}
+
+/* ---------- chrome ---------- */
+document.getElementById("aboutBtn").addEventListener("click",()=>document.getElementById("modal").classList.add("open"));
+document.querySelector("#inspector .close").addEventListener("click", closeInspector);
+document.getElementById("homeBtn").addEventListener("click",(e)=>{ e.stopPropagation(); document.getElementById("homeMenu").classList.toggle("open"); });
+document.getElementById("homeMenu").addEventListener("click",(e)=>{
+  const b = e.target.closest("button[data-h]"); if(!b) return;
+  document.getElementById("homeMenu").classList.remove("open");
+  if(b.dataset.h==="MAP"){ settingHome = true; document.getElementById("map").style.cursor = "crosshair"; }
+  else { const p = HOME_PRESETS[b.dataset.h]; setHome(p[0], p[1], b.dataset.h); }
+});
+document.addEventListener("click",(e)=>{ if(!e.target.closest("#homeMenu,#homeBtn")) document.getElementById("homeMenu").classList.remove("open"); });
+document.getElementById("homeBtn").textContent = "⌂ " + HOME.label;
+document.getElementById("legBtn").addEventListener("click",()=>{
+  const m = document.getElementById("legMore");
+  const open = m.style.display !== "none";
+  m.style.display = open ? "none" : "block";
+  document.getElementById("legBtn").textContent = open ? "▸ more" : "▾ less";
+});
+document.getElementById("modal").addEventListener("click",e=>{ if(e.target.id==="modal") e.target.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") document.getElementById("modal").classList.remove("open"); });
+document.getElementById("panelBtn").addEventListener("click",()=>document.getElementById("panel").classList.toggle("open"));
+
+/* permit-segment overlays (e.g., Wolf through the Menominee Reservation): season-color dash inside a red outline */
+ids.forEach(id=>{
+  const d = rivers[id].def;
+  if(!d.permit_seg) return;
+  L.polyline(d.permit_seg,{pane:"casing",color:"#d24b4b",weight:6,opacity:0.8,dashArray:"8 6",lineCap:"round",interactive:false}).addTo(map);
+  const seg = L.polyline(d.permit_seg,{pane:"lines",color:lineColor(d),weight:3,opacity:0.85,dashArray:"8 6",lineCap:"round"});
+  seg.bindTooltip(d.permit_seg_label,{sticky:true,opacity:.95});
+  seg.addTo(map);
+});
+
+/* ---------- go ---------- */
+document.body.classList.add("nobig");   // large rivers & motor-shared water hidden by default
+document.getElementById("bigToggle").addEventListener("change", applyBigToggle);
+document.getElementById("byoToggle").addEventListener("change", applyByoToggle);
+buildPanel();
+expandAllStates();                      // default: every state open to its submenus
+refreshMarkerVisibility();
+// draw EVERY river's backup line immediately (dashed) — real geometry replaces each as it downloads
+ids.forEach(id=>{ const fb = fallbackFor(id); if(fb.length) drawRiver(id, fb, true); });
+renderDistChips();
+loadAll();
+loadGauges();
+</script>
+</body>
+</html>
